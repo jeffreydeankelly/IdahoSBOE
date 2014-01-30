@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13898221830120" configfile="/dict-web/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" id="pf13903297837430" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf13903297837431 pf13903297837432 pf13903297837433 pf13903297837434 pf13903297837435 pf13903297837436 pf13903297837437 pf13903297837438 pf13903297837439 pf139032978374310 pf139032978374311 pf139032978374312 pf139032978374313 pf139032978374314 pf139032978374315 pf139032978374316 pf139032978374317 pf139032978374318 pf139032978374319 pf139032978374320" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="welcome" id="pf139032978374321" referenceLink="//@navigationRule.0/@navigationCase.13/@toViewId|" inlinks="pf13903297837431 pf139032978374314" path="/welcome.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="feedback" id="pf139032978374322" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf13903297837432" path="/feedback.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="adminredirect" id="pf139032978374323" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf13903297837433" path="/adminredirect.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="kwsearch" id="pf139032978374324" referenceLink="//@navigationRule.0/@navigationCase.6/@toViewId|" inlinks="pf13903297837434 pf13903297837437" path="/kwsearch.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="collection" id="pf139032978374325" referenceLink="//@navigationRule.0/@navigationCase.12/@toViewId|" inlinks="pf13903297837435 pf13903297837438 pf139032978374311 pf139032978374313" path="/collection.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="rolodex" id="pf139032978374326" referenceLink="//@navigationRule.0/@navigationCase.11/@toViewId|" inlinks="pf13903297837436 pf13903297837439 pf139032978374312" path="/rolodex.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="showexception" id="pf139032978374327" referenceLink="//@navigationRule.0/@navigationCase.9/@toViewId|" inlinks="pf139032978374310" path="/showexception.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="faq" id="pf139032978374328" referenceLink="//@navigationRule.0/@navigationCase.14/@toViewId|" inlinks="pf139032978374315" path="/faq.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="about" id="pf139032978374329" referenceLink="//@navigationRule.0/@navigationCase.15/@toViewId|" inlinks="pf139032978374316" path="/about.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="statistics" id="pf139032978374330" referenceLink="//@navigationRule.0/@navigationCase.16/@toViewId|" inlinks="pf139032978374317" path="/statistics.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="sessionlength" id="pf139032978374331" referenceLink="//@navigationRule.0/@navigationCase.17/@toViewId|" inlinks="pf139032978374318" path="/sessionlength.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="sessionperday" id="pf139032978374332" referenceLink="//@navigationRule.0/@navigationCase.18/@toViewId|" inlinks="pf139032978374319" path="/sessionperday.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="feedbackusage" id="pf139032978374333" referenceLink="//@navigationRule.0/@navigationCase.19/@toViewId|" inlinks="pf139032978374320" path="/feedbackusage.jspx"/>
+  <links id="pf13903297837431" target="pf139032978374321" source="pf13903297837430" outcome="menu2.home"/>
+  <links id="pf13903297837432" target="pf139032978374322" source="pf13903297837430" outcome="menu2.feedback"/>
+  <links id="pf13903297837433" target="pf139032978374323" source="pf13903297837430" outcome="menu2.login" redirect="true"/>
+  <links id="pf13903297837434" target="pf139032978374324" source="pf13903297837430" outcome="keyword"/>
+  <links id="pf13903297837435" target="pf139032978374325" source="pf13903297837430" outcome="collection"/>
+  <links id="pf13903297837436" target="pf139032978374326" source="pf13903297837430" outcome="alpha"/>
+  <links id="pf13903297837437" target="pf139032978374324" source="pf13903297837430" outcome="menu2.keyword"/>
+  <links id="pf13903297837438" target="pf139032978374325" source="pf13903297837430" outcome="menu2.collection"/>
+  <links id="pf13903297837439" target="pf139032978374326" source="pf13903297837430" outcome="menu2.alpha"/>
+  <links id="pf139032978374310" target="pf139032978374327" source="pf13903297837430" outcome="error"/>
+  <links id="pf139032978374311" target="pf139032978374325" source="pf13903297837430" outcome="menu2.print"/>
+  <links id="pf139032978374312" target="pf139032978374326" source="pf13903297837430" outcome="menu2.printAlpha"/>
+  <links id="pf139032978374313" target="pf139032978374325" source="pf13903297837430" outcome="menu2.printCollection"/>
+  <links id="pf139032978374314" target="pf139032978374321" source="pf13903297837430" outcome="menu2.flush"/>
+  <links id="pf139032978374315" target="pf139032978374328" source="pf13903297837430" outcome="menu2.faq"/>
+  <links id="pf139032978374316" target="pf139032978374329" source="pf13903297837430" outcome="menu2.about"/>
+  <links id="pf139032978374317" target="pf139032978374330" source="pf13903297837430" outcome="menu2.statistics"/>
+  <links id="pf139032978374318" target="pf139032978374331" source="pf13903297837430" outcome="sessionLength"/>
+  <links id="pf139032978374319" target="pf139032978374332" source="pf13903297837430" outcome="sessionPerDay"/>
+  <links id="pf139032978374320" target="pf139032978374333" source="pf13903297837430" outcome="feedbackUsage"/>
+</pageflow:Pageflow>

@@ -1,0 +1,412 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.2"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/EA13/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <link rel="shortcut icon" href="favicon.ico"/>
+  <f:view>
+    <f:loadBundle basename="locales.default" var="mainBundle"/>
+    <af:document id="document" initialFocusId="sarg" title="Colorado Department of Education - Data Dictionary - Collections">
+      <af:form id="form1" defaultCommand="search">
+        <af:panelBorder id="panelBorder">
+          <f:facet name="top">
+            <af:panelPageHeader id="panelPageHeader">
+              <f:facet name="branding">
+                <af:panelGroup layout="vertical">
+                  <f:facet name="separator">
+                    <af:objectSpacer width="1" height="2"/>
+                  </f:facet>
+                  <af:outputFormatted value="#{mainBundle.back_disclaimer}" inlineStyle="font-size: 8pt;"/>
+                  <af:objectImage id="branding" source="/images/cdelogo_home.gif"
+                                shortDesc="#{mainBundle.brandingDesc}"/>
+                </af:panelGroup>
+              </f:facet>
+              <f:facet name="brandingApp">
+                <af:objectImage id="brandingApp" source="/images/banner.gif"
+                                shortDesc="#{mainBundle.brandingDesc}"/>
+              </f:facet>
+              <f:facet name="menu2">
+                <af:menuBar><!-- inlineStyle="background-color:rgb(0,0,255)" -->
+                  <af:commandMenuItem text="Home" action="menu2.home"
+                                      selected="false" immediate="true"
+                                      shortDesc="#{mainBundle.menu_home_tip}"/>
+                  <af:commandMenuItem text="Feedback" action="menu2.feedback"
+                                      actionListener="#{feedback.captureReturnView}"
+                                      selected="false" immediate="true"
+                                      shortDesc="Give feedback about this web site"/><!--  styleClass="cde_menubar" -->
+                  <af:commandMenuItem text="Print"
+                                    actionListener="#{collection.doPrint}"
+                                      action="menu2.printCollection"
+                                      immediate="true" selected="false"
+                                      rendered="true"
+                                      shortDesc="#{mainBundle.menu_print_tip}"/>
+                </af:menuBar>
+              </f:facet>
+              <f:facet name="brandingAppContextual">
+                <af:panelHorizontal>
+                    <af:commandLink action="#{collection.actionKeywordSearch}"
+                            shortDesc="#{mainBundle.keywordsearch_tip}" >
+                            <af:objectImage source="#{requestScope.contextPath}/images/KWSearchS.gif"
+                               shortDesc="Keyword Search" />
+                          </af:commandLink>
+                    <af:objectSpacer width="5" />
+                    <af:commandLink action="#{collection.actionRolodexSearch}"
+                        shortDesc="#{mainBundle.alphasearch_tip}" >
+                        <af:objectImage source="#{requestScope.contextPath}/images/DataElementS.gif"
+                           shortDesc="Alphabetic Search"/>
+                    </af:commandLink>
+                </af:panelHorizontal>
+              </f:facet>
+              <f:facet name="menuGlobal">
+                <af:menuBar rendered="#{security.isAuthenticated}">
+                  <af:commandMenuItem text="Reload Cache" action="menu2.flush"
+                                      inlineStyle="font-size: 9pt;"
+                                      selected="false" immediate="true"
+                                      actionListener="#{security.flushCache}"
+                                      rendered="#{security.isAuthenticated}"
+                                      shortDesc="Reload all data held in system memory"/>
+                </af:menuBar>
+              </f:facet>
+            </af:panelPageHeader>
+          </f:facet>
+          <f:facet name="innerTop">
+            <af:panelGroup layout="vertical">
+              <f:facet name="separator">
+                <af:objectSpacer width="1" height="5"/>
+              </f:facet>
+             <af:panelHorizontal>
+             
+                <af:menuPath id="pathModel" var="crumb" 
+                      value="#{collection.menuModel}" 
+                      partialTriggers="treeDetail showDetail1 showNarrative showPreviousNarrative showReferences" >
+                    <f:facet name="nodeStamp">
+                       <af:commandMenuItem text="#{crumb.label}" 
+                                        action="menu2.collection"
+                                        actionListener="#{collection.menuPathNavigate}"
+                                        immediate="true"
+                                        rendered="true" />
+                    </f:facet>
+                 </af:menuPath>
+                <af:outputText value="#{collection.pageName}"
+                      inlineStyle="color:#336699;font-family: Arial, Helvetica, Sans-Serif;font-size: 9pt;"/>
+              </af:panelHorizontal>
+               <af:panelHeader text="Search Collections by Keywords" size="0">
+                 <af:panelTip>
+                    <af:outputText escape="false" value="#{mainBundle.panel_search_tip}"/>
+                    <af:outputText escape="false" value="#{mainBundle.panel_filter_tip_p2}"/>
+                 </af:panelTip>
+                 <af:inputText id="sarg" columns="55"
+                                value="#{collection.sarg}"
+                                immediate="true" 
+                                shortDesc="#{mainBundle.input_search_tip}" 
+                                accessKey="S"/>
+                 <af:panelButtonBar>
+                   <af:commandButton id="search" text="Search"
+                                    actionListener="#{collection.search}"
+                                    immediate="false" 
+                                    shortDesc="#{mainBundle.button_search_tip}"
+                                    accessKey="e"
+                                    action="menu2.collection" 
+                                    blocking="true"
+                                    inlineStyle="width:60px"/>
+                   <af:commandButton id="reset" 
+                                    actionListener="#{collection.resetSearch}" 
+                                    text="Clear " shortDesc="#{mainBundle.button_clear_tip}"
+                                    accessKey="c"
+                                    action="menu2.collection"
+                                    blocking="true"
+                                    onclick="javascript:document.form1.sarg.value='';"
+                                    inlineStyle="width:60px"/>
+                 </af:panelButtonBar>
+                </af:panelHeader>
+              </af:panelGroup>
+          </f:facet>
+          <af:objectSpacer width="5" height="5" rendered="#{collection.isEmptySearch}"  />
+          <af:message message="#{mainBundle.search_nothing}" messageType="none" 
+              rendered="#{collection.isEmptySearch}" 
+              inlineStyle="font-size:medium;"/>
+          <af:objectSpacer width="5" height="5" rendered="#{collection.isEmptySearch}"  />
+          <af:panelPartialRoot>
+            <af:messages globalOnly="false" />
+            <af:panelBox background="medium" width="100%"
+                         text="#{collection.filterCriteria}" 
+                         shortDesc="#{mainBundle.panel_collection_desc}">
+              <af:tree id="tree" var="node" value="#{collection.treeModel}"
+                       immediate="true" rendered="#{!collection.isEmptySearch}"
+                       partialTriggers="treeDetail showDetail1 showNarrative showPreviousNarrative showReferences"
+                       binding="#{collection.catalogTree}">
+                <f:facet name="nodeStamp">
+                  <af:panelGroup id="treeDetail" layout="vertical"
+                       partialTriggers="selectCommand showDetail1 showNarrative showPreviousNarrative showReferences">
+                    <f:facet name="separator">
+                      <af:objectSpacer width="5" height="1"/>
+                    </f:facet>
+                    <af:panelHorizontal valign="top">
+                        <f:facet name="separator">
+                          <af:objectSpacer width="5" height="1"/>
+                        </f:facet>
+                        <af:commandLink id="selectCommand"
+                                        actionListener="#{collection.select}"
+                                        text="#{node.displayItemName}"
+                                        immediate="true" partialSubmit="true"
+                                        partialTriggers="tree treeDetail showDetail1 showNarrative showPreviousNarrative showReferences"
+                                        shortDesc="#{mainBundle.button_treearrow_tip}"/>
+                        <af:commandLink id="adminCopyCmd"
+                                        actionListener="#{collection.copyToClipboard}"
+                                        immediate="true" 
+                                        rendered="#{security.isAuthenticated and node.canCopy}">
+                          <af:objectImage id="adminCopy" source="/images/copy.gif"
+                                          shortDesc="#{mainBundle.button_admincopy_tip}"/>
+                        </af:commandLink>
+                        <af:commandLink id="adminPasteCmd"
+                                        actionListener="#{collection.pasteFromClipboard}"
+                                        immediate="true"
+                                        rendered="#{security.isAuthenticated and !collection.isClipboardEmpty and node.canPaste}"
+                                        action="menu2.collection"
+                                        disabled="#{!security.isAdmin}" >
+                          <af:objectImage id="adminPaste" source="/images/paste.gif" rendered="#{security.isAdmin}"
+                                          shortDesc="Build Relationship with Items in the Editor"/>
+                          <af:objectImage id="adminPasteDisable" source="/images/pastedisable.gif" rendered="#{security.isDemo}"
+                                          shortDesc="Build Relationship with Items in the Editor - Disabled"/>
+                        </af:commandLink>
+                        <af:commandLink id="adminDeleteCmd"
+                                        actionListener="#{collection.deleteFromTree}"
+                                        immediate="true"
+                                        rendered="#{security.isAuthenticated and node.canDelete}"
+                                        action="menu2.collection"
+                                        disabled="#{!security.isAdmin}" >
+                          <af:objectImage id="adminDelete"
+                                          source="/images/delete.gif" rendered="#{security.isAdmin}"
+                                          shortDesc="Delete Item Relationship"/>
+                           <af:objectImage id="adminDeleteDisable"
+                                          source="/images/deletedisable.gif" rendered="#{security.isDemo}"
+                                          shortDesc="Delete Item Relationship - Disabled"/>
+                        </af:commandLink>
+                    </af:panelHorizontal>
+                  <af:panelHorizontal valign="top" rendered="#{node.showingDetail}"
+                            inlineStyle="background-color:#FFFFE3">
+                    <f:facet name="separator">
+                      <af:objectSpacer width="10" height="2"/>
+                    </f:facet>
+                    <!-- 100% of enclosing table! but 100% causes clipping of right border -->
+                    <af:panelBox id="showDetail1" width="98%"
+                                 rendered="#{node.showingDetail}"
+                                 text="#{node.itemType} - #{node.itemName}"
+                                 partialTriggers="tree treeDetail selectCommand showNarrative showPreviousNarrative showReferences"
+                                 shortDesc="#{mainBundle.panel_showdetail_tip}">
+                      <af:showDetailHeader text="Narrative" id="showNarrative"
+                                inlineStyle="color:#336699"
+                                disclosed="true" immediate="true"
+                                disclosureListener="#{collection.select}"
+                                shortDesc="#{mainBundle.panel_detailheader_tip}">
+                        <af:outputText value="#{node.itemNarrative}" escape="false"/>
+                        <af:outputFormatted value="&lt;br&gt;Definition as of: #{node.effDateStart}&lt;/br&gt;"/>
+                      </af:showDetailHeader>
+                      <af:showDetailHeader text="Previous Narrative"
+                                           id="showPreviousNarrative"
+                                           inlineStyle="color:#336699"
+                                           immediate="true"
+                                           shortDesc="#{mainBundle.panel_prevnarr_tip}"
+                                           rendered="#{!empty node.narrativeHistory}">
+                        <af:table id="showPreviousNarrativeTable" var="node" value="#{node.narrativeHistory}"
+                                  rows="3" shortDesc="Narrative History"
+                                  rendered="#{!empty node.narrativeHistory}">
+                          <f:facet name="detailStamp">
+                            <h:panelGrid columns="3">
+                              <af:outputFormatted value="&amp;nbsp;"/>
+                              <af:outputFormatted value="&lt;b&gt;User&lt;/b&gt;"/>
+                              <af:outputFormatted value="&lt;b&gt;Date&lt;/b&gt;"/>
+                              <af:outputFormatted value="&lt;b&gt;Create&lt;/b&gt;"/>
+                              <af:outputText value="#{collection.selectedCatalogElement.instance.createUserid}"/>
+                              <af:outputText value="#{collection.selectedCatalogElement.instance.createDate}"/>
+                              <af:outputFormatted value="&lt;b&gt;Update&lt;/b&gt;"/>
+                              <af:outputText value="#{collection.selectedCatalogElement.instance.updateUserid}"/>
+                              <af:outputText value="#{collection.selectedCatalogElement.instance.updateDate}"/>
+                            </h:panelGrid>
+                          </f:facet>
+                          <af:column id="colNarrative">
+                            <f:facet name="header">
+                              <af:outputText value="Narrative"/>
+                            </f:facet>
+                            <af:outputText escape="false"
+                                           value="#{node.itemNarrative}"/>
+                          </af:column>
+                        </af:table>
+                      </af:showDetailHeader>
+                    </af:panelBox>
+                    <af:showDetailHeader text="Reference List"
+                                         disclosed="true"
+                                         rendered="#{node.showingDetail and !node.isGlossaryType}"
+                                         immediate="true"
+                                         partialTriggers="tree treeDetail selectCommand showNarrative showPreviousNarrative referenceLink"
+                                         shortDesc="#{mainBundle.panel_reflist_tip}">
+                      <af:tree var="nodeRef"
+                               value="#{node.referencesModel}">
+                        <f:facet name="nodeStamp">
+                                            <!--  id="referenceLink" -->
+                          <af:commandLink
+                                          disabled="#{nodeRef.isGlossaryType}"
+                                          text="#{nodeRef.displayItemName}"
+                                          actionListener="#{collection.selectReference}"
+                                          immediate="false"
+                                          inlineStyle="color:#336699"
+                                          rendered="#{(nodeRef.isGlossaryType and nodeRef.hasChildren) or !nodeRef.isGlossaryType}"
+                                          partialSubmit="false" shortDesc="#{menuBundle.link_reference_tip}"
+                                          action="menu2.collection">
+                            <f:param name="glossType" value="#{nodeRef.itemType}"/>
+                            <f:param name="itemName" value="#{nodeRef.itemName}"/>
+                          </af:commandLink>
+                        </f:facet>
+                      </af:tree>
+                    </af:showDetailHeader>
+                  </af:panelHorizontal>
+                  </af:panelGroup>
+                </f:facet>
+              </af:tree>
+              <af:panelGroup layout="vertical"  >
+                <af:showDetailHeader text="Editor" id="clipboardDetail"
+                                     immediate="true" disclosed="true"
+                                     rendered="#{security.isAuthenticated}">
+                  <af:panelBox background="medium"   >
+                    <af:messages globalOnly="true"/>
+                    <af:panelHorizontal valign="top">
+                      <f:facet name="separator">
+                        <af:objectSpacer width="2" height="2"/>
+                      </f:facet>
+                      <af:table id="clipboardTable" shortDesc="Edit Clipboard"
+                                var="node" value="#{collection.clipboard}" rows="5"
+                                rendered="#{!collection.isClipboardEmpty}">
+                        <f:facet name="detailStamp">
+                          <af:panelBox>
+                            <af:message for="cbNarrative"/>
+                            <af:inputText label="Narrative" id="cbNarrative"
+                                          value="#{node.itemNarrative}"
+                                          maximumLength="4000" columns="120"
+                                          rows="10" required="true"
+                                          requiredMessageDetail="Narrative is required"/>
+                          </af:panelBox>
+                        </f:facet>
+                        <af:column>
+                          <af:commandLink id="clipboardDeleteCmd" text="Delete"
+                                          actionListener="#{collection.clipboardDelete}"
+                                          action="menu2.collection" 
+                                          disabled="#{!security.isAdmin}" 
+                                          immediate="true">
+                            <af:setActionListener from="#{node}"
+                                                  to="#{requestScope.detail}"/>
+                          </af:commandLink>
+                        </af:column>
+                        <af:column>
+                          <f:facet name="header">
+                            <af:outputText value="Name"/>
+                          </f:facet>
+                          <af:inputText id="cbName" value="#{node.itemName}"
+                                        maximumLength="80" columns="80" required="true"
+                                        requiredMessageDetail="Item name is required"/>
+                          <f:facet name="footer">
+                            <af:message for="cbName"/>
+                          </f:facet>
+                        </af:column>
+                        <af:column>
+                          <f:facet name="header">
+                            <af:outputText value="Type"/>
+                          </f:facet>
+                        
+                          <af:selectOneChoice id="cbType" label="Catalog Type"
+                                              value="#{node.itemType}"
+                                              required="true"
+                                              requiredMessageDetail="Item type is required">
+                            <f:selectItems id="cbTypes"
+                                           value="#{collection.catalogTypes}"/>
+                          </af:selectOneChoice>
+                    <!--
+                          <af:inputText id="cbType" value="#{node.itemType}"
+                                        maximumLength="40" columns="40" required="true"
+                                        requiredMessageDetail="Item item is required"/>
+                        -->
+                          <f:facet name="footer">
+                            <af:message for="cbType"/>
+                          </f:facet>
+                        
+                        </af:column>
+                      </af:table>
+                          <af:panelGroup layout="vertical">
+                            <f:facet name="separator">
+                              <af:objectSpacer width="1" height="3"/>
+                            </f:facet>
+                            <af:commandButton id="clipboardNewItemCmd" text=" New   "
+                                              actionListener="#{collection.clipboardNewItem}"/>
+                            <af:commandButton id="clipboardClearCmd" text=" Clear "
+                                              actionListener="#{collection.clipboardClear}"
+                                              action="menu2.collection"
+                                              rendered="#{!collection.isClipboardEmpty}"/>
+                            <af:commandButton id="clipboardSaveCmd" text=" Save  "
+                                              actionListener="#{collection.clipboardSave}"
+                                              rendered="#{!collection.isClipboardEmpty}"  
+                                              disabled="#{!security.isAdmin}"  />
+                          </af:panelGroup>
+                         </af:panelHorizontal>
+                  </af:panelBox>
+                </af:showDetailHeader>
+              </af:panelGroup>
+            </af:panelBox>
+          </af:panelPartialRoot>
+          <f:facet name="bottom">
+            <f:verbatim>
+              <div style="color:#336699;font-family: Arial, Helvetica, Sans-Serif;font-size: 9pt;">
+                <hr width="100%"/>
+            <p>
+              Any questions or comments on the organization or operation of
+              this site?<br/>
+               Please contact the CDE Data Dictionary administrator at:
+              <a href="mailto:dd_webmaster@cde.state.co.us">dd_webmaster@cde.state.co.us</a>.
+            </p>
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" id="footer">
+               <tr>
+                 <td colspan="2" align="right"></td>
+		</tr>
+		<tr>
+                    <td colspan="2">
+			<img src="./images/hfnav_bar.gif" alt="" border="0" height="2" width="100%"/>
+                    </td>
+		</tr>
+		<tr>
+			<td valign="top" width="50%">
+				<table cellpadding="2" cellspacing="0" border="0">
+					<tr>
+						<td valign="top">
+							<img src="./images/hfnav_top.gif" width="10" height="11" alt="" border="0"/></td>
+						<td valign="top">
+							<a href="#">Top of Page</a></td>
+						<td valign="top" style="padding-left:7px;">
+							<img src="./images/hfnav_home.gif" width="10" height="10" alt="" border="0"/></td>
+						<td valign="top">
+							<a href="http://www.cde.state.co.us/">CDE Home</a></td>
+						<td valign="top" style="padding-left:7px;">
+							<img src="./images/hfnav_state.gif" width="17" height="11" alt="" border="0"/></td>
+						<td valign="top">
+							<a href="http://www.colorado.gov/">State Home</a></td>
+					</tr>
+				</table></td>
+		  <td valign="top" align="right" width="50%">
+				Copyright &amp;copy; 2007 Colorado Department of Education.<br/>
+				All rights reserved. <a href="http://www.cde.state.co.us/utility/titleIX.htm">Title IX</a>. 
+                                <a href="http://www.cde.state.co.us/utility/access.htm">Accessibility</a>. 
+                                <a href="http://www.cde.state.co.us/utility/cddisclm.htm">Disclaimer</a>. 
+                                <a href="http://www.cde.state.co.us/utility/privacy.htm">Privacy</a>.</td>
+		</tr>
+            </table>
+              </div>
+            </f:verbatim>
+          </f:facet>
+        </af:panelBorder>
+      </af:form>
+    </af:document>
+  </f:view>
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_catalog-->
+</jsp:root>

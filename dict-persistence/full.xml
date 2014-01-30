@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <DictUser/>
+  <Glossary GlossType="Business Rule" ItemName="Academic Subject (Assessment)" ItemNarrative="RLA - Reading/Language Art"/>
+  <Glossary GlossType="Business Rule" ItemName="Academic Subject (Secondary)" ItemNarrative="&lt;p&gt;ENGL - English &lt;br&gt;M - Mathematics &lt;br&gt;S - Science &lt;br&gt;SS - Social Sciences"/>
+  <Glossary GlossType="Business Rule" ItemName="AMAO Proficiency Attainment Status for Limited English Proficient Students" ItemNarrative="&lt;p&gt;METAMAOLEP - Met the Annual Measurable Achievement Objectives (AMAO) for Limited English Proficient (LEP) Students"/>
+  <Glossary GlossType="Business Rule" ItemName="Base Salary" ItemNarrative="&lt;p&gt;Do not include additional pay for additional duties. If individual has"/>
+  <Glossary GlossType="Data Element" ItemName="Attends District Funded GED Program" ItemNarrative="GED funded using state funds either in the form of a district run GED program or tuition paid, by the district, to an external GED program."/>
+  <Glossary GlossType="Data Element" ItemName="Bilingual" ItemNarrative="This one digit field indicates whether the student is currently enrolled in a bilingual program, is in the monitoring period, or is Exited.  Must be a valid code as defined in the Student Data Elements and Definitions document or Zero-fill."/>
+  <GlossaryHistory/>
+  <GlossaryHistoryNarrIndx/>
+  <GlossaryNarrIndx/>
+  <GlossaryNoiseWord/>
+  <GlossaryType GlossType="Business Rule" GlossDesc="Business Rule Description" GlossVisible="1"/>
+  <GlossaryType GlossType="Collection" GlossDesc="Collection Description" GlossVisible="1"/>
+  <GlossaryType GlossType="Data Element" GlossDesc="Data Element Description" GlossVisible="1"/>
+  <GlossaryType GlossType="Report" GlossDesc="Report Element Description" GlossVisible="1"/>
+  <GlossaryWordAlias/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="District Number" GlossTypeParent="Data Element" GlossTypeChild="District Number"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="Ethnic Category" GlossTypeParent="Data Element" GlossTypeChild="Ethnic Category"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="Gender" GlossTypeParent="Data Element" GlossTypeChild="Gender"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="Language Background" GlossTypeParent="Data Element" GlossTypeChild="Language Background"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="LASID" GlossTypeParent="Data Element" GlossTypeChild="LASID"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="Racial Category" GlossTypeParent="Data Element" GlossTypeChild="Racial Category"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="SASID" GlossTypeParent="Data Element" GlossTypeChild="SASID"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="Section 504 Handicapped" GlossTypeParent="Data Element" GlossTypeChild="Section 504 Handicapped"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="District Number"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="Ethnic Category"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="Gender"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="Language Background"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="LASID"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="Racial Category"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="SASID"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="Section 504 Handicapped"/>
+  <GlossaryXwalkHistory/>
+  <KeySequence SeqName="GlossaryHistorySeq" SeqCount="0"/>
+  <KeySequence SeqName="GlossaryXwalkHistorySeq" SeqCount="0"/>
+</dataset>

@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <f:loadBundle basename="locales.default" var="mainBundle"/>
+    <af:document id="document">
+      <afh:head title="Colorado Department of Education - Data Dictionary - FAQ"/>
+      <h:form id="form1">
+        <af:panelBorder id="panelBorder">
+          <f:facet name="top">
+            <af:panelPageHeader id="panelPageHeader">
+              <f:facet name="branding">
+                <af:objectImage id="branding" source="#{requestScope.contextPath}/images/cdelogo_home.gif"
+                                shortDesc="Colorado Department of Education"/>
+              </f:facet>
+              <f:facet name="brandingApp">
+                <af:objectImage id="brandingApp" source="#{requestScope.contextPath}/images/banner.gif"
+                                shortDesc="Colorado Department of Education"/>
+              </f:facet>
+              <f:facet name="brandingAppContextual">
+                <af:outputFormatted id="brandingAppContext"
+                                    value="Data Dictionary"
+                                    styleUsage="inContextBranding"/>
+              </f:facet>
+              <f:facet name="menu2">
+                <af:menuBar>
+                  <af:commandMenuItem text="Home" selected="false"
+                                      immediate="true" action="menu2.home"
+                                      shortDesc="Main Menu"/>
+                  <af:commandMenuItem text="Feedback" action="menu2.feedback"
+                                      inlineStyle="font-size: 9pt;"
+                                      actionListener="#{feedback.captureReturnView}"
+                                      selected="false" immediate="true"
+                                      shortDesc="Give feedback about this web site"/>
+                </af:menuBar>
+              </f:facet>
+            </af:panelPageHeader>
+          </f:facet>
+          <f:facet name="innerTop">
+            <af:panelGroup layout="vertical" >
+              <f:facet name="separator">
+                <af:objectSpacer width="1" height="10"/>
+              </f:facet>
+              <af:messages globalOnly="false" />
+              <f:verbatim>
+                <div style="color:#336699">
+    <h4>Here are the answers to questions frequently asked about the Colorado Department of Education's (CDE) Data Dictionary.</h4>
+                </div>
+                <div style="color:#336699;font-family: Arial, Helvetica, Sans-Serif;font-size: 9pt;">  
+<p><b>Q:</b> Why does the Collection information in the Data Dictionary 
+not look like the file layouts in ADE?<br/>
+<b>A:</b> Currently, the Data Dictionary contains the definitions and business rules for the data
+elements in the collections. They are arranged in alphabetical order for easier searching. 
+Also, the data dictionary uses "business" names for data elements where ADE tends to lean 
+towards "technical" names (ie. the field names used by the programs to load the data from
+collections into databases). Ultimately, we see the Data Dictionary providing the mapping 
+of "business" named data elements to all the physical uses of data. 
+(e.g. Student Birth Date is used in field "ST_Brth_Dt" on report "ABC", 
+and Student Birth Date is used in field "stbthday" on collection file "XYX", etc).</p>
+ 
+<p><b>Q:</b> Which browsers are supported by DataDictionary?<br/>
+<b>A:</b> Currently the DataDictionary supports:<br/>
+ - Windows IE 6.* and higher<br/>
+ - Mozilla 1.7.* and higher<br/>
+ - Firefox 1.0.* and higher<br/>
+ - Safari 1.3.* (with patch 312.2) or 2.0.* (with patch 412.5)</p> 
+ 
+<p><b>Q:</b> Why does the "Back" button on my browser not always work?<br/>
+<b>A:</b> As with many Internet applications, the standard browser "Back" button
+does not always function as designed.  It is wise to use the navigation features
+of the application you are using instead of the "Back" button as it may produce
+unexpected results. The CDE Data Dictionary uses a feature called "Bread Crumbs".
+These clickable links will appear under the blue action bar (where you see "Home",
+"Feedback", "Print") as you navigate within the Data Dictionary.</p>
+ 
+<p><b>Q:</b> Can I use the Collection information shown in the Data Dictionary 
+to request reports or data?<br/>
+<b>A:</b> Not necessarily. The information gathered in the Data Dictionary, 
+documents the data elements as they are used in the collection of data. 
+Many times, the data is manipulated and provided to CDE or school districts 
+in summarized or aggregated form instead of the details.  It could also be 
+the detail data may be classified or personal in nature which is not available 
+to the public or other school districts and only available in a non-specific
+reporting format.</p>
+<p>Check the 'CDE Data Requests' page: 
+<a href="http://www.cde.state.co.us/cdereval/datarequest.asp">
+http://www.cde.state.co.us/cdereval/datarequest.asp</a> for how to request 
+data or to see what reports and data are already available for general use.</p> 
+                 </div>
+              </f:verbatim>
+           </af:panelGroup>
+         </f:facet>
+          <f:facet name="bottom">
+          <f:verbatim>
+              <div style="color:#336699;font-family: Arial, Helvetica, Sans-Serif;font-size: 9pt;">
+<!-- I'm not sure this is all true and not mis-leading
+<p>Much of this information is confidential and for that reason all Collections are password protected.</p>
+<p>See <a href="https://ade.cde.state.co.us/doc_toc.htm">https://ade.cde.state.co.us/doc_toc.htm</a> for a list of the CDE Data Collections.<br/>
+See <a href="https://ade.cde.state.co.us/#contacts">https://ade.cde.state.co.us/#contacts</a> for the list of CDE contact persons to speak with for issues pertaining to Data Collections.<br/>
+See <a href="https://ade.cde.state.co.us/respondents.htm">https://ade.cde.state.co.us/respondents.htm</a> for the list of Colorado school districts' contact persons who have user names and passwords for the Collections.<br/>
+-->
+<p>You can help us improve the Data Dictionary by giving us your feedback.</p>
+                <hr width="100%"/>
+            <p>
+              Any questions or comments on the organization or operation of
+              this site?<br/>
+               Please contact the CDE Data Dictionary administrator at:
+              <a href="mailto:dd_webmaster@cde.state.co.us">dd_webmaster@cde.state.co.us</a>.
+            </p>
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" id="footer">
+		<tr>
+			<td width="50%">&amp;nbsp;</td>
+			<td width="50%" align="right"></td>
+		</tr>
+		<tr>
+                    <td colspan="2">
+			<img src="./images/hfnav_bar.gif" alt="" border="0" height="2" width="100%"/>
+                    </td>
+		</tr>
+		<tr>
+			<td valign="top" width="50%">
+				<table cellpadding="2" cellspacing="0" border="0">
+					<tr>
+						<td valign="top">
+							<img src='./images/hfnav_top.gif' width='10' height='11' alt='' border='0'/></td>
+						<td valign="top">
+							<a href="#">Top of Page</a></td>
+						<td valign="top" style="padding-left:7px;">
+							<img src="./images/hfnav_home.gif" width="10" height="10" alt="" border="0"/></td>
+						<td valign="top">
+							<a href="http://www.cde.state.co.us/">CDE Home</a></td>
+						<td valign="top" style="padding-left:7px;">
+							<img src="./images/hfnav_state.gif" width="17" height="11" alt="" border="0"/></td>
+						<td valign="top">
+							<a href="http://www.colorado.gov/">State Home</a></td>
+					</tr>
+				</table></td>
+		  <td valign="top" align="right" width="50%">
+				Copyright &amp;copy; 2007 Colorado Department of Education.<br/>
+				All rights reserved. <a href="http://www.cde.state.co.us/utility/titleIX.htm">Title IX</a>. 
+                                <a href="http://www.cde.state.co.us/utility/access.htm">Accessibility</a>. 
+                                <a href="http://www.cde.state.co.us/utility/cddisclm.htm">Disclaimer</a>. 
+                                <a href="http://www.cde.state.co.us/utility/privacy.htm">Privacy</a>.</td>
+		</tr>
+              </table>
+              </div>
+            </f:verbatim>
+          </f:facet>
+        </af:panelBorder>
+      </h:form>
+    </af:document>
+  </f:view>
+</jsp:root>

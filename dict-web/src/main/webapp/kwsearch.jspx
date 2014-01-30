@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <link rel="shortcut icon" href="favicon.ico"/>
+  <f:view>
+    <f:loadBundle basename="locales.default" var="mainBundle"/>
+    <af:document id="document" initialFocusId="sarg" title="Colorado Department of Education - Data Dictionary - Keyword Search">
+      <af:form id="form1" defaultCommand="search">
+        <af:panelBorder id="panelBorder">
+          <f:facet name="top">
+            <af:panelPageHeader id="panelPageHeader">
+              <f:facet name="branding">
+                <af:panelGroup layout="vertical">
+                  <f:facet name="separator">
+                    <af:objectSpacer width="1" height="2"/>
+                  </f:facet>
+                  <af:outputFormatted value="#{mainBundle.back_disclaimer}" inlineStyle="font-size: 8pt;"/>
+                  <af:objectImage id="branding" source="/images/cdelogo_home.gif"
+                                shortDesc="#{mainBundle.brandingDesc}"/>
+                </af:panelGroup>
+              </f:facet>
+              <f:facet name="brandingApp">
+                <af:objectImage id="brandingApp" source="/images/banner.gif"
+                                shortDesc="#{mainBundle.brandingDesc}"/>
+              </f:facet>
+              <f:facet name="menu2">
+                <af:menuBar inlineStyle="background-color:rgb(0,0,255)">
+                  <af:commandMenuItem text="Home" action="menu2.home"
+                                      selected="false" immediate="true"
+                                      shortDesc="#{mainBundle.menu_home_tip}"/>
+                  <af:commandMenuItem text="Feedback" action="menu2.feedback"
+                                      actionListener="#{feedback.captureReturnView}"
+                                      selected="false" immediate="true"
+                                      shortDesc="Give feedback about this web site" styleClass="cde_menubar"/>
+                </af:menuBar>
+              </f:facet>
+              <f:facet name="brandingAppContextual">
+                <af:panelHorizontal>
+                   <af:commandLink action="menu2.alpha"
+                        shortDesc="#{mainBundle.alphasearch_tip}" >
+                        <af:objectImage source="#{requestScope.contextPath}/images/DataElementS.gif"
+                           shortDesc="Alphabetic Search"/>
+                    </af:commandLink>
+                    <af:objectSpacer width="5" />
+                    <af:commandLink action="menu2.collection"
+                                shortDesc="#{mainBundle.collectionsearch_tip}">
+                        <af:objectImage source="#{requestScope.contextPath}/images/CollectionS.gif"
+                           shortDesc="Collection Search" />
+                    </af:commandLink>
+                </af:panelHorizontal>
+              </f:facet>
+            </af:panelPageHeader>
+          </f:facet>
+          <f:facet name="innerTop">
+            <af:panelGroup layout="vertical" >
+              <f:facet name="separator">
+                <af:objectSpacer width="10" height="10"/>
+              </f:facet>
+              <af:panelHeader text="Search by Keywords" size="0">
+                <af:panelTip>
+                    <af:outputText escape="false" value="#{mainBundle.panel_kwsearch_tip}"/>
+                </af:panelTip>
+                <af:inputText id="sarg" columns="55"
+                            value="#{kwsearch.sarg}"
+                            immediate="true" 
+                            shortDesc="#{mainBundle.input_search_tip}" 
+                            accessKey="S"/>
+                <af:panelButtonBar>
+                  <af:commandButton id="search" text="Search"
+                                    actionListener="#{kwsearch.search}"
+                                    immediate="false" 
+                                    shortDesc="#{mainBundle.button_search_tip}"
+                                    accessKey="e"
+                                    action="menu2.keyword" 
+                                    blocking="true"
+                                    inlineStyle="width:60px"/>
+                  <af:commandButton id="reset" 
+                                    actionListener="#{kwsearch.resetSearch}" 
+                                    text="Clear " shortDesc="#{mainBundle.button_clear_tip}"
+                                    accessKey="c"
+                                    action="menu2.keyword"
+                                    blocking="true"
+                                    inlineStyle="width:60px"/>
+                </af:panelButtonBar>
+            </af:panelHeader>
+            </af:panelGroup>
+          </f:facet>
+          <af:objectSpacer width="5" height="5" rendered="#{!kwsearch.hasResults}"  />
+          <af:message message="#{mainBundle.search_nothing}" messageType="none" 
+              rendered="#{!kwsearch.hasResults}" 
+              inlineStyle="font-size:medium;"/>
+          <af:objectSpacer width="5" height="5" rendered="#{!kwsearch.hasResults}"  />
+              <af:panelPartialRoot>
+                     <af:messages globalOnly="false" />
+                     <af:panelBox background="medium" width="100%"
+                                 text="#{kwsearch.filterCriteria}"
+                                 rendered="#{kwsearch.hasResults}">
+                        <af:table id="resultTable" var="row" value="#{kwsearch.keywordSearchResults}"
+                            rendered="#{kwsearch.hasResults}"
+                            partialTriggers="sarg search"
+                            emptyText="No results found"
+                            first="#{kwsearch.firstTableRow}">
+                            <af:column>
+                              <f:facet name="header">
+                                <af:outputText value="Relevance" shortDesc="A score indicating the relative degree of matching"/>
+                              </f:facet>
+                              <af:outputText value="#{row.score}"/>
+                            </af:column>
+                            <af:column>
+                              <f:facet name="header">
+                                <af:outputText value="Dictionary Type" shortDesc="The type of data element found"/>
+                              </f:facet>
+                              <af:outputText value="#{row.item.glossType}" rendered="#{!row.isLinkable}"/>
+                              <af:commandLink
+                                          text="#{row.item.glossType}"
+                                          actionListener="#{kwsearch.selectReference}"
+                                          immediate="false"
+                                          inlineStyle="color:#336699"
+                                          rendered="#{row.isLinkable}"
+                                          partialSubmit="false" shortDesc="#{menuBundle.link_reference_tip}">
+                                <f:param name="glossType" value="#{row.item.glossType}"/>
+                                <f:param name="itemName" value="#{row.item.itemName}"/>
+                              </af:commandLink>
+                            </af:column>
+                            <af:column>
+                              <f:facet name="header">
+                                <af:outputText value="Item Name" shortDesc="The name and description of the item"/>
+                              </f:facet>
+                              <af:showDetailHeader text="#{row.item.itemName}" size="1" inlineStyle="color:#000000">
+                               <af:outputText value="#{row.narrative}" escape="false"/>
+                              </af:showDetailHeader>
+                            </af:column>
+<!--
+                            <af:column>
+                              <f:facet name="header">
+                                <af:outputText value="Narrative"/>
+                              </f:facet>
+                              <af:outputText value="#{row.narrative}" escape="false"/>
+                            </af:column>
+-->
+                        </af:table>
+                    </af:panelBox>
+              </af:panelPartialRoot>
+          <f:facet name="bottom">
+            <f:verbatim>
+              <div style="color:#336699;font-family: Arial, Helvetica, Sans-Serif;font-size: 9pt;">
+                <hr width="100%"/>
+            <p>
+              Any questions or comments on the organization or operation of
+              this site?<br/>
+               Please contact the CDE Data Dictionary administrator at:
+              <a href="mailto:dd_webmaster@cde.state.co.us">dd_webmaster@cde.state.co.us</a>.
+            </p>
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" id="footer">
+		<tr>
+			<td width="50%"><af:outputFormatted value="&amp;nbsp;"/></td>
+			<td width="50%" align="right"></td>
+		</tr>
+		<tr>
+                    <td colspan="2">
+			<img src="./images/hfnav_bar.gif" alt="" border="0" height="2" width="100%"/>
+                    </td>
+		</tr>
+		<tr>
+			<td valign="top" width="50%">
+				<table cellpadding="2" cellspacing="0" border="0">
+					<tr>
+						<td valign="top">
+							<img src="./images/hfnav_top.gif" width="10" height="11" alt="" border="0"/></td>
+						<td valign="top">
+							<a href="#">Top of Page</a></td>
+						<td valign="top" style="padding-left:7px;">
+							<img src="./images/hfnav_home.gif" width="10" height="10" alt="" border="0"/></td>
+						<td valign="top">
+							<a href="http://www.cde.state.co.us/">CDE Home</a></td>
+						<td valign="top" style="padding-left:7px;">
+							<img src="./images/hfnav_state.gif" width="17" height="11" alt="" border="0"/></td>
+						<td valign="top">
+							<a href="http://www.colorado.gov/">State Home</a></td>
+					</tr>
+				</table></td>
+		  <td valign="top" align="right" width="50%">
+				Copyright &amp;copy; 2007 Colorado Department of Education.<br/>
+				All rights reserved. <a href="http://www.cde.state.co.us/utility/titleIX.htm">Title IX</a>. 
+                                <a href="http://www.cde.state.co.us/utility/access.htm">Accessibility</a>. 
+                                <a href="http://www.cde.state.co.us/utility/cddisclm.htm">Disclaimer</a>. 
+                                <a href="http://www.cde.state.co.us/utility/privacy.htm">Privacy</a>.</td>
+		</tr>
+            </table>
+              </div>
+            </f:verbatim>
+          </f:facet>
+        </af:panelBorder>
+      </af:form>
+    </af:document>
+  </f:view>
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_catalog-->
+</jsp:root>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="edwi" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<jar-file>../src/main/webapp/WEB-INF/lib/javax.persistence_2.1.0.v201304241213.jar</jar-file>
+		<class>gov.idaho.sboe.jpa.beans.Glossary</class>
+		<class>gov.idaho.sboe.jpa.beans.Glossary.PK</class>
+		<class>gov.idaho.sboe.jpa.beans.GlossaryHistory</class>
+		<class>gov.idaho.sboe.jpa.beans.GlossaryType</class>
+		<class>gov.idaho.sboe.jpa.beans.GlossaryXwalkHistory</class>
+		<class>gov.idaho.sboe.jpa.beans.GlossaryXwalk</class>
+		<class>gov.idaho.sboe.jpa.beans.GlossaryXwalk.PK</class>
+		<class>gov.idaho.sboe.jpa.beans.DictUser</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=SBOE_Data_Dictionary;integratedSecurity=true"/>
+			<property name="javax.persistence.jdbc.user" value="RESDAT\jeffk" />
+			<property name="javax.persistence.jdbc.password" value="j20552055K" />
+		</properties>	
+	</persistence-unit>
+	<persistence-unit name="default" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<jar-file>../src/main/webapp/WEB-INF/lib/javax.persistence_2.1.0.v201304241213.jar</jar-file>
+		<class>gov.idaho.sboe.jpa.beans.Glossary</class>
+		<class>gov.idaho.sboe.jpa.beans.Glossary.PK</class>
+		<class>gov.idaho.sboe.jpa.beans.GlossaryHistory</class>
+		<class>gov.idaho.sboe.jpa.beans.GlossaryType</class>
+		<class>gov.idaho.sboe.jpa.beans.GlossaryXwalkHistory</class>
+		<class>gov.idaho.sboe.jpa.beans.GlossaryXwalk</class>
+		<class>gov.idaho.sboe.jpa.beans.GlossaryXwalk.PK</class>
+		<class>gov.idaho.sboe.jpa.beans.DictUser</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=SBOE_Data_Dictionary;integratedSecurity=true"/>
+			<property name="javax.persistence.jdbc.user" value="RESDAT\jeffk" />
+			<property name="javax.persistence.jdbc.password" value="j20552055K" />
+		</properties>	
+	</persistence-unit>
+</persistence>

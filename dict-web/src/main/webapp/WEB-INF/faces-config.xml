@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!DOCTYPE faces-config PUBLIC
+  "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN"
+  "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+<faces-config xmlns="http://java.sun.com/JSF/Configuration">
+ 
+ <managed-bean>
+    <description>
+        This is a POJO Facade that encapsulates various data access
+        operations.
+    </description>   
+    <managed-bean-name>gov$idaho$sboe$services$CatalogFacade</managed-bean-name>
+    <managed-bean-class>gov.idaho.sboe.services.CatalogFacade</managed-bean-class>
+    <managed-bean-scope>none</managed-bean-scope>
+    <managed-property>
+       <description>JPA persistence unit injected for the jpaResource</description>
+       <property-name>persistenceUnit</property-name>
+       <property-class>javax.persistence.EntityManagerFactory</property-class>
+       <value>#{gov$idaho$sboe$JpaResource.factory}</value>
+    </managed-property>
+ </managed-bean>
+
+ <managed-bean>
+    <description>
+        This is a POJO Facade that encapsulates various data access
+        operations.
+    </description>   
+    <managed-bean-name>gov$idaho$sboe$IndexingFacade</managed-bean-name>
+    <managed-bean-class>gov.idaho.sboe.services.NarrativeIndexingFacade</managed-bean-class>
+    <managed-bean-scope>none</managed-bean-scope>
+    <managed-property>
+       <description>JPA persistence unit injected for the jpaResource</description>
+       <property-name>persistenceUnit</property-name>
+       <property-class>javax.persistence.EntityManagerFactory</property-class>
+       <value>#{gov$idaho$sboe$JpaResource.factory}</value>
+    </managed-property>
+ </managed-bean>
+ 
+<!--  <managed-bean> -->
+<!--     <description> -->
+<!--         This is a POJO Facade  -->
+<!--     </description>    -->
+<!--     <managed-bean-name>gov$idaho$sboe$FacadeException</managed-bean-name> -->
+<!--     <managed-bean-class>gov.idaho.sboe.services.FacadeException</managed-bean-class> -->
+<!--     <managed-bean-scope>none</managed-bean-scope> -->
+<!--     <managed-property> -->
+<!--        <description>JPA persistence unit injected for the jpaResource</description> -->
+<!--        <property-name>persistenceUnit</property-name> -->
+<!--        <property-class>javax.persistence.EntityManagerFactory</property-class> -->
+<!--        <value>#{gov$idaho$sboe$JpaResource.factory}</value> -->
+<!--     </managed-property> -->
+<!--  </managed-bean> -->
+ 
+ <managed-bean>
+    <description>
+       This is a utility wrapper class around some of the JPA
+       API.  It provides simple bean methods for getting at the
+       EntityManagerFactor and EntityManager.  It is designed to be
+       a managed bean.  Since it is bean friendly, we can us the 
+       property setter injection of the managed bean facility to
+       inject a persistence unit into a service facade that is
+       also a managed bean.
+    
+       There are three persistence-units defined in the ccat-jpa 
+       /META-INF/persistence.xml.
+       1. default – this unit should only be used for unit testing.  
+          It creates an Apache Derby database on the fly and then tells 
+          toplink to build the database tables associated with the 
+          entity classes.
+          
+       2. edwi – this unit uses local connection.  This connection can 
+          be used within the import command line utility program.  This 
+          type of connection requires imbedded connection information.
+          
+       3. edwi_JTA – this unit uses a JTA connection.  It uses data source 
+          jdbc/edwi.  This type of connection can be configured at the 
+          application server level and is the preferable type of connection 
+          within the web container.
+
+       The persistenceUnitName of the JPA resource bean will direct the 
+       db connectivity.
+    </description>
+    <managed-bean-name>gov$idaho$sboe$JpaResource</managed-bean-name>
+    <managed-bean-class>gov.idaho.sboe.utils.JPAResourceBean</managed-bean-class>
+    <managed-bean-scope>application</managed-bean-scope>
+    <managed-property>
+       <description>
+            Name is found in the /META-INF/persistence.xml of the ccat-jpa.jar
+       </description>
+       <property-name>persistenceUnitName</property-name>
+       <property-class>java.lang.String</property-class>
+       <!-- <value>edwi_JTA</value> -->
+       <value>edwi</value>
+    </managed-property>
+ </managed-bean>
+ 
+  <managed-bean>
+    <description>
+      Custom implementation of org.apache.shale.view.ExceptionHandler
+      used to process application-triggered exceptions.
+    </description>
+    <managed-bean-name>org$apache$shale$view$EXCEPTION_HANDLER</managed-bean-name>
+    <managed-bean-class>gov.idaho.sboe.view.backing.ShaleExceptionHandler</managed-bean-class>
+    <managed-bean-scope>application</managed-bean-scope>
+  </managed-bean>
+
+
+ 
+  <navigation-rule>
+    <from-view-id>*</from-view-id>
+    <navigation-case>
+      <from-outcome>menu2.home</from-outcome>
+      <to-view-id>/welcome.jspx</to-view-id>
+    </navigation-case>
+     <navigation-case>
+      <from-outcome>menu2.feedback</from-outcome>
+      <to-view-id>/feedback.jspx</to-view-id>
+    </navigation-case>
+   <navigation-case>
+      <from-outcome>menu2.login</from-outcome>
+      <to-view-id>/adminredirect.jspx</to-view-id>
+      <redirect/>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>keyword</from-outcome>
+      <to-view-id>/kwsearch.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>collection</from-outcome>
+      <to-view-id>/collection.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>alpha</from-outcome>
+      <to-view-id>/rolodex.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>menu2.keyword</from-outcome>
+      <to-view-id>/kwsearch.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>menu2.collection</from-outcome>
+      <to-view-id>/collection.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>menu2.alpha</from-outcome>
+      <to-view-id>/rolodex.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>error</from-outcome>
+      <to-view-id>/showexception.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>menu2.print</from-outcome>
+      <to-view-id>/collection.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>menu2.printAlpha</from-outcome>
+      <to-view-id>/rolodex.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>menu2.printCollection</from-outcome>
+      <to-view-id>/collection.jspx</to-view-id>
+    </navigation-case>
+   <navigation-case>
+      <from-outcome>menu2.flush</from-outcome>
+      <to-view-id>/welcome.jspx</to-view-id>
+    </navigation-case>
+   <navigation-case>
+      <from-outcome>menu2.faq</from-outcome>
+      <to-view-id>/faq.jspx</to-view-id>
+    </navigation-case>
+   <navigation-case>
+      <from-outcome>menu2.about</from-outcome>
+      <to-view-id>/about.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>menu2.statistics</from-outcome>
+      <to-view-id>/statistics.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>sessionLength</from-outcome>
+      <to-view-id>/sessionlength.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>sessionPerDay</from-outcome>
+      <to-view-id>/sessionperday.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>feedbackUsage</from-outcome>
+      <to-view-id>/feedbackusage.jspx</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  <application>
+    <default-render-kit-id>oracle.adf.core</default-render-kit-id>
+  </application>
+</faces-config>

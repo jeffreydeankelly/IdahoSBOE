@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+      <af:document id="document">
+      <afh:head title="Colorado Department of Education - Data Dictionary"/>
+      <h:form id="form1">
+        <af:panelBorder id="panelBorder">
+          <f:facet name="top">
+            <af:panelPageHeader id="panelPageHeader">
+              <f:facet name="branding">
+                <af:objectImage id="branding" source="/images/cdelogo_home.gif"
+                                shortDesc="Colorado Department of Education"/>
+              </f:facet>
+              <f:facet name="brandingApp">
+                <af:objectImage id="brandingApp" source="/images/banner.gif"
+                                shortDesc="Colorado Department of Education"/>
+              </f:facet>
+              <f:facet name="brandingAppContextual">
+                <af:outputFormatted id="brandingAppContext"
+                                    value="Web Site Feedback"
+                                    styleUsage="inContextBranding"/>
+              </f:facet>
+              <f:facet name="menu2">
+                <af:menuBar>
+                  <af:commandMenuItem text="Home" selected="false"
+                                      immediate="true" action="menu2.home"
+                                      shortDesc="Main Menu"/>
+                  <af:commandMenuItem text="FAQ" action="menu2.faq"
+                                      inlineStyle="font-size: 9pt;"
+                                      selected="false" immediate="true"
+                                      shortDesc="See Frequently Asked Questions"/>
+                  <af:commandMenuItem text="About"
+                                      inlineStyle="font-size: 9pt;"
+                                      action="menu2.about" selected="false"
+                                      immediate="true"
+                                      shortDesc="About the DataDictionary"/>
+                </af:menuBar>
+              </f:facet>
+            </af:panelPageHeader>
+          </f:facet>
+          <af:panelGroup layout="vertical">
+            <f:facet name="separator">
+              <af:objectSpacer width="1" height="30"/>
+            </f:facet>
+            <af:messages globalOnly="true"/>
+            <af:panelGroup layout="horizontal">
+              <f:facet name="separator">
+                <af:objectSpacer width="20" height="1"/>
+              </f:facet>
+              <h:panelGrid columns="3">
+                <af:objectSpacer width="1" height="20"/>
+                <af:objectSpacer width="1" height="20"/>
+                <af:objectSpacer width="1" height="20"/>
+                <af:outputLabel for="rating" value="Please rate this service:"/>
+                <af:selectOneRadio
+                    id="rating"
+                    value="#{feedback.rating}"
+                    shortDesc="Select the choice that describes how well this web site helped you find what you wanted.">
+                    <f:selectItem itemLabel="Excellent" itemValue="4"/>
+                    <f:selectItem itemLabel="Good" itemValue="3"/>
+                    <f:selectItem itemLabel="Fair" itemValue="2"/>
+                    <f:selectItem itemLabel="Poor" itemValue="1"/>
+               </af:selectOneRadio>
+               <af:message for="rating"/>
+                <af:outputLabel for="comment" value="Comments:"/>
+                <af:inputText id="comment" required="false"
+                              showRequired="false" rows="10"
+                              value="#{feedback.comment}"/>
+                <af:message for="comment"/>
+              </h:panelGrid>
+              <af:commandButton actionListener="#{feedback.send}" text="Send"
+                                immediate="false"/>
+            </af:panelGroup>
+          </af:panelGroup>
+          <f:facet name="bottom">
+            <f:verbatim>
+              <div style="color:#336699;font-family: Arial, Helvetica, Sans-Serif;font-size: 9pt;">
+                <hr width="100%"/>
+            <p>
+              Any questions or comments on the organization or operation of
+              this site?<br/>
+               Please contact the CDE DataDictionary administrator at:
+              <a href="mailto:dd_webmaster@cde.state.co.us">dd_webmaster@cde.state.co.us</a>.
+            </p>
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" id="footer">
+		<tr>
+			<td width="50%"><af:outputFormatted value="&amp;nbsp;"/></td>
+			<td width="50%" align="right"></td>
+		</tr>
+		<tr>
+                    <td colspan="2">
+			<img src="./images/hfnav_bar.gif" alt="" border="0" height="2" width="100%"/>
+                    </td>
+		</tr>
+		<tr>
+			<td valign="top" width="50%">
+				<table cellpadding="2" cellspacing="0" border="0">
+					<tr>
+                                            <td valign="top">
+                                                    <img src="./images/hfnav_top.gif" width="10" height="11" alt="" border="0"/></td>
+                                            <td valign="top">
+                                                    <a href="#">Top of Page</a></td>
+                                            <td valign="top" style="padding-left:7px;">
+                                                    <img src="./images/hfnav_home.gif" width="10" height="10" alt="" border="0"/></td>
+                                            <td valign="top">
+                                                    <a href="http://www.cde.state.co.us/">CDE Home</a></td>
+                                            <td valign="top" style="padding-left:7px;">
+                                                    <img src="./images/hfnav_state.gif" width="17" height="11" alt="" border="0"/></td>
+                                            <td valign="top">
+                                                    <a href="http://www.colorado.gov/">State Home</a></td>
+					</tr>
+				</table></td>
+		  <td valign="top" align="right" width="50%">
+				Copyright &amp;copy; 2007 Colorado Department of Education.<br/>
+				All rights reserved. <a href="http://www.cde.state.co.us/utility/titleIX.htm">Title IX</a>. 
+                                <a href="http://www.cde.state.co.us/utility/access.htm">Accessibility</a>. 
+                                <a href="http://www.cde.state.co.us/utility/cddisclm.htm">Disclaimer</a>. 
+                                <a href="http://www.cde.state.co.us/utility/privacy.htm">Privacy</a>.</td>
+		</tr>
+            </table>
+              </div>
+            </f:verbatim>
+          </f:facet>
+        </af:panelBorder>
+      </h:form>
+    </af:document>
+  </f:view>
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_feedback-->
+</jsp:root>

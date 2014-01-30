@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces"
+          xmlns:afh="http://xmlns.oracle.com/adf/faces/html"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <c:remove var="scratchPad"/>
+  <f:view>
+    <af:document id="document">
+      <afh:head title="Colorado Department of Education - Data Dictionary"/>
+      <h:form id="form1">
+        <af:panelBorder id="panelBorder">
+          <f:facet name="top">
+            <af:panelPageHeader id="panelPageHeader">
+              <f:facet name="branding">
+                <af:objectImage id="branding" source="/images/cdelogo_home.gif"
+                                shortDesc="Colorado Department of Education"/>
+              </f:facet>
+              <f:facet name="brandingApp">
+                <af:objectImage id="brandingApp" source="/images/banner.gif"
+                                shortDesc="Colorado Department of Education"/>
+              </f:facet>
+              <f:facet name="brandingAppContextual">
+                <af:outputFormatted id="brandingAppContext"
+                                    value="Data Dictionary"
+                                    styleUsage="inContextBranding"/>
+              </f:facet>
+              <f:facet name="menu2">
+                <af:menuBar>
+                  <af:commandMenuItem text="Home" selected="false"
+                                      immediate="true" action="menu2.home"
+                                      shortDesc="Main Menu"/>
+                  <af:commandMenuItem text="Glossary" action="menu2.catalogView"
+                                      selected="false" immediate="true"
+                                      shortDesc="View the Glossary"/>
+                </af:menuBar>
+              </f:facet>
+            </af:panelPageHeader>
+          </f:facet>
+          <af:panelHeader messageType="error"
+                          text="Fatal Application Exception"/>
+          <af:panelBox>
+            <af:outputFormatted value="&lt;p&gt;"/><f:verbatim>An unrecoverable fatal exception was encountered. Please contact the Webmaster.</f:verbatim><h:outputLink value="http://www.cde.state.co.us/index_contact.asp"><af:outputFormatted value="&lt;/p&gt;"/>
+            <f:verbatim>CDE Webmaster</f:verbatim></h:outputLink>
+            <af:showDetailHeader text="Exception Details" id="showDetails"
+                                 disclosed="false" immediate="true">
+              <h:panelGrid columns="2">
+                <af:outputText value="HTTP Error Error Status Code"/>
+                <af:outputText value="#{view.attributes['javax.servlet.error.status_code']}"/>
+                <af:outputText value="Exception Type"/>
+                <af:outputText value="#{view.attributes['javax.servlet.error.exception_type']}"/>
+                <af:outputText value="Message:"/>
+                <af:outputText value="#{view.attributes['javax.servlet.error.message']}"/>
+                <af:outputText value="Request URI:"/>
+                <af:outputText value="#{view.attributes['javax.servlet.error.request_uri']}"/>
+                <af:outputText value="Servlet Name:"/>
+                <af:outputText value="#{view.attributes['javax.servlet.error.servlet_name']}"/>
+              </h:panelGrid>
+              <h:dataTable var="s"
+                           value="#{view.attributes['javax.servlet.error.exception'].stackTrace}">
+                <h:column>
+                  <af:outputText value="#{s}"/>
+                </h:column>
+              </h:dataTable>
+            </af:showDetailHeader>
+          </af:panelBox>
+        </af:panelBorder>
+      </h:form>
+    </af:document>
+  </f:view>
+</jsp:root>

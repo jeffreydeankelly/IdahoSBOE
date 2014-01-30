@@ -1,0 +1,140 @@
+Collection	Student October	Data Element	District Number
+Collection	Student October	Data Element	LASID
+Collection	Student October	Data Element	SASID
+Collection	Student October	Data Element	Racial Category
+Collection	Student October	Data Element	Ethnic Category
+Collection	Student October	Data Element	Language Background
+Collection	Student October	Data Element	Section 504 Handicapped
+Collection	Student October	Data Element	Gender
+Collection	Student October	Data Element	Birth Date
+Collection	Student October	Data Element	Grade Level
+Collection	Student October	Data Element	Pupil Attendance Information
+Collection	Student October	Data Element	District/State Code of Parents Residence for Non-resident Students
+Collection	Student October	Data Element	County Code of Residence for Joint School Districts
+Collection	Student October	Data Element	School Code
+Collection	Student October	Data Element	Eligible Facility/Detention Code
+Collection	Student October	Data Element	Public School Finance Funding Status
+Collection	Student October	Data Element	Free Reduced Lunch Eligible
+Collection	Student October	Data Element	Title 1
+Collection	Student October	Data Element	Migrant
+Collection	Student October	Data Element	Immigrant--
+Collection	Student October	Data Element	Special Education (IEP)
+Collection	Student October	Data Element	Transition
+Collection	Student October	Data Element	Homeless
+Collection	Student October	Data Element	Primary Nighttime Residence
+Collection	Student October	Data Element	Gifted/Talented
+Collection	Student October	Data Element	Fast Track
+Collection	Student October	Data Element	Independent Study
+Collection	Student October	Data Element	On-Line Program
+Collection	Student October	Data Element	Expelled
+Collection	Student October	Data Element	Attends District Funded GED Program
+Collection	Student October	Data Element	Last Name
+Collection	Student October	Data Element	First Name
+Collection	Student October	Data Element	Middle Name
+Collection	Student October	Data Element	Middle Name
+Collection	Student October	Data Element	Continuous in District
+Collection	Student October	Data Element	Continuous in School
+Collection	Student October	Data Element	Language Proficiency
+Collection	Student October	Data Element	Bilingual
+Collection	Student October	Data Element	ESL
+Collection	Student October	Data Element	Dist Use B (Accountability)--
+Collection	Student October	Data Element	Colorado Continuously
+Collection	Student October	Data Element	US Continuously
+Collection	Student October	Data Element	ELL Continuously
+Collection	Student October	Data Element	October New to School
+Collection	Student October	Data Element	Primary Disability
+Collection	Student October	Data Element	CSAP Alternate Assessment Participant
+			
+Collection	Student October	Business Rule	District Number
+Collection	Student October	Business Rule	LASID
+Collection	Student October	Business Rule	SASID
+Collection	Student October	Business Rule	Racial Category
+Collection	Student October	Business Rule	Ethnic Category
+Collection	Student October	Business Rule	Language Background
+Collection	Student October	Business Rule	Section 504 Handicapped
+Collection	Student October	Business Rule	Gender
+Collection	Student October	Business Rule	Birth Date
+Collection	Student October	Business Rule	Grade Level
+Collection	Student October	Business Rule	Pupil Attendance Information
+Collection	Student October	Business Rule	District/State Code of Parents Residence for Non-resident Students
+Collection	Student October	Business Rule	County Code of Residence for Joint School Districts
+Collection	Student October	Business Rule	School Code
+Collection	Student October	Business Rule	Eligible Facility/Detention Code
+Collection	Student October	Business Rule	Public School Finance Funding Status
+Collection	Student October	Business Rule	Free Reduced Lunch Eligible
+Collection	Student October	Business Rule	Title 1
+Collection	Student October	Business Rule	Migrant
+Collection	Student October	Business Rule	Immigrant--
+Collection	Student October	Business Rule	Special Education (IEP)
+Collection	Student October	Business Rule	Transition
+Collection	Student October	Business Rule	Homeless
+Collection	Student October	Business Rule	Primary Nighttime Residence
+Collection	Student October	Business Rule	Gifted/Talented
+Collection	Student October	Business Rule	Fast Track
+Collection	Student October	Business Rule	Independent Study
+Collection	Student October	Business Rule	On-Line Program
+Collection	Student October	Business Rule	Expelled
+Collection	Student October	Business Rule	Attends District Funded GED Program
+Collection	Student October	Business Rule	Last Name
+Collection	Student October	Business Rule	First Name
+Collection	Student October	Business Rule	Middle Name
+Collection	Student October	Business Rule	Middle Name
+Collection	Student October	Business Rule	Continuous in District
+Collection	Student October	Business Rule	Continuous in School
+Collection	Student October	Business Rule	Language Proficiency
+Collection	Student October	Business Rule	Bilingual
+Collection	Student October	Business Rule	ESL
+Collection	Student October	Business Rule	Dist Use B (Accountability)--
+Collection	Student October	Business Rule	Colorado Continuously
+Collection	Student October	Business Rule	US Continuously
+Collection	Student October	Business Rule	ELL Continuously
+Collection	Student October	Business Rule	October New to School
+Collection	Student October	Business Rule	Primary Disability
+Collection	Student October	Business Rule	CSAP Alternate Assessment Participant
+			
+Business Rule	District Number	Data Element	District Number
+Business Rule	LASID	Data Element	LASID
+Business Rule	SASID	Data Element	SASID
+Business Rule	Racial Category	Data Element	Racial Category
+Business Rule	Ethnic Category	Data Element	Ethnic Category
+Business Rule	Language Background	Data Element	Language Background
+Business Rule	Section 504 Handicapped	Data Element	Section 504 Handicapped
+Business Rule	Gender	Data Element	Gender
+Business Rule	Birth Date	Data Element	Birth Date
+Business Rule	Grade Level	Data Element	Grade Level
+Business Rule	Pupil Attendance Information	Data Element	Pupil Attendance Information
+Business Rule	District/State Code of Parents Residence for Non-resident Students	Data Element	District/State Code of Parents Residence for Non-resident Students
+Business Rule	County Code of Residence for Joint School Districts	Data Element	County Code of Residence for Joint School Districts
+Business Rule	School Code	Data Element	School Code
+Business Rule	Eligible Facility/Detention Code	Data Element	Eligible Facility/Detention Code
+Business Rule	Public School Finance Funding Status	Data Element	Public School Finance Funding Status
+Business Rule	Free Reduced Lunch Eligible	Data Element	Free Reduced Lunch Eligible
+Business Rule	Title 1	Data Element	Title 1
+Business Rule	Migrant	Data Element	Migrant
+Business Rule	Immigrant--	Data Element	Immigrant--
+Business Rule	Special Education (IEP)	Data Element	Special Education (IEP)
+Business Rule	Transition	Data Element	Transition
+Business Rule	Homeless	Data Element	Homeless
+Business Rule	Primary Nighttime Residence	Data Element	Primary Nighttime Residence
+Business Rule	Gifted/Talented	Data Element	Gifted/Talented
+Business Rule	Fast Track	Data Element	Fast Track
+Business Rule	Independent Study	Data Element	Independent Study
+Business Rule	On-Line Program	Data Element	On-Line Program
+Business Rule	Expelled	Data Element	Expelled
+Business Rule	Attends District Funded GED Program	Data Element	Attends District Funded GED Program
+Business Rule	Last Name	Data Element	Last Name
+Business Rule	First Name	Data Element	First Name
+Business Rule	Middle Name	Data Element	Middle Name
+Business Rule	Middle Name	Data Element	Middle Name
+Business Rule	Continuous in District	Data Element	Continuous in District
+Business Rule	Continuous in School	Data Element	Continuous in School
+Business Rule	Language Proficiency	Data Element	Language Proficiency
+Business Rule	Bilingual	Data Element	Bilingual
+Business Rule	ESL	Data Element	ESL
+Business Rule	Dist Use B (Accountability)--	Data Element	Dist Use B (Accountability)--
+Business Rule	Colorado Continuously	Data Element	Colorado Continuously
+Business Rule	US Continuously	Data Element	US Continuously
+Business Rule	ELL Continuously	Data Element	ELL Continuously
+Business Rule	October New to School	Data Element	October New to School
+Business Rule	Primary Disability	Data Element	Primary Disability
+Business Rule	CSAP Alternate Assessment Participant	Data Element	CSAP Alternate Assessment Participant

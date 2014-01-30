@@ -1,0 +1,28 @@
+BUSINESS RULE	Business Rules of the People and Procedures of CDE. Glossary Item Name is BUSINESS RULE. The Glossary Item Type is GLOSSARY TYPE.
+CDE CATALOG	Default value for non-specific entries into the CDE Glossary.. Glossary Item Name is CDE CATALOG. The Glossary Item Type is GLOSSARY TYPE.
+CDE WEB SITE	Web Site of CDE. Glossary Item Name is CDE WEB SITE. The Glossary Item Type is GLOSSARY TYPE.
+COLLECTION	Official Collections of CDE. Glossary Item Name is COLLECTION. The Glossary Item Type is GLOSSARY TYPE.
+DATA ELEMENT	Data Elements of CDE. Glossary Item Name is DATA ELEMENT. The Glossary Item Type is GLOSSARY TYPE.
+DATA GROUP	Any data grouping including source tables, flat files, views or other entities. Glossary Item Name is DATA GROUP. The Glossary Item Type is GLOSSARY TYPE.
+EVENT	Events of CDE. Glossary Item Name is EVENT. The Glossary Item Type is GLOSSARY TYPE.
+FLD TRANSFORMS	Informatica Field Level Transformations. Glossary Item Name is FLD TRANSFORMS. The Glossary Item Type is GLOSSARY TYPE.
+GLOSSARY	Glossary of Terms. Glossary Item Name is GLOSSARY. The Glossary Item Type is GLOSSARY TYPE.
+GLOSSARY TYPE	Glossary type represents all entries in the Glossary Type Dimension table.. Glossary Item Name is GLOSSARY TYPE. The Glossary Item Type is GLOSSARY TYPE.
+HARDWARE	Hardware used at CDE. Glossary Item Name is HARDWARE. The Glossary Item Type is GLOSSARY TYPE.
+MAPPINGS	Informatica Mapping information. Glossary Item Name is MAPPINGS. The Glossary Item Type is GLOSSARY TYPE.
+PROCESS FLOW	Organizational and Manual Process flows of the CDE Organization. Glossary Item Name is PROCESS FLOW. The Glossary Item Type is GLOSSARY TYPE.
+REPORT	Reports used and published by CDE. Glossary Item Name is REPORT. The Glossary Item Type is GLOSSARY TYPE.
+REPORT COLUMN	Columns or fields used on Reports of the CDE. Glossary Item Name is REPORT COLUMN. The Glossary Item Type is GLOSSARY TYPE.
+ROLE	Roles, People, Organizations and Stakeholders. Glossary Item Name is ROLE. The Glossary Item Type is GLOSSARY TYPE.
+SESSION	Informatica Sessions. Glossary Item Name is SESSION. The Glossary Item Type is GLOSSARY TYPE.
+SF FIELDS	Informatica Source File Fields. Glossary Item Name is SF FIELDS. The Glossary Item Type is GLOSSARY TYPE.
+SOFTWARE	Software components used by CDE. Glossary Item Name is SOFTWARE. The Glossary Item Type is GLOSSARY TYPE.
+SOURCE FILE	Informatica Source Files. Glossary Item Name is SOURCE FILE. The Glossary Item Type is GLOSSARY TYPE.
+SOURCE TABLE	Informatica Source Tables. Glossary Item Name is SOURCE TABLE. The Glossary Item Type is GLOSSARY TYPE.
+ST COLUMNS	Informatica Source Table Columns. Glossary Item Name is ST COLUMNS. The Glossary Item Type is GLOSSARY TYPE.
+SYSTEMS	Systems and Applications at CDE. Glossary Item Name is SYSTEMS. The Glossary Item Type is GLOSSARY TYPE.
+TARGET TABLE	Informatica Target Tables. Glossary Item Name is TARGET TABLE. The Glossary Item Type is GLOSSARY TYPE.
+TBL TRANSFORMS	Informatica Table Level Transformations. Glossary Item Name is TBL TRANSFORMS. The Glossary Item Type is GLOSSARY TYPE.
+TIME	Academic and Calendar Time by Year, Quarter, Month and Day. Glossary Item Name is TIME. The Glossary Item Type is GLOSSARY TYPE.
+TT COLUMNS	Informatica Target Table Columns. Glossary Item Name is TT COLUMNS. The Glossary Item Type is GLOSSARY TYPE.
+WORKFLOWS	Informatica Workflows. Glossary Item Name is WORKFLOWS. The Glossary Item Type is GLOSSARY TYPE.
