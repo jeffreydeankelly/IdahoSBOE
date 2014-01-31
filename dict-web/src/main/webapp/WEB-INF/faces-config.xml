@@ -25,7 +25,7 @@
         This is a POJO Facade that encapsulates various data access
         operations.
     </description>   
-    <managed-bean-name>gov$idaho$sboe$IndexingFacade</managed-bean-name>
+    <managed-bean-name>gov$idaho$sboe$services$IndexingFacade</managed-bean-name>
     <managed-bean-class>gov.idaho.sboe.services.NarrativeIndexingFacade</managed-bean-class>
     <managed-bean-scope>none</managed-bean-scope>
     <managed-property>
@@ -35,21 +35,6 @@
        <value>#{gov$idaho$sboe$JpaResource.factory}</value>
     </managed-property>
  </managed-bean>
- 
-<!--  <managed-bean> -->
-<!--     <description> -->
-<!--         This is a POJO Facade  -->
-<!--     </description>    -->
-<!--     <managed-bean-name>gov$idaho$sboe$FacadeException</managed-bean-name> -->
-<!--     <managed-bean-class>gov.idaho.sboe.services.FacadeException</managed-bean-class> -->
-<!--     <managed-bean-scope>none</managed-bean-scope> -->
-<!--     <managed-property> -->
-<!--        <description>JPA persistence unit injected for the jpaResource</description> -->
-<!--        <property-name>persistenceUnit</property-name> -->
-<!--        <property-class>javax.persistence.EntityManagerFactory</property-class> -->
-<!--        <value>#{gov$idaho$sboe$JpaResource.factory}</value> -->
-<!--     </managed-property> -->
-<!--  </managed-bean> -->
  
  <managed-bean>
     <description>
@@ -103,8 +88,6 @@
     <managed-bean-class>gov.idaho.sboe.view.backing.ShaleExceptionHandler</managed-bean-class>
     <managed-bean-scope>application</managed-bean-scope>
   </managed-bean>
-
-
  
   <navigation-rule>
     <from-view-id>*</from-view-id>

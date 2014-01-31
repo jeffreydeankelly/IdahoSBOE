@@ -1,0 +1,509 @@
+<?xml version = '1.0' encoding = 'ISO-8859-1'?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN" "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+
+  <tlib-version>1.0</tlib-version>
+  <jsp-version>1.2</jsp-version>
+  <short-name>jwcache</short-name>
+  <uri>http://xmlns.oracle.com/j2ee/jsp/tld/ojsp/jwcache.tld</uri>
+  <description>The Web Object Cache Tag library.</description>
+  <!-- name="META-INF/taglib.tld" location="@oracle.home@/jsp/lib/tlds/jwcache.jar" -->
+
+  <tag>
+    <name>cache</name>
+    <tag-class>oracle.jsp.jwcache.tagext.CacheTag</tag-class>
+    <body-content>JSP</body-content>
+    <description>Caches char-based data in Web Object Cache.</description>
+    <!-- page="OJSP Cache" -->
+    <!-- icon="/oracle/jsp/palette/images/T_cache.gif" -->
+
+    <attribute>
+	<name>policy</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>ignoreCache</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>invalidateCache</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>scope</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>autoType</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>selectedParam</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>selectedCookies</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>reusableTimeStamp</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>reusableDeltaTime</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+	<name>name</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+	<name>expirationType</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>TTL</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>timeInaDay</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>dayInaWeek</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>dayInaMonth</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>writeThrough</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+
+    <attribute>
+	<name>printCacheBlockInfo</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>printCachePolicy</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+
+    <attribute>
+	<name>cacheRepositoryName</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+        <name>reportException</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+  </tag>
+
+  <tag>
+    <name>invalidateCache</name>
+    <tag-class>oracle.jsp.jwcache.tagext.InvalidateCacheTag</tag-class>
+    <body-content>empty</body-content>
+    <description>Invalidates a cached block.</description>
+    <!-- page="OJSP Cache" -->
+    <!-- icon="/oracle/jsp/palette/images/T_invalidateCache.gif" -->
+
+    <attribute>
+	<name>policy</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+        <name>ignoreCache</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>scope</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>autoType</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>selectedParam</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>selectedCookies</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+	<name>name</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>invalidateNameLike</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+	<name>page</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>autoInvalidateLevel</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+        <name>cacheRepositoryName</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+        <name>reportException</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+  </tag>
+
+  <tag>
+    <name>cacheInclude</name>
+    <tag-class>oracle.jsp.jwcache.tagext.CacheIncludeTag</tag-class>
+    <body-content>empty</body-content>
+    <description>Caches an included (char-based) page.</description>
+    <!-- page="OJSP Cache" -->
+    <!-- icon="/oracle/jsp/palette/images/T_cacheInclude.gif" -->
+
+    <attribute>
+	<name>policy</name>
+	<required>true</required>
+        <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>page</name>
+	<required>true</required>
+        <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>printCacheBlockInfo</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+        <name>reportException</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+  </tag>
+
+
+
+  <tag>
+    <name>cacheXMLObj</name>
+    <tag-class>oracle.jsp.jwcache.tagext.CacheXMLObjTag</tag-class>
+    <tei-class>oracle.jsp.jwcache.tagext.CacheXMLObjTEI</tei-class>
+    <body-content>JSP</body-content>
+    <description>Caches XML DOM object in the Web Object Cache.</description>
+    <!-- page="OJSP Cache" -->
+    <!-- icon="/oracle/jsp/palette/images/T_cacheXMLObj.gif" -->
+
+    <attribute>
+	<name>policy</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>ignoreCache</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>invalidateCache</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>scope</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>autoType</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>selectedParam</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>selectedCookies</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>reusableTimeStamp</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>reusableDeltaTime</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+	<name>name</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+	<name>expirationType</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>TTL</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>timeInaDay</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>dayInaWeek</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>dayInaMonth</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>writeThrough</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+
+    <attribute>
+	<name>printCacheBlockInfo</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>printCachePolicy</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+
+    <attribute>
+	<name>cacheRepositoryName</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+	<name>fromXMLObjName</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>toXMLObjName</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>toWriter</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+        <name>reportException</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+  </tag>
+
+  <tag>
+    <name>useCacheObj</name>
+    <tag-class>oracle.jsp.jwcache.tagext.UseCacheObjTag</tag-class>
+    <tei-class>oracle.jsp.jwcache.tagext.UseCacheObjTEI</tei-class>
+    <body-content>JSP</body-content>
+    <description>Caches serializable Java object in Web Object Cache.</description>
+    <!-- page="OJSP Cache" -->
+    <!-- icon="/oracle/jsp/palette/images/T_useCacheObj.gif" -->
+
+    <attribute>
+	<name>policy</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>ignoreCache</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>invalidateCache</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>cacheScope</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>autoType</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>selectedParam</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>selectedCookies</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>reusableTimeStamp</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>reusableDeltaTime</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+	<name>name</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+	<name>expirationType</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>TTL</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>timeInaDay</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>dayInaWeek</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>dayInaMonth</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>writeThrough</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+
+    <attribute>
+	<name>printCacheBlockInfo</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>printCachePolicy</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+
+    <attribute>
+	<name>cacheRepositoryName</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+        <name>reportException</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+
+    <attribute>
+        <name>id</name>
+        <required>true</required>
+        <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>type</name>
+        <required>true</required>
+        <rtexprvalue>false</rtexprvalue>
+    </attribute>
+
+
+  </tag>
+
+  
+</taglib>
+

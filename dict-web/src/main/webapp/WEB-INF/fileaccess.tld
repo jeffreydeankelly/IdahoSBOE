@@ -1,0 +1,190 @@
+<?xml version = '1.0' encoding = 'ISO-8859-1'?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN" "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+
+  <tlib-version>1.0</tlib-version>
+  <jsp-version>1.2</jsp-version>
+  <short-name>fileaccess</short-name>
+  <uri>http://xmlns.oracle.com/j2ee/jsp/tld/ojsp/fileaccess.tld</uri>
+  <description>The OC4J Tag library for uploading and downloading files to/from the server/database.</description>
+  <!-- name="META-INF/taglib.tld" location="@oracle.home@/jsp/lib/tlds/fileaccess.jar" -->
+
+
+  <!-- upload form -->
+  <tag>
+    <name>httpUploadForm</name>
+    <tag-class>oracle.jsp.webutil.fileaccess.tagext.HttpUploadFormTag</tag-class>
+    <body-content>JSP</body-content>
+    <description>Creates a form for inputting files to upload.</description>
+    <!-- page="OJSP File Access" -->
+    <!-- icon="/oracle/jsp/palette/images/T_hUForm.gif" -->
+
+    <attribute>
+      <name>formsAction</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>maxFiles</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>fileNameSize</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>maxFileNameSize</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>includeNumbers</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>submitButtonText</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <!--  upload tag -->
+  <tag>
+    <name>httpUpload</name>
+    <tag-class>oracle.jsp.webutil.fileaccess.tagext.HttpUploadTag</tag-class>
+    <body-content>JSP</body-content>
+    <description>Uploads files from the client to a server.</description>
+    <!-- page="OJSP File Access" -->
+    <!-- icon="/oracle/jsp/palette/images/T_hUpload.gif" -->
+
+    <attribute>
+      <name>destination</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>destinationType</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>connId</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>scope</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>table</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>prefixColumn</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>fileNameColumn</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>dataColumn</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>fileType</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>overwrite</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>docCharacterset</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <!--  download tag -->  
+  <tag>
+    <name>httpDownload</name>
+    <tag-class>oracle.jsp.webutil.fileaccess.tagext.HttpDownloadTag</tag-class>
+    <body-content>JSP</body-content>
+    <description>Downloads files from a server to the client.</description>
+    <!-- page="OJSP File Access" -->
+    <!-- icon="/oracle/jsp/palette/images/T_hDownload.gif" -->
+
+    <attribute>
+      <name>source</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>sourceType</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>servletPath</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>connId</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>scope</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>table</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>prefixColumn</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>fileNameColumn</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>dataColumn</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>fileType</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>recurse</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>docCharacterset</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+</taglib>
+

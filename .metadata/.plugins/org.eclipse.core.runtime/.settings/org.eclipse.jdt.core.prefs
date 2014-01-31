@@ -1,5 +1,12 @@
 eclipse.preferences.version=1
 org.eclipse.jdt.core.builder.resourceCopyExclusionFilter=
+org.eclipse.jdt.core.classpathVariable.ECLIPSE_HOME=C\:/tools/Eclipse IDE for Java EE Developers 4.3.1
+org.eclipse.jdt.core.classpathVariable.JRE_LIB=C\:/Program Files/Java/jdk1.7.0_45/jre/lib/rt.jar
+org.eclipse.jdt.core.classpathVariable.JRE_SRC=C\:/Program Files/Java/jdk1.7.0_45/src.zip
+org.eclipse.jdt.core.classpathVariable.JRE_SRCROOT=
+org.eclipse.jdt.core.classpathVariable.JUNIT_HOME=C\:/tools/Eclipse IDE for Java EE Developers 4.3.1/plugins/org.junit_4.11.0.v201303080030/
+org.eclipse.jdt.core.classpathVariable.M2_REPO=C\:/Users/jeffk/.m2/repository
+org.eclipse.jdt.core.classpathVariable.TESTNG_HOME=C\:/tools/Eclipse IDE for Java EE Developers 4.3.1/plugins/org.testng.eclipse_6.3.2.20111203_1323
 org.eclipse.jdt.core.codeComplete.visibilityCheck=enabled
 org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
 org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.7

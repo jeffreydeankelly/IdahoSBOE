@@ -1,0 +1,132 @@
+<?xml version = '1.0' encoding = 'ISO-8859-1'?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN" "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>util</short-name>
+        <uri>http://xmlns.oracle.com/j2ee/jsp/tld/ojsp/utiltaglib.tld</uri>
+	<description>Utility helper tags.</description>	
+	<!-- name="META-INF/taglib.tld" location="@oracle.home@/jsp/lib/tlds/utiltaglib.jar" -->
+
+		<tag>	
+		<name>displayCurrency</name>
+		<tag-class>com.evermind.taglib.util.DisplayCurrencyTag</tag-class>
+		<body-content>empty</body-content>
+		<description>Formats a given amount as currency for a given Locale.</description>
+                <!-- page="OJSP Utility" -->
+                <!-- icon="/oracle/jsp/palette/images/T_displayCurrency.gif" -->
+
+		<attribute>
+			<name>amount</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>locale</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>	
+		<name>displayDate</name>
+		<tag-class>com.evermind.taglib.util.DisplayDateTag</tag-class>
+		<body-content>empty</body-content>
+		<description>Formats a given Date for a given Locale.</description>
+                <!-- page="OJSP Utility" -->
+                <!-- icon="/oracle/jsp/palette/images/T_displayDate.gif" -->
+
+		<attribute>
+			<name>date</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>locale</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>	<tag>
+		<name>iterate</name>
+		<tag-class>com.evermind.taglib.util.IterateTag</tag-class>
+		<tei-class>com.evermind.taglib.util.IterateTEI</tei-class>
+		<body-content>jsp</body-content>
+		<description>Iterates over a Collection.</description>
+                <!-- page="OJSP Utility" -->
+                <!-- icon="/oracle/jsp/palette/images/T_iterate.gif" -->
+
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>collection</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>max</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>	<tag>
+		<name>displayNumber</name>
+		<tag-class>com.evermind.taglib.util.DisplayNumberTag</tag-class>
+		<body-content>empty</body-content>
+		<description>Displays a number in a formatted way.</description>
+                <!-- page="OJSP Utility" -->
+                <!-- icon="/oracle/jsp/palette/images/T_displayNumber.gif" -->
+
+		<attribute>
+			<name>locale</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>number</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>format</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>	<tag>
+		<name>ifInRole</name>
+		<tag-class>com.evermind.taglib.util.IfInRoleTag</tag-class>
+		<body-content>jsp</body-content>
+		<description>Includes the body if the user is in the specified role.</description>
+                <!-- page="OJSP Utility" -->
+                <!-- icon="/oracle/jsp/palette/images/T_ifInRole.gif" -->
+
+		<attribute>
+			<name>role</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>include</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>	
+		<name>lastModified</name>
+		<tag-class>com.evermind.taglib.util.LastModifiedTag</tag-class>
+		<body-content>empty</body-content>
+		<description>Displays when a JSP page was last modified.</description>
+                <!-- page="OJSP Utility" -->
+                <!-- icon="/oracle/jsp/palette/images/T_lastModified.gif" -->
+
+		<attribute>
+			<name>locale</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>      
+</taglib>
+

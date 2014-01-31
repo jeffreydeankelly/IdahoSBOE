@@ -1,0 +1,252 @@
+<?xml version = '1.0' encoding = 'ISO-8859-1'?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN" "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+
+        <tlib-version>1.0</tlib-version>
+        <jsp-version>1.2</jsp-version>
+        <short-name>XML</short-name>
+        <uri>http://xmlns.oracle.com/j2ee/jsp/tld/ojsp/xml.tld</uri>
+        <description>The OC4J XML Tag Library</description>
+        <!-- name="META-INF/taglib.tld" location="@oracle.home@/jsp/lib/tlds/xml.jar" -->
+
+	<!--  
+		All of the xml tag's available in the Oracle JSP environment
+		The tags are:
+			*  xml:transform 
+			*  xml:styleSheet 
+			*  xml:parsexml 
+			*  xml:cacheXMLObj 
+        -->
+  	<!-- The styleSheet tag -->
+	<tag>
+		<name>styleSheet</name>
+		<tag-class>oracle.jsp.jml.tagext.JmlStyleSheet</tag-class>
+                <tei-class>oracle.jsp.jml.tagext.xmlTagTEI</tei-class>
+		<body-content>JSP</body-content>
+		<description>Uses a stylesheet to transform the body of a tag.</description>
+                <!-- page="OJSP XML" -->
+                <!-- icon="/oracle/jsp/palette/images/T_xmlstyleSheet.gif" -->
+
+		<attribute>
+			<name>href</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+            <attribute>
+			<name>fromXMLObjName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+            <attribute>
+			<name>toXMLObjName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+            <attribute>
+			<name>toWriter</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+  	<!-- The transform tag -->
+	<tag>
+		<name>transform</name>
+		<tag-class>oracle.jsp.jml.tagext.JmlStyleSheet</tag-class>
+                <tei-class>oracle.jsp.jml.tagext.xmlTagTEI</tei-class>
+		<body-content>JSP</body-content>
+		<description>Transforms the body of a tag.</description>
+                <!-- page="OJSP XML" -->
+                <!-- icon="/oracle/jsp/palette/images/T_transform.gif" -->
+
+		<attribute>
+			<name>href</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+            <attribute>
+			<name>fromXMLObjName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+            <attribute>
+			<name>toXMLObjName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+            <attribute>
+			<name>toWriter</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+	</tag>
+
+      <!-- The parsexml tag -->
+	<tag>
+		<name>parsexml</name>
+		<tag-class>oracle.jsp.jml.tagext.JmlParseXML</tag-class>
+                <tei-class>oracle.jsp.jml.tagext.xmlTagTEI</tei-class>
+		<body-content>JSP</body-content>
+		<description>Parses the specified resource or tag body as XML.</description>
+                <!-- page="OJSP XML" -->
+                <!-- icon="/oracle/jsp/palette/images/T_parsexml.gif" -->
+
+		<attribute>
+			<name>resource</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>toXMLObjName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>validateResource</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>root</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+
+  <tag>
+    <name>cacheXMLObj</name>
+    <tag-class>oracle.jsp.jwcache.tagext.CacheXMLObjTag</tag-class>
+    <tei-class>oracle.jsp.jwcache.tagext.CacheXMLObjTEI</tei-class>
+    <body-content>JSP</body-content>
+    <description>Caches XML DOM object in the Web Object Cache.</description>
+    <!-- page="OJSP XML" -->
+    <!-- icon="/oracle/jsp/palette/images/T_cacheXMLObj.gif" -->
+
+    <attribute>
+	<name>policy</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>ignoreCache</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>invalidateCache</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>scope</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>autoType</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>selectedParam</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>selectedCookies</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>reusableTimeStamp</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>reusableDeltaTime</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+	<name>name</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+	<name>expirationType</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>TTL</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>timeInaDay</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>dayInaWeek</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>dayInaMonth</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>writeThrough</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+
+    <attribute>
+	<name>printCacheBlockInfo</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>printCachePolicy</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+
+    <attribute>
+	<name>cacheRepositoryName</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+	<name>fromXMLObjName</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>toXMLObjName</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+	<name>toWriter</name>
+	<required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+        <name>reportException</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+  </tag>
+</taglib>
+

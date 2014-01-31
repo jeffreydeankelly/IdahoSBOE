@@ -1,0 +1,260 @@
+<?xml version = '1.0' encoding = 'ISO-8859-1'?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN" "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+
+  <tlib-version>1.0</tlib-version>
+  <jsp-version>1.2</jsp-version>
+  <short-name>database</short-name>
+  <uri>http://xmlns.oracle.com/j2ee/jsp/tld/ojsp/sqltaglib.tld</uri>
+  <description>The OC4J database access tag library.</description>
+  <!-- name="META-INF/taglib.tld" location="@oracle.home@/jsp/lib/tlds/sqltaglib.jar" --> 
+
+  <!-- Open Connection Tag -->
+  <tag>
+    <name>dbOpen</name>
+    <tag-class>oracle.jsp.dbutil.tagext.dbOpenTag</tag-class>
+    <tei-class>oracle.jsp.dbutil.tagext.dbOpenTEI</tei-class>
+    <body-content>JSP</body-content>
+    <description>Establishes a database connection via url or data source.</description>     
+    <!-- page="OJSP SQL" -->
+    <!-- icon="/oracle/jsp/palette/images/T_dbOpen.gif" -->
+
+    <attribute>
+      <name>connId</name>
+      <required>false</required>
+    </attribute>
+    <attribute>
+      <name>user</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>password</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>URL</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>dataSource</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>scope</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>commitOnClose</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+  </tag>
+
+  <!-- Query Tag -->
+  <tag>
+    <name>dbQuery</name>
+    <tag-class>oracle.jsp.dbutil.tagext.dbQueryTag</tag-class>
+    <tei-class>oracle.jsp.dbutil.tagext.dbQueryTEI</tei-class>
+    <body-content>JSP</body-content>
+    <description>Performs a query using an established connection.</description>
+    <!-- page="OJSP SQL" -->
+    <!-- icon="/oracle/jsp/palette/images/T_dbQuery.gif" -->
+
+    <attribute>
+      <name>queryId</name>
+      <required>false</required>
+    </attribute>
+    <attribute>
+      <name>connId</name>
+      <required>false</required>
+    </attribute>
+    <attribute>
+      <name>scope</name>
+      <required>false</required>
+     <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>output</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>maxRows</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>skipRows</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>bindParams</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>toXMLObjName</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <!-- Connection Close Tag -->
+  <tag>
+    <name>dbClose</name>
+    <tag-class>oracle.jsp.dbutil.tagext.dbCloseTag</tag-class>
+    <description>Closes the connection specified with a connection id.</description>
+    <!-- page="OJSP SQL" -->
+    <!-- icon="/oracle/jsp/palette/images/T_dbClose.gif" -->
+
+     <attribute>
+       <name>connId</name>
+       <required>true</required>     
+    </attribute>
+     <attribute>
+       <name>scope</name>
+       <required>false</required> 
+       <rtexprvalue>true</rtexprvalue>    
+    </attribute>
+  </tag>
+
+  <!-- Query Close Tag -->
+  <tag>
+    <name>dbCloseQuery</name>
+    <tag-class>oracle.jsp.dbutil.tagext.dbCloseQueryTag</tag-class>
+    <description>Closes the query cursor specified with a query id.</description>
+    <!-- page="OJSP SQL" -->
+    <!-- icon="/oracle/jsp/palette/images/T_dbCloseQuery.gif" -->
+
+     <attribute>
+       <name>queryId</name>
+       <required>true</required>     
+    </attribute>
+  </tag>
+
+  <!-- Execute Tag -->
+  <tag>
+    <name>dbExecute</name>
+    <tag-class>oracle.jsp.dbutil.tagext.dbExecuteTag</tag-class>
+    <body-content>JSP</body-content>
+    <description>Executes non-query statements (DDl and DML).</description>
+    <!-- page="OJSP SQL" -->
+    <!-- icon="/oracle/jsp/palette/images/T_dbExecute.gif" -->
+
+    <attribute>
+      <name>connId</name>
+      <required>false</required>
+    </attribute>
+    <attribute>
+      <name>scope</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>output</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>bindParams</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <!-- NextRow tag -->
+  <tag>
+    <name>dbNextRow</name>
+    <tag-class>oracle.jsp.dbutil.tagext.dbNextTag</tag-class>
+    <body-content>JSP</body-content>
+    <description>Obtains the next row from the JDBC result set.</description>
+    <!-- page="OJSP SQL" -->
+    <!-- icon="/oracle/jsp/palette/images/T_dbNextRow.gif" -->
+
+    <attribute>
+     <name>queryId</name>
+     <required>true</required>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>dbSetParam</name>
+    <tag-class>oracle.jsp.dbutil.tagext.dbSetParamTag</tag-class>
+    <description>Sets a bind parameter in a SQL statement.</description>
+    <!-- page="OJSP SQL" -->
+    <!-- icon="/oracle/jsp/palette/images/T_dbSetParam.gif" -->
+
+     <attribute>
+       <name>name</name>
+       <required>true</required>
+       <rtexprvalue>true</rtexprvalue>
+    </attribute>
+     <attribute>
+       <name>value</name>
+       <required>true</required>     
+       <rtexprvalue>true</rtexprvalue>
+    </attribute>
+     <attribute>
+       <name>scope</name>
+       <required>false</required>     
+       <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>dbSetCookie</name>
+    <tag-class>oracle.jsp.dbutil.tagext.dbSetCookieTag</tag-class>
+    <description>Sets a cookie value.</description>
+    <!-- page="OJSP SQL" -->
+    <!-- icon="/oracle/jsp/palette/images/T_dbSetCookie.gif" -->
+
+     <attribute>
+       <name>name</name>
+       <required>true</required>
+       <rtexprvalue>true</rtexprvalue>
+    </attribute>
+     <attribute>
+       <name>value</name>
+       <required>false</required>     
+       <rtexprvalue>true</rtexprvalue>
+    </attribute>
+     <attribute>
+       <name>domain</name>
+       <required>false</required>     
+       <rtexprvalue>true</rtexprvalue>
+    </attribute>
+     <attribute>
+       <name>comment</name>
+       <required>false</required>     
+       <rtexprvalue>true</rtexprvalue>
+    </attribute>
+     <attribute>
+       <name>maxAge</name>
+       <required>false</required>     
+       <rtexprvalue>true</rtexprvalue>
+    </attribute>
+     <attribute>
+       <name>version</name>
+       <required>false</required>     
+       <rtexprvalue>true</rtexprvalue>
+    </attribute>
+     <attribute>
+       <name>secure</name>
+       <required>false</required>     
+       <rtexprvalue>true</rtexprvalue>
+    </attribute>
+     <attribute>
+       <name>path</name>
+       <required>false</required>     
+       <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+</taglib>
+

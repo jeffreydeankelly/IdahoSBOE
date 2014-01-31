@@ -1,2 +1,86 @@
-Jan 28, 2014 1:16:07 PM com.genuitec.pulse.client.deliverypackage.runtime.internal.Activator initializeLoggers
-INFO: Package starting up at Tue Jan 28 13:16:07 AKST 2014
+Jan 30, 2014 3:29:21 PM com.genuitec.pulse.client.deliverypackage.runtime.internal.Activator initializeLoggers
+INFO: Package starting up at Thu Jan 30 15:29:21 AKST 2014
+Jan 30, 2014 3:29:23 PM com.genuitec.pulse.client.deliverypackage.runtime.UpdatesService checkForWorkspaceUpdates
+INFO: Latest version of package has already been enabled in the workspace; check finished in 6ms
+Jan 30, 2014 3:31:50 PM org.glassfish.tools.ide.logging.Logger log
+INFO: localhost:4848:::::__locations?null
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at org.glassfish.tools.ide.utils.Utils.isSecurePort(Utils.java:183)
+	at org.glassfish.tools.ide.utils.Utils.isSecurePort(Utils.java:129)
+	at org.glassfish.tools.ide.admin.RunnerHttp.getHttpListenerProtocol(RunnerHttp.java:232)
+	at org.glassfish.tools.ide.admin.RunnerHttp.constructCommandUrl(RunnerHttp.java:426)
+	at org.glassfish.tools.ide.admin.Runner.call(Runner.java:682)
+	at org.glassfish.tools.ide.admin.RunnerHttp.call(RunnerHttp.java:66)
+	at org.glassfish.tools.ide.admin.Runner.call(Runner.java:70)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+Jan 30, 2014 3:32:46 PM org.glassfish.tools.ide.logging.Logger log
+INFO: localhost:4848:::::__locations?null
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at org.glassfish.tools.ide.utils.Utils.isSecurePort(Utils.java:183)
+	at org.glassfish.tools.ide.utils.Utils.isSecurePort(Utils.java:129)
+	at org.glassfish.tools.ide.admin.RunnerHttp.getHttpListenerProtocol(RunnerHttp.java:232)
+	at org.glassfish.tools.ide.admin.RunnerHttp.constructCommandUrl(RunnerHttp.java:426)
+	at org.glassfish.tools.ide.admin.Runner.call(Runner.java:682)
+	at org.glassfish.tools.ide.admin.RunnerHttp.call(RunnerHttp.java:66)
+	at org.glassfish.tools.ide.admin.Runner.call(Runner.java:70)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+Jan 30, 2014 3:33:30 PM org.glassfish.tools.ide.logging.Logger log
+INFO: localhost:4848:::::__locations?null
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at org.glassfish.tools.ide.utils.Utils.isSecurePort(Utils.java:183)
+	at org.glassfish.tools.ide.utils.Utils.isSecurePort(Utils.java:129)
+	at org.glassfish.tools.ide.admin.RunnerHttp.getHttpListenerProtocol(RunnerHttp.java:232)
+	at org.glassfish.tools.ide.admin.RunnerHttp.constructCommandUrl(RunnerHttp.java:426)
+	at org.glassfish.tools.ide.admin.Runner.call(Runner.java:682)
+	at org.glassfish.tools.ide.admin.RunnerHttp.call(RunnerHttp.java:66)
+	at org.glassfish.tools.ide.admin.Runner.call(Runner.java:70)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+Jan 30, 2014 3:34:07 PM org.glassfish.tools.ide.logging.Logger log
+INFO: localhost:4848:::::__locations?null
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at org.glassfish.tools.ide.utils.Utils.isSecurePort(Utils.java:183)
+	at org.glassfish.tools.ide.utils.Utils.isSecurePort(Utils.java:129)
+	at org.glassfish.tools.ide.admin.RunnerHttp.getHttpListenerProtocol(RunnerHttp.java:232)
+	at org.glassfish.tools.ide.admin.RunnerHttp.constructCommandUrl(RunnerHttp.java:426)
+	at org.glassfish.tools.ide.admin.Runner.call(Runner.java:682)
+	at org.glassfish.tools.ide.admin.RunnerHttp.call(RunnerHttp.java:66)
+	at org.glassfish.tools.ide.admin.Runner.call(Runner.java:70)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+Jan 30, 2014 3:34:25 PM org.glassfish.tools.ide.logging.Logger log
+INFO: Adding { http-listener-1, 8080, false }
+Jan 30, 2014 3:34:25 PM org.glassfish.tools.ide.logging.Logger log
+INFO: Adding { http-listener-2, 8181, false }
+Jan 30, 2014 3:34:25 PM org.glassfish.tools.ide.logging.Logger log
+INFO: Adding { admin-listener, 4848, false }

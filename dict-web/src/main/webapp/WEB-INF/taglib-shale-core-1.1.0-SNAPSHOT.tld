@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+ contributor license agreements.  See the NOTICE file distributed with
+ this work for additional information regarding copyright ownership.
+ The ASF licenses this file to you under the Apache License, Version 2.0
+ (the "License"); you may not use this file except in compliance with
+ the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<!DOCTYPE taglib PUBLIC
+ "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+ "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+
+<taglib>
+
+
+  <tlib-version>1.0</tlib-version>
+  <jsp-version>1.2</jsp-version>
+  <short-name>s</short-name>
+  <uri>http://shale.apache.org/core</uri>
+  <display-name>Shale Framework Core JSF Components and Tags</display-name>
+  <description>
+    This tag library contains tags for the core JSF components supported by
+    the Shale Framework, plus additional custom tag handlers as required.
+  </description>
+
+
+  <!-- ================= JSF Component Tags ================================ -->
+
+
+  <tag>
+
+    <name>subview</name>
+    <tag-class>org.apache.shale.view.faces.SubviewTag</tag-class>
+    <body-content>JSP</body-content>
+    <display-name>Subview</display-name>
+    <description>
+      Provide ViewController support functionality for the nested content
+      (typically a JSP dynamic include) of this component.
+
+      @deprecated Use the "subview" tag from tag library
+      "http://shale.apache.org/view" (in shale-view-xxx.jar)
+      instead of this tag.
+
+    </description>
+
+    <!-- Custom -->
+
+    <!-- JSF -->
+
+    <attribute>
+      <name>binding</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+      <description>
+        Value binding expression used to bind this component instance
+        to a backing bean property.
+      </description>
+    </attribute>
+
+    <attribute>
+      <name>id</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+      <description>
+        Component identifier of this component.  If specified, this identifier
+        must be unique within the context of the closest parent UIComponent
+        that is a NamingContainer.
+      </description>
+    </attribute>
+
+    <attribute>
+      <name>rendered</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+      <description>
+        Flag indicating whether this component should be rendered.
+        Default value is true.
+      </description>
+    </attribute>
+
+  </tag>
+
+
+  <tag>
+
+    <name>token</name>
+    <tag-class>org.apache.shale.taglib.TokenTag</tag-class>
+    <body-content>empty</body-content>
+    <display-name>Token</display-name>
+    <description>
+      Render a hidden input field whose value is the transaction token
+      for the containing form. The token component must be the last
+      input component child of the parent form to be processed.
+    </description>
+
+    <!-- Custom -->
+
+    <!-- JSF -->
+
+    <attribute>
+      <name>binding</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+      <description>
+        Value binding expression used to bind this component instance
+        to a backing bean property.
+      </description>
+    </attribute>
+
+    <attribute>
+      <name>id</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+      <description>
+        Component identifier of this component.  If specified, this identifier
+        must be unique within the context of the closest parent UIComponent
+        that is a NamingContainer.
+      </description>
+    </attribute>
+
+    <attribute>
+      <name>rendered</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+      <description>
+        Flag indicating whether this component should be rendered.
+        Default value is true.
+      </description>
+    </attribute>
+
+
+    <attribute>
+      <name>messageSummary</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+      <description>
+        Default messageSummary override used to reporting a token verification failure.
+      </description>
+    </attribute>
+
+
+    <attribute>
+      <name>messageDetail</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+      <description>
+        Default messageDetail override used to reporting a token verification failure.
+      </description>
+    </attribute>
+
+  </tag>
+
+  <tag>
+
+    <name>commonsValidator</name>
+    <tag-class>org.apache.shale.validator.faces.ValidatorTag</tag-class>
+    <body-content>JSP</body-content>
+    <display-name>Commons Validator</display-name>
+    <description>
+        Provides access to Commons Validators. 
+
+      @deprecated Use the "commonsValidator" tag from tag library
+      "http://shale.apache.org/validator" (in shale-validator-xxx.jar)
+      instead of this tag.
+
+    </description>
+
+    <!-- Custom -->
+      
+    <attribute> 
+      <name>type</name> 
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+      <description>
+        The type of validator associated with this tag
+      </description>
+    </attribute> 
+
+    <attribute> 
+      <name>min</name> 
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+      <description>
+        The minimum valid value
+      </description>
+    </attribute> 
+
+    <attribute> 
+      <name>max</name> 
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+      <description>
+        The maximum valid value
+      </description>
+    </attribute>
+    
+    <attribute> 
+      <name>minlength</name> 
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+      <description>
+        The minimum valid length of the field
+      </description>
+    </attribute> 
+
+    <attribute> 
+      <name>maxlength</name> 
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+      <description>
+        The maximum valid length of the field
+      </description>
+    </attribute> 
+
+    <attribute> 
+      <name>mask</name> 
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+      <description>
+        A regular expression to which the value must conform
+      </description>
+    </attribute> 
+    
+    <attribute> 
+      <name>datePatternStrict</name> 
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+      <description>
+        A date pattern using syntax defined in java.text.SimpleDateFormat
+      </description>
+    </attribute> 
+    
+    <attribute> 
+      <name>message</name> 
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+      <description>
+        A message displayed when validation fails 
+      </description>
+    </attribute> 
+    
+    <attribute> 
+      <name>arg</name> 
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+      <description>
+        A value that's plugged into the message
+      </description>
+    </attribute>
+    
+    <attribute> 
+      <name>client</name> 
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+      <description>
+        If true, validation is performed on the client
+      </description>
+    </attribute>
+    
+    <attribute> 
+      <name>server</name> 
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+      <description>
+        If true, validation is performed on the server
+      </description>
+    </attribute>
+  </tag>
+
+  <tag>
+
+    <name>validatorScript</name>
+    <tag-class>org.apache.shale.validator.faces.ValidatorScriptTag</tag-class>
+    <body-content>empty</body-content>
+    <display-name>Validator Script</display-name>
+    <description>
+      Generates JavaScript required for validation.
+
+      @deprecated Use the "validatorScript" tag from tag library
+      "http://shale.apache.org/validator" (in shale-validator-xxx.jar)
+      instead of this tag.
+
+    </description>
+
+    <!-- Custom -->
+      
+    <attribute> 
+      <name>functionName</name> 
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+      <description>
+        The name of the function to generate.
+      </description>
+    </attribute> 
+  </tag>
+
+  <tag>
+
+    <name>validatorVar</name>
+    <tag-class>org.apache.shale.validator.faces.ValidatorVarTag</tag-class>
+    <body-content>empty</body-content>
+    <display-name>Validator Var</display-name>
+    <description>
+      Parameters for specific validators.
+
+      @deprecated Use the "subview" tag from tag library
+      "http://shale.apache.org/view" (in shale-view-xxx.jar)
+      instead of this tag.
+
+    </description>
+
+    <!-- Custom -->
+
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+      <description>
+        The name of the parameter.
+      </description>
+    </attribute>
+
+    <attribute>
+      <name>value</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+      <description>
+        The value of the parameter.
+      </description>
+    </attribute>
+  </tag>
+
+</taglib>

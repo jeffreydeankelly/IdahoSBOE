@@ -2,8 +2,8 @@
     <wb-module deploy-name="dict-web">
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
-        <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
-        <dependent-module archiveName="dict-persistence.war" deploy-path="/WEB-INF/lib" handle="module:/resource/dict-persistence/dict-persistence">
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <dependent-module archiveName="dict-persistence.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/dict-persistence/dict-persistence">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="context-root" value="dict-web"/>
