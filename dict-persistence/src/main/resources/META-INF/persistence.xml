@@ -36,4 +36,9 @@
 			<property name="javax.persistence.jdbc.password" value="j20552055K" />
 		</properties>	
 	</persistence-unit>
+	<persistence-unit name="DataDictionary" transaction-type="JTA">
+		<jta-data-source>DataDictionary</jta-data-source>
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		<properties/>
+	</persistence-unit>
 </persistence>

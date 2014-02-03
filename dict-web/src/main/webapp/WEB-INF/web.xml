@@ -1,19 +1,104 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>dict-web</display-name>
-  <welcome-file-list>
-    <welcome-file>index.jspx</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
-  <servlet>
-    <servlet-name>Faces Servlet</servlet-name>
-    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Faces Servlet</servlet-name>
-    <url-pattern>/faces/*</url-pattern>
-  </servlet-mapping>
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		 xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" 
+		 version="2.4" 
+		 xmlns="http://java.sun.com/xml/ns/j2ee">
+    <description>Web deployment descriptor for the CDE data dictionary application</description>
+    <context-param>
+        <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+        <param-value>client</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>oracle.adf.view.faces.CHECK_FILE_MODIFICATION</param-name>
+        <param-value>false</param-value>
+    </context-param>
+    <context-param>
+        <param-name>oracle.adf.view.faces.DEBUG_JAVASCRIPT</param-name>
+        <param-value>false</param-value>
+    </context-param>
+
+    <context-param>
+       <param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+       <param-value>.jspx</param-value>
+    </context-param>
+    
+    <context-param>
+       <param-name>org.apache.shale.tiger.SCAN_PACKAGES</param-name>
+      <param-value>gov/idaho/sboe/view/backing</param-value>
+    </context-param>
+    
+    <context-param>
+       <param-name>org.apache.shale.view.EXCEPTION_DISPATCH_PATH</param-name>
+       <param-value>/showexception.jspx</param-value>
+    </context-param>
+    
+    <filter>
+        <filter-name>adfFaces</filter-name>
+        <filter-class>oracle.adf.view.faces.webapp.AdfFacesFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>adfFaces</filter-name>
+        <servlet-name>Faces Servlet</servlet-name>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>resources</servlet-name>
+        <servlet-class>oracle.adf.view.faces.webapp.ResourceServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.faces</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>resources</servlet-name>
+        <url-pattern>/adf/*</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+       <welcome-file>/index.jspx</welcome-file>
+    </welcome-file-list>
+<!--     <security-constraint> -->
+<!--         <web-resource-collection> -->
+<!--             <web-resource-name>All Administrators</web-resource-name> -->
+<!--             <url-pattern>admin*</url-pattern> -->
+<!--         </web-resource-collection> -->
+<!--         <auth-constraint> -->
+<!--             <role-name>ccat_admin</role-name> -->
+<!--             <role-name>ccat_demo</role-name> -->
+<!--         </auth-constraint> -->
+<!--     </security-constraint> -->
+<!--     <login-config> -->
+<!--         <auth-method>FORM</auth-method> -->
+<!--         <form-login-config> -->
+<!--             <form-login-page>login.jsp</form-login-page> -->
+<!--             <form-error-page>errors.jsp</form-error-page> -->
+<!--         </form-login-config> -->
+<!--     </login-config> -->
+<!--     <security-role> -->
+<!--         <role-name>ccat_admin</role-name> -->
+<!--     </security-role> -->
+<!--     <security-role> -->
+<!--         <role-name>ccat_demo</role-name> -->
+<!--     </security-role> -->
+    <session-config>
+        <session-timeout>35</session-timeout>
+    </session-config>
+    <mime-mapping>
+        <extension>html</extension>
+        <mime-type>text/html</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>txt</extension>
+        <mime-type>text/plain</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>jspx</extension>
+        <mime-type>text/html</mime-type>
+    </mime-mapping>
 </web-app>
