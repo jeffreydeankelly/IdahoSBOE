@@ -39,6 +39,30 @@ public abstract class SystemDateGetter {
         }
     }
     
+    public static class FromSqlServer extends SystemDateGetter {
+        /**
+         * <p>Returns the current Database's system date.</p>
+         * @param em persistence context
+         * @return system date
+         */
+        public java.sql.Date getSystemDate(EntityManager em) throws FacadeException {
+            java.sql.Date now = null;
+            try {
+//               Vector results = (Vector) em.createNativeQuery("select CONVERT (date, GETDATE())").getSingleResult();
+//               Object d = results.firstElement();
+            	Object d = em.createNativeQuery("select CONVERT (date, GETDATE())").getSingleResult();
+               if (d instanceof java.sql.Date) {
+                   now = (java.sql.Date) d;
+               } else if (d instanceof java.sql.Timestamp) {
+                   now = new java.sql.Date(((java.sql.Timestamp) d).getTime());
+               }
+            } catch (Exception e) {
+               log.warning(AbstractFacade.getMessages().getMessage("systemDate.exception"));
+            }
+            return now;
+        }
+    }
+    
     public static class FromJava extends SystemDateGetter {
         /**
          * <p>Returns the current Database's system date.</p>

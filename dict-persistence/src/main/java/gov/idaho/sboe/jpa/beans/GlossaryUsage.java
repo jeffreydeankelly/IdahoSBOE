@@ -8,13 +8,13 @@ package gov.idaho.sboe.jpa.beans;
  * 
  * HttpSession session = (HttpSession)context.getExternalContext().getSession(false);
  *  session.getId()
- *  CREATE TABLE CCAT_GLOSSARY_USAGE_STATISTICS
+ *  CREATE TABLE GlossaryUsageStatistics
 (
-CCAT_GLOSSARY_USAGE_PAGE VARCHAR2(1) NOT NULL,
-CCAT_GLOSSARY_USAGE_EXTRA VARCHAR2(200),
-CCAT_GLOSSARY_USAGE_IP VARCHAR2(16) NOT NULL,
-CCAT_GLOSSARY_USAGE_SESSION VARCHAR2(256) NOT NULL,
-CCAT_GLOSSARY_USAGE_TIMESTAMP TIMESTAMP NOT NULL
+GlossaryUsagePage VARCHAR2(1) NOT NULL,
+GlossaryUsageExtra VARCHAR2(200),
+GlossaryUsageIP VARCHAR2(16) NOT NULL,
+GlossaryUsageSession VARCHAR2(256) NOT NULL,
+GlossaryUsageTimestamp TIMESTAMP NOT NULL
 )
 ;
 
@@ -22,7 +22,7 @@ CCAT_GLOSSARY_USAGE_TIMESTAMP TIMESTAMP NOT NULL
  */
 
 //Entity
-//Table(name = "CCAT_GLOSSARY_USAGE_STATISTICS")
+//Table(name = "GlossaryUsageStatistics")
 public class GlossaryUsage 
 //extends AbstractEntityBean implements Serializable,Comparable, Cloneable 
 {

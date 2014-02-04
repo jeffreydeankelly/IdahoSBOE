@@ -30,9 +30,9 @@ public class AbstractFacade {
     private static Logger log = Logger.getLogger(AbstractFacade.class.getName());
 
     /**
-     * A system date getter is created to allow one for production using Oracle,
+     * A system date getter is created to allow one for production using SqlServer,
      * and another using just Java libraries so that getting a SQLException on
-     * the bad Oracle query (when we're not using Oracle for testing) doesn't
+     * the bad SqlServer query (when we're not using SqlServer for testing) doesn't
      * hose the transaction.
      */
     private static SystemDateGetter dateGetter = null;
@@ -43,7 +43,7 @@ public class AbstractFacade {
 
     public static java.sql.Date getSystemDate(EntityManager em) throws FacadeException {
         if (dateGetter == null) {
-            setSystemDateGetter(new SystemDateGetter.FromOracle());
+            setSystemDateGetter(new SystemDateGetter.FromSqlServer());
         }
         return dateGetter.getSystemDate(em);
     }

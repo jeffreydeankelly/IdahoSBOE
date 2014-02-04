@@ -9,46 +9,46 @@ public class Globals {
      * <p>Name of the registered managed bean that holds the current
      * working set used by the Catalog view.</p>
      */
-    public static final String SCRATCH_PAD = "us$co$cde$ccat$ScratchPad";
+    public static final String SCRATCH_PAD = "gov$idaho$sboe$ScratchPad";
     
     /**
      * <p>An application scoped managed bean that delegates
      * to the resource layer.</p>
      */
-    public static final String DATA_ACCESS_HELPER = "us$co$cde$ccat$DataAccessHelper";
+    public static final String DATA_ACCESS_HELPER = "gov$idaho$sboe$DataAccessHelper";
 
 
     /**
      * <p>The logical service layer that wrappers many of the calls to
      * the data access layer.</p>
      */
-    public static final String CATALOG_FACADE = "us$co$cde$ccat$CatalogFacade";
+    public static final String CATALOG_FACADE = "gov$idaho$sboe$CatalogFacade";
     
     
     /**
-     * <p>The locical service layer that handles the indexing and searching
+     * <p>The logical service layer that handles the indexing and searching
      * for <code>Glossary</code> items.</p>
      */
-    public static final String INDEXING_FACADE = "us$co$cde$ccat$IndexingFacade";
+    public static final String INDEXING_FACADE = "gov$idaho$sboe$IndexingFacade";
     
     
     /**
      * <p>JPA persistence unit bean kept in application scope.</p>
      */
-    public static final String JPA_RESOURCE = "us$co$cde$ccat$JpaResource";
+    public static final String JPA_RESOURCE = "gov$idaho$sboe$JpaResource";
     
     
     /**
      * <p>The <code>User</code> entity bean for an authenticated internal 
      * staff user.</p>
      */
-    public static final String AUTHENTICATED_USER = "us$co$cde$ccat$authenticatedUser";
+    public static final String AUTHENTICATED_USER = "gov$idaho$sboe$authenticatedUser";
 
     /**
      * <p>The key used to collect the viewId prior to redirecting to the 
      * login page.</p>
      */
-    public static final String RETURN_VIEWID = "us$co$cde$ccat$ReturnViewId";
+    public static final String RETURN_VIEWID = "gov$idaho$sboe$ReturnViewId";
     
     /**
      * <p>The default viewId that successful login will be directed to if

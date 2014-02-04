@@ -75,7 +75,7 @@
        <property-name>persistenceUnitName</property-name>
        <property-class>java.lang.String</property-class>
        <!-- <value>edwi_JTA</value> -->
-       <value>edwi</value>
+       <value>dict-JTA</value>
     </managed-property>
  </managed-bean>
  

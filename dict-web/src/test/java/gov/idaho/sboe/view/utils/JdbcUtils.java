@@ -17,12 +17,12 @@ public class JdbcUtils {
     public static int insertItem(EntityManager em, Glossary g, Security user) {
         em.getTransaction().begin();
         Query q = em.createNativeQuery(
-            "insert into CCAT_GLOSSARY" +
+            "insert into Glossary" +
             "(ItemNarrative, EffDateStart, CreateDate, ItemName, GlossType, CreateUserId)" +
             " VALUES("+
                 "'" + g.getItemNarrative() + "'," +
-                " SYSDATE, " +
-                " SYSDATE," +
+                " GETDATE(), " +
+                " GETDATE()," +
                 "'" + g.getPk().getItemName() + "'," +
                 "'" + g.getPk().getGlossType() + "'," +
                 "'" + user.getUserId()+ "'" +
@@ -36,10 +36,10 @@ public class JdbcUtils {
     public static int insertReference(EntityManager em, Glossary.PK pkP, Glossary.PK pkC) {
         em.getTransaction().begin();
         Query q = em.createNativeQuery(
-            "insert into CCAT_GLOSSARY_XWALK" +
+            "insert into GlossaryXwalk" +
             "(CreateDate, CreateUserId, ItemNameParent, GlossTypeParent, ItemNameChild, GlossTypeChild)" +
             " VALUES("+
-                " SYSDATE, 'SYSTEM', " +
+                " GETDATE(), 'SYSTEM', " +
                 "'" + pkP.getItemName() + "'," +
                 "'" + pkP.getGlossType() + "'," +
                 "'" + pkC.getItemName() + "'," +
@@ -53,11 +53,11 @@ public class JdbcUtils {
     public static void deleteItemAndReferences(EntityManager em, Glossary.PK pk) {
         em.getTransaction().begin();
         int updateCount = em.createNativeQuery(
-            "delete from CCAT_GLOSSARY where ItemName='" + pk.getItemName()+
+            "delete from Glossary where ItemName='" + pk.getItemName()+
             "' and GlossType='" + pk.getGlossType() +
             "'").executeUpdate();
         updateCount = em.createNativeQuery(
-            "delete from CCAT_GLOSSARY_XWALK where " +
+            "delete from GlossaryXwalk where " +
                 "(ItemNameParent='" + pk.getItemName()+ "' and GlossTypeParent='" + pk.getGlossType() + "') or " +
                 "(ItemNameChild='" + pk.getItemName()+ "' and GlossTypeChild='" + pk.getGlossType() +"')").executeUpdate();
         em.getTransaction().commit();
@@ -66,7 +66,7 @@ public class JdbcUtils {
     public static List<Glossary.PK> existsParentReferences(EntityManager em, Glossary.PK pk) {
         List query = em.createNativeQuery(
             "select ItemNameChild,GlossTypeChild " + 
-            "from CCAT_GLOSSARY_XWALK where ItemNameParent='" + pk.getItemName()+
+            "from GlossaryXwalk where ItemNameParent='" + pk.getItemName()+
             "' and GlossTypeParent='" + pk.getGlossType() + "'").
             getResultList();
         if (query == null) return null;
@@ -82,7 +82,7 @@ public class JdbcUtils {
     public static boolean existsReference(EntityManager em, Glossary.PK pkP, Glossary.PK pkC) {
         List query = em.createNativeQuery(
             "select ItemNameChild,GlossTypeChild " + 
-            "from CCAT_GLOSSARY_XWALK " +
+            "from GlossaryXwalk " +
             "where ItemNameParent='" + pkP.getItemName()+
             "' and GlossTypeParent='" + pkP.getGlossType() + "'" +
             "  and ItemNameChild='" + pkC.getItemName()+
@@ -95,7 +95,7 @@ public class JdbcUtils {
     public static List<Glossary.PK> existsItem(EntityManager em, Glossary.PK pk) {
         List query = em.createNativeQuery(
             "select ItemName,GlossType " + 
-            "from CCAT_GLOSSARY where ItemName='" + pk.getItemName()+
+            "from Glossary where ItemName='" + pk.getItemName()+
             "' and GlossType='" + pk.getGlossType() + "'").
             getResultList();
         if (query == null) return null;

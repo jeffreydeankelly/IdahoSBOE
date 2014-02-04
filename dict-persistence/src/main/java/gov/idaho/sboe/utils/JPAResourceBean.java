@@ -65,7 +65,7 @@ public class JPAResourceBean {
      * <p>The name of the persistence unit that is registered in the
      * "/META-INF/persistence.xml".</p>
      */
-    private String persistenceUnitName = "default";
+    private String persistenceUnitName = "dict-JTA";
 
     /**
      * <p>Custom JPA connection properties used when creating a

@@ -1379,9 +1379,9 @@ public class CatalogFacade extends AbstractFacade {
 
     void persistFeedback(EntityManager em, GlossaryFeedback gf) {
         Query insert = em.createNativeQuery("insert into " +
-                "CCAT_GLOSSARY_USER_RATING " +
-                "   (CCAT_GLOSSARY_USER_IP, CCAT_GLOSSARY_USER_RATING, CCAT_GLOSSARY_USER_SESSION, " +
-                "    CCAT_GLOSSARY_USER_COMMENT, CCAT_GLOSSARY_USER_TIMESTAMP)" +
+                "GlossaryUsagePageRating " +
+                "   (GlossaryUsagePageIP, GlossaryUsagePageRating, GlossaryUsagePageSessopm, " +
+                "    GlossaryUsagePageComment, GlossaryUsagePageTimestamp)" +
                 "   VALUES" +
                 "   (#addr, #rating, #sess, #comment,  SYSTIMESTAMP)"
             ).
@@ -1423,10 +1423,10 @@ public class CatalogFacade extends AbstractFacade {
 
     void persistUsage(EntityManager em, GlossaryUsage gu) {
         Query insert = em.createNativeQuery("insert into " +
-            "CCAT_GLOSSARY_USAGE_STATISTICS " +
-            "  (CCAT_GLOSSARY_USAGE_PAGE, CCAT_GLOSSARY_USAGE_EXTRA," +
-            "   CCAT_GLOSSARY_USAGE_IP, CCAT_GLOSSARY_USAGE_SESSION," +
-            "   CCAT_GLOSSARY_USAGE_TIMESTAMP" +
+            "GlossaryUsageStatistics " +
+            "  (GlossaryUsagePage, GlossaryUsageExtra," +
+            "   GlossaryUsageIP, GlossaryUsageSession," +
+            "   GlossaryUsageTimestamp" +
             "   )" +
             "   VALUES" +
             "   (#pi, #px, #addr, #sess,  SYSTIMESTAMP)"
@@ -1455,17 +1455,17 @@ public class CatalogFacade extends AbstractFacade {
 
          try {
              StringBuffer sql = new StringBuffer("select distinct day, avg(abs(to_number(slen))) over (partition by day) avglen " 
-              + " from (select distinct ccat_glossary_usage_session,   "
-              + " to_char( min(ccat_glossary_usage_timestamp) over (partition by ccat_glossary_usage_session), 'YYYY-MM-DD') day,   "
-              + " to_char(max(ccat_glossary_usage_timestamp) over (partition by ccat_glossary_usage_session), 'SSSS') -   "
-              + " to_char(min(ccat_glossary_usage_timestamp) over (partition by ccat_glossary_usage_session), 'SSSS') slen  "
-              + " from ccat_glossary_usage_statistics   where 1=1  ");
+              + " from (select distinct GlossaryUsageSession,   "
+              + " to_char( min(GlossaryUsageTimestamp) over (partition by GlossaryUsageSession), 'YYYY-MM-DD') day,   "
+              + " to_char(max(GlossaryUsageTimestamp) over (partition by GlossaryUsageSession), 'SSSS') -   "
+              + " to_char(min(GlossaryUsageTimestamp) over (partition by GlossaryUsageSession), 'SSSS') slen  "
+              + " from GlossaryUsageStatistics   where 1=1  ");
                  
                  if (startDate != null)
-                    sql.append(" and ccat_glossary_usage_timestamp >= ? ");
+                    sql.append(" and GlossaryUsageTimestamp >= ? ");
                  
                  if (endDate != null)
-                    sql.append(" and ccat_glossary_usage_timestamp <= ? ");
+                    sql.append(" and GlossaryUsageTimestamp <= ? ");
                     
                  sql.append(") order by day ");
                  
@@ -1528,18 +1528,18 @@ public class CatalogFacade extends AbstractFacade {
         
             try {
                 StringBuffer sql = new StringBuffer("select distinct day, hour, count(*) over (partition by timeofday) cnt "
-                 + " from ( select distinct ccat_glossary_usage_session, "
-                 + "  to_char( min(ccat_glossary_usage_timestamp) over (partition by ccat_glossary_usage_session), 'YYYY-MM-DD') day, "
-                 + "  to_char( min(ccat_glossary_usage_timestamp) over (partition by ccat_glossary_usage_session), 'HH am') hour, "
-                 + "  to_char( min(ccat_glossary_usage_timestamp) over (partition by ccat_glossary_usage_session), 'YYYY-MM-DD HH am') timeofday "
-                 + " from ccat_glossary_usage_statistics " 
+                 + " from ( select distinct GlossaryUsageSession, "
+                 + "  to_char( min(GlossaryUsageTimestamp) over (partition by GlossaryUsageSession), 'YYYY-MM-DD') day, "
+                 + "  to_char( min(GlossaryUsageTimestamp) over (partition by GlossaryUsageSession), 'HH am') hour, "
+                 + "  to_char( min(GlossaryUsageTimestamp) over (partition by GlossaryUsageSession), 'YYYY-MM-DD HH am') timeofday "
+                 + " from GlossaryUsageStatistics " 
                  + " where 1=1 ");
                 
                 if (startDate != null)
-                  sql.append(" and ccat_glossary_usage_timestamp >= ? ");
+                  sql.append(" and GlossaryUsageTimestamp >= ? ");
                 
                 if (endDate != null)
-                  sql.append(" and ccat_glossary_usage_timestamp <= ? ");
+                  sql.append(" and GlossaryUsageTimestamp <= ? ");
                   
                 sql.append(") order by day, hour  ");
                    
@@ -1600,23 +1600,23 @@ public class CatalogFacade extends AbstractFacade {
         
             try {
                 StringBuffer sql = new StringBuffer( "select " + 
-                    "    ccat_glossary_user_rating, " + 
-                    "    ccat_glossary_usage_timestamp, " + 
-                    "    ccat_glossary_usage_page, " + 
-                    "    ccat_glossary_user_comment, " + 
-                    "    ccat_glossary_usage_extra " + 
-                    " from ccat_glossary_user_rating r " + 
-                    "    left join ccat_glossary_usage_statistics s " + 
-                    "        on r.ccat_glossary_user_session = s.ccat_glossary_usage_session " + 
+                    "    GlossaryUsagePageRating, " + 
+                    "    GlossaryUsageTimestamp, " + 
+                    "    GlossaryUsagePage, " + 
+                    "    GlossaryUsagePageComment, " + 
+                    "    GlossaryUsageExtra " + 
+                    " from GlossaryUsagePageRating r " + 
+                    "    left join GlossaryUsageStatistics s " + 
+                    "        on r.GlossaryUsagePageSession = s.GlossaryUsageSession " + 
                     " where 1=1 ");
                 
                 if (startDate != null)
-                   sql.append(" and ccat_glossary_usage_timestamp >= ? ");
+                   sql.append(" and GlossaryUsageTimestamp >= ? ");
                 
                 if (endDate != null)
-                   sql.append(" and ccat_glossary_usage_timestamp <= ? ");
+                   sql.append(" and GlossaryUsageTimestamp <= ? ");
                    
-                sql.append(" order by ccat_glossary_usage_timestamp");
+                sql.append(" order by GlossaryUsageTimestamp");
                 
                 em = emf.createEntityManager();
                 Query query = em.createNativeQuery(sql.toString());

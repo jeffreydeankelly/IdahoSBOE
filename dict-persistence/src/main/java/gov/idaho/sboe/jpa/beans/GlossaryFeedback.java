@@ -6,19 +6,19 @@ package gov.idaho.sboe.jpa.beans;
  * this is not a full-function, first-class JPA bean.  It is more of just a 
  * data structure POJO.
  * 
- * CREATE TABLE CCAT_GLOSSARY_USER_RATING
+ * CREATE TABLE GlossaryUserRating
 (
-CCAT_GLOSSARY_USER_IP VARCHAR2(16) NOT NULL,
-CCAT_GLOSSARY_USER_RATING VARCHAR2(1) NOT NULL,
-CCAT_GLOSSARY_USER_COMMENT VARCHAR2(4000),
-CCAT_GLOSSARY_USER_TIMESTAMP TIMESTAMP NOT NULL,
-CCAT_GLOSSARY_USER_SESSION VARCHAR2(256)
+GlossaryUserIP VARCHAR2(16) NOT NULL,
+GlossaryUserRating VARCHAR2(1) NOT NULL,
+GlossaryUserComment VARCHAR2(4000),
+GlossaryUserTimestamp TIMESTAMP NOT NULL,
+GlossaryUserSession VARCHAR2(256)
 )
 ;
  * </p>
  */
 //@Entity
-//@Table(name = "CCAT_GLOSSARY_USER_RATING")
+//@Table(name = "GlossaryUserRATING")
 public class GlossaryFeedback
 //extends AbstractEntityBean implements Serializable, Comparable, Cloneable 
 {
@@ -26,17 +26,17 @@ public class GlossaryFeedback
     }
 
     // the tab letter, search term, etc.
-//    @Column(name = "CCAT_GLOSSARY_USER_RATING", nullable = false, length = 1)
+//    @Column(name = "GlossaryUserRating", nullable = false, length = 1)
     private String rating;
 
     // the tab letter, search term, etc.
-//    @Column(name = "CCAT_GLOSSARY_USER_COMMENT", nullable = true, length = 4096)
+//    @Column(name = "GlossaryUserComment", nullable = true, length = 4096)
     private String comment;
 
-//    @Column(name = "CCAT_GLOSSARY_USER_IP", nullable = false, length = 16)
+//    @Column(name = "GlossaryUserIP", nullable = false, length = 16)
     private String ipAddress;
 
-//    @Column(name = "CCAT_GLOSSARY_USER_SESSION", nullable = true, length = 256)
+//    @Column(name = "GlossaryUserSession", nullable = true, length = 256)
     private String session;
 
     public void setSession(String session) {

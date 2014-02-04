@@ -204,7 +204,7 @@ public class NarrativeIndexingFacade extends AbstractFacade {
         List<Glossary.PK> list = new ArrayList<Glossary.PK>();
         try {
             StringBuffer querySql = new StringBuffer("SELECT GlossType,ItemName " +
-                "FROM ccat_glossary WHERE ");
+                "FROM Glossary WHERE ");
             if (glossType != null) {
                 querySql.append("GlossType = '").append(glossType).append("' AND (");
             }
@@ -392,7 +392,7 @@ public class NarrativeIndexingFacade extends AbstractFacade {
         try {
             StringBuffer selectSql = new StringBuffer("SELECT ");
             StringBuffer querySql = new StringBuffer(
-                "FROM ccat_glossary WHERE ");
+                "FROM Glossary WHERE ");
             StringBuffer orderBySql = new StringBuffer(" ORDER BY ");
             System.out.println("Select: "+selectSql.toString());
             System.out.println("Query: "+querySql.toString());

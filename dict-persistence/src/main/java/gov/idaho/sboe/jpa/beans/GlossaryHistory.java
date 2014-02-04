@@ -147,9 +147,9 @@ public class GlossaryHistory extends AbstractEntityBean implements
         return 0;
     }
 
-    @TableGenerator(table="KeySequence", name = "GlossaryHistorySeq", allocationSize = 1)
+    @TableGenerator(name="GlossaryHistorySeq",table="KeySequence",pkColumnName="SEQ_NAME",valueColumnName="SEQ_COUNT",pkColumnValue="GlossaryHistorySeq",allocationSize = 1)
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "GlossaryHistorySeq")
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "GlossaryHistorySeq")
     @Column(name = "Id", nullable = false, updatable = false)
     private BigDecimal histId;
 
