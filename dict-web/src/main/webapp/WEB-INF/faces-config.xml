@@ -9,7 +9,7 @@
         This is a POJO Facade that encapsulates various data access
         operations.
     </description>   
-    <managed-bean-name>gov$idaho$sboe$services$CatalogFacade</managed-bean-name>
+    <managed-bean-name>gov$idaho$sboe$CatalogFacade</managed-bean-name>
     <managed-bean-class>gov.idaho.sboe.services.CatalogFacade</managed-bean-class>
     <managed-bean-scope>none</managed-bean-scope>
     <managed-property>
@@ -25,7 +25,7 @@
         This is a POJO Facade that encapsulates various data access
         operations.
     </description>   
-    <managed-bean-name>gov$idaho$sboe$services$IndexingFacade</managed-bean-name>
+    <managed-bean-name>gov$idaho$sboe$IndexingFacade</managed-bean-name>
     <managed-bean-class>gov.idaho.sboe.services.NarrativeIndexingFacade</managed-bean-class>
     <managed-bean-scope>none</managed-bean-scope>
     <managed-property>

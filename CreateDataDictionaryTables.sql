@@ -115,6 +115,16 @@ CREATE TABLE GlossaryWordAlias (
 )
 GO
 
+CREATE TABLE GlossaryUsageStatistics (
+	GlossaryUsagePage		VARCHAR(1) NOT NULL,
+	GlossaryUsageExtra		VARCHAR(200),
+	GlossaryUsageIP			VARCHAR(16) NOT NULL,
+	GlossaryUsageSession	VARCHAR(256) NOT NULL,
+	GlossaryUsageTimestamp	DATETIME NOT NULL
+)
+GO
+
+
 CREATE TABLE GlossaryNoiseWord (
 	Word VARCHAR(80) NOT NULL, 
 	CONSTRAINT PkGlossNoiseWord PRIMARY KEY (Word)

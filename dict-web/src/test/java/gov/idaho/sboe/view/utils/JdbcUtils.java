@@ -102,8 +102,11 @@ public class JdbcUtils {
         List<Glossary.PK> results = new ArrayList<Glossary.PK>();
         java.util.Iterator iter = query.iterator();
         while (iter.hasNext()) {
-            Vector<String> item = (Vector<String>)iter.next();
-            results.add(new Glossary.PK(item.get(1), item.get(0)));
+        	/* jeffk - Receiving ClassCastException when casting the iter Object to a Vector	
+        	Vector<String> item = (Vector<String>)iter.next();
+            results.add(new Glossary.PK(item.get(1), item.get(0))); */
+            Object[] item = (Object[])iter.next();
+            results.add(new Glossary.PK(item[1].toString(), item[0].toString()));
         }
         return results;
     }

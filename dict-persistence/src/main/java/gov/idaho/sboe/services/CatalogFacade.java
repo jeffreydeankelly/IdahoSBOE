@@ -1383,7 +1383,7 @@ public class CatalogFacade extends AbstractFacade {
                 "   (GlossaryUsagePageIP, GlossaryUsagePageRating, GlossaryUsagePageSessopm, " +
                 "    GlossaryUsagePageComment, GlossaryUsagePageTimestamp)" +
                 "   VALUES" +
-                "   (#addr, #rating, #sess, #comment,  SYSTIMESTAMP)"
+                "   (#addr, #rating, #sess, #comment,  SYSDATETIME())"
             ).
                 setParameter("addr", gf.getIpAddress()).
                 setParameter("rating", gf.getRating()).
@@ -1429,7 +1429,7 @@ public class CatalogFacade extends AbstractFacade {
             "   GlossaryUsageTimestamp" +
             "   )" +
             "   VALUES" +
-            "   (#pi, #px, #addr, #sess,  SYSTIMESTAMP)"
+            "   (#pi, #px, #addr, #sess,  SYSDATETIME())"
             ).
                 setParameter("addr", gu.getIpAddress()).
                 setParameter("pi", gu.getPageId()).
