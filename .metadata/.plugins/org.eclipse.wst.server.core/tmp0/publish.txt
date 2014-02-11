@@ -1,5 +1,0 @@
-#GlassFish 3
-#Tue Feb 11 11:04:27 AKST 2014
-org.eclipse.jst.jee.server\:dict-web=C\:\\tools\\glassfish4\\glassfish\\domains\\domain1\\eclipseApps\\dict-web
-org.eclipse.jst.jee.server\:dict-web2=C\:\\tools\\glassfish4\\glassfish\\domains\\domain1\\eclipseApps\\dict-web2
-org.eclipse.jst.jee.server\:jsf-test=C\:\\tools\\glassfish4\\glassfish\\domains\\domain1\\eclipseApps\\jsf-test

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<servers>
-  <server auto-publish-setting="1" auto-publish-time="0" hostname="BoiTest1.resdat.com" id="GlassFish 4.0 at BoiTest1.resdat.com" name="GlassFish 4.0 at BoiTest1.resdat.com" runtime-id="GlassFish 4.0" server-type="org.glassfish.jst.server.glassfish4" server-type-id="org.glassfish.jst.server.glassfish4" start-timeout="240" stop-timeout="240" timestamp="0">
-    <map key="generic_server_instance_properties" sunappserver.adminname="admin" sunappserver.adminpassword="adminadmin" sunappserver.adminserverportnumber="4848" sunappserver.keepSessions="true"/>
-  </server>
-</servers>
