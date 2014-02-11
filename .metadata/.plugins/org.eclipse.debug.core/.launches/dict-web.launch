@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<launchConfiguration type="org.eclipse.wst.server.ui.launchConfigurationType">
-<stringAttribute key="client-id" value="org.eclipse.wst.server.ui.web"/>
-<stringAttribute key="launchable-adapter-id" value="org.glassfish.launchableAdapter"/>
-<stringAttribute key="module-artifact" value="org.eclipse.jst.jee.server:dict-web//"/>
-<stringAttribute key="module-artifact-class" value="org.eclipse.wst.server.core.util.WebResource"/>
+<launchConfiguration type="org.eclipse.jdt.junit.launchconfig">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/dict-web"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="4"/>
 </listAttribute>
-<stringAttribute key="server-id" value="GlassFish 4.0 at localhost"/>
+<stringAttribute key="org.eclipse.jdt.junit.CONTAINER" value="=dict-web"/>
+<booleanAttribute key="org.eclipse.jdt.junit.KEEPRUNNING_ATTR" value="false"/>
+<stringAttribute key="org.eclipse.jdt.junit.TESTNAME" value=""/>
+<stringAttribute key="org.eclipse.jdt.junit.TEST_KIND" value="org.eclipse.jdt.junit.loader.junit4"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value=""/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="dict-web"/>
 </launchConfiguration>

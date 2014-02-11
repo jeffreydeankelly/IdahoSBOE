@@ -1,36 +1,67 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dataset>
-  <GlossaryType GlossType="Business Rule" GlossDesc="Business Rule Description" GlossVisible="1"/>
-  <GlossaryType GlossType="Collection" GlossDesc="Collection Description" GlossVisible="1"/>
-  <GlossaryType GlossType="Data Element" GlossDesc="Data Element Description" GlossVisible="1"/>
-  <GlossaryType GlossType="Report" GlossDesc="Report Element Description" GlossVisible="1"/>
+  <GlossaryType GlossType="Business Rule" GlossDesc="Business Rule Description" GlossVisible="Y"/>
+  <GlossaryType GlossType="Collection" GlossDesc="Collection Description" GlossVisible="Y"/>
+  <GlossaryType GlossType="Data Element" GlossDesc="Data Element Description" GlossVisible="Y"/>
+  <GlossaryType GlossType="Report" GlossDesc="Report Element Description" GlossVisible="Y"/>
   <GlossaryWordAlias/>
   <GlossaryNoiseWord/>
   <DictUser/>
-  <Glossary GlossType="Business Rule" ItemName="Academic Subject (Assessment)" ItemNarrative="RLA - Reading/Language Art"/>
-  <Glossary GlossType="Business Rule" ItemName="Academic Subject (Secondary)" ItemNarrative="&lt;p&gt;ENGL - English &lt;br&gt;M - Mathematics &lt;br&gt;S - Science &lt;br&gt;SS - Social Sciences"/>
-  <Glossary GlossType="Business Rule" ItemName="AMAO Proficiency Attainment Status for Limited English Proficient Students" ItemNarrative="&lt;p&gt;METAMAOLEP - Met the Annual Measurable Achievement Objectives (AMAO) for Limited English Proficient (LEP) Students"/>
-  <Glossary GlossType="Business Rule" ItemName="Base Salary" ItemNarrative="&lt;p&gt;Do not include additional pay for additional duties. If individual has"/>
-  <Glossary GlossType="Data Element" ItemName="Attends District Funded GED Program" ItemNarrative="GED funded using state funds either in the form of a district run GED program or tuition paid, by the district, to an external GED program."/>
-  <Glossary GlossType="Data Element" ItemName="Bilingual" ItemNarrative="This one digit field indicates whether the student is currently enrolled in a bilingual program, is in the monitoring period, or is Exited.  Must be a valid code as defined in the Student Data Elements and Definitions document or Zero-fill."/>
-  <GlossaryHistory/>
+  <Glossary Id="1" GlossType="Business Rule" ItemName="AMAO Proficiency Attainment Status for Limited English Proficient Students" ItemNarrative="&lt;p&gt;METAMAOLEP - Met the Annual Measurable Achievement Objectives (AMAO) for Limited English Proficient (LEP) Students" CreateUserId="SYSTEM" CreateDate="2014-02-07"/>
+  <Glossary Id="2" GlossType="Business Rule" ItemName="Academic Subject (Assessment)" ItemNarrative="RLA - Reading/Language Art" CreateUserId="SYSTEM" CreateDate="2014-02-07"/>
+  <Glossary Id="3" GlossType="Business Rule" ItemName="Academic Subject (Secondary)" ItemNarrative="&lt;p&gt;ENGL - English &lt;br&gt;M - Mathematics &lt;br&gt;S - Science &lt;br&gt;SS - Social Sciences" CreateUserId="SYSTEM" CreateDate="2014-02-07"/>
+  <Glossary Id="4" GlossType="Business Rule" ItemName="Base Salary" ItemNarrative="&lt;p&gt;Do not include additional pay for additional duties. If individual has" CreateUserId="SYSTEM" CreateDate="2014-02-07"/>
+  <Glossary Id="5" GlossType="Data Element" ItemName="Attends District Funded GED Program" ItemNarrative="GED funded using state funds either in the form of a district run GED program or tuition paid, by the district, to an external GED program." CreateUserId="SYSTEM" CreateDate="2014-02-07"/>
+  <Glossary Id="6" GlossType="Data Element" ItemName="Bilingual" ItemNarrative="This one digit field indicates whether the student is currently enrolled in a bilingual program, is in the monitoring period, or is Exited.  Must be a valid code as defined in the Student Data Elements and Definitions document or Zero-fill." CreateUserId="SYSTEM" CreateDate="2014-02-07"/>
+  <Glossary Id="7" GlossType="Data Element" ItemName="Additional Contract" ItemNarrative="&lt;br&gt;Additional contract for an administrative unit employee.  This includes additional pay received beyond the persons regular contract or addendum to his/her contract." CreateUserId="SYSTEM" CreateDate="2014-02-07"/>
+  <Glossary Id="8" GlossType="Business Rule" ItemName="Additional Contract - Form SED-409" ItemNarrative="&lt;p&gt;Form SED-409 - Enter a &amp;quot;Y&amp;quot; for all staff employed on the basis of purchased services contracts. The data system will generate a printout of all staff reported with a &amp;quot;Y&amp;quot; under Purchased Services, and you will be required to attach appropriately signed contracts to the printout.&lt;/p&gt;" CreateUserId="SYSTEM" CreateDate="2014-02-07"/>
+  <Glossary Id="9" GlossType="Collection" ItemName="Application for Federal IDEA Flow through Funds - Form SED-409" ItemNarrative="&lt;br&gt;An application to request for funds under the Federal IDEA (Individuals with Disabilities Education Act).&lt;br&gt;&lt;br&gt;For more information please go to the following web site:&lt;a href=http://www.cde.state.co.us/cdespedfin/download/pdf/FY08/FED/Narrative_Forms_FY08.pdf&gt;Application for Federal Special Education Funds&lt;/a&gt;." CreateUserId="SYSTEM" CreateDate="2014-02-07"/>
+  <Glossary Id="10" GlossType="Collection" ItemName="Student October - Form DAR-106" ItemNarrative="&lt;b&gt;Collection is:  ACTIVE, MANDATORY, OCTOBER - NOVEMBER, ELECTRONIC (ADE) SUBMITTAL&lt;/b&gt;&lt;br&gt;&lt;br&gt;Collection also known as:  October Count. &lt;p&gt;Student October collects information on all grades, while Colorado Student Assessment Program (CSAP) labels are valid only for grades 3 through 10.&lt;/p&gt;For more information please go to the following website:&lt;a href=&quot;https://ade.cde.state.co.us/doc_toc.htm#student&quot;&lt;u&gt;Student October&lt;/a&gt;.&lt;/p&gt;" CreateUserId="SYSTEM" CreateDate="2014-02-07"/>
+  <GlossaryHistory Id="1" GlossType="Data Element" CreateUserId="SYSTEM" ItemNarrative="JUnit Narrative" EffDateStart="2014-02-03" CreateDate="2014-02-03" ItemName="HomelessJUnit"/>
+  <GlossaryHistory Id="2" GlossType="Business Rule" CreateUserId="SYSTEM" ItemNarrative="Homeless BR" EffDateStart="2014-02-03" CreateDate="2014-02-03" ItemName="Homeless"/>
+  <GlossaryHistory Id="3" GlossType="Data Element" CreateUserId="SYSTEM" ItemNarrative="JUnit Narrative" EffDateStart="2014-02-03" CreateDate="2014-02-03" ItemName="HomelessJUnit"/>
+  <GlossaryHistory Id="4" GlossType="Business Rule" CreateUserId="SYSTEM" ItemNarrative="Homeless BR" EffDateStart="2014-02-03" CreateDate="2014-02-03" ItemName="Homeless"/>
+  <GlossaryHistory Id="5" GlossType="Data Element" CreateUserId="SYSTEM" ItemNarrative="JUnit Narrative" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="HomelessJUnit"/>
+  <GlossaryHistory Id="6" GlossType="Business Rule" CreateUserId="SYSTEM" ItemNarrative="Homeless BR" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="Homeless"/>
+  <GlossaryHistory Id="7" GlossType="Data Element" CreateUserId="SYSTEM" ItemNarrative="JUnit Narrative" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="HomelessJUnit"/>
+  <GlossaryHistory Id="8" GlossType="Data Element" CreateUserId="SYSTEM" ItemNarrative="JUnit Narrative" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="HomelessJUnit"/>
+  <GlossaryHistory Id="9" GlossType="Business Rule" CreateUserId="SYSTEM" ItemNarrative="Homeless BR" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="Homeless"/>
+  <GlossaryHistory Id="10" GlossType="Data Element" DeleteUserId="SYSTEM" CreateUserId="SYSTEM" ItemNarrative="Homeless DE" DeleteDate="2014-02-04" EffDateStart="2014-02-03" CreateDate="2014-02-03" ItemName="Homeless"/>
+  <GlossaryHistory Id="11" GlossType="Data Element" CreateUserId="SYSTEM" ItemNarrative="JUnit Narrative" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="HomelessJUnit"/>
+  <GlossaryHistory Id="12" GlossType="Data Element" CreateUserId="SYSTEM" ItemNarrative="JUnit Narrative" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="HomelessJUnit"/>
+  <GlossaryHistory Id="13" GlossType="Data Element" CreateUserId="SYSTEM" ItemNarrative="JUnit Narrative" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="HomelessJUnit"/>
+  <GlossaryHistory Id="14" GlossType="Data Element" CreateUserId="SYSTEM" ItemNarrative="JUnit Narrative" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="HomelessJUnit"/>
+  <GlossaryHistory Id="15" GlossType="Business Rule" CreateUserId="SYSTEM" ItemNarrative="Homeless BR" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="Homeless"/>
+  <GlossaryHistory Id="16" GlossType="Data Element" DeleteUserId="SYSTEM" CreateUserId="SYSTEM" ItemNarrative="Homeless DE" DeleteDate="2014-02-04" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="Homeless"/>
+  <GlossaryHistory Id="17" GlossType="Data Element" CreateUserId="SYSTEM" ItemNarrative="JUnit Narrative" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="HomelessJUnit"/>
   <GlossaryHistoryNarrIndx/>
   <GlossaryNarrIndx/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="District Number" GlossTypeParent="Data Element" GlossTypeChild="District Number"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="Ethnic Category" GlossTypeParent="Data Element" GlossTypeChild="Ethnic Category"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="Gender" GlossTypeParent="Data Element" GlossTypeChild="Gender"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="Language Background" GlossTypeParent="Data Element" GlossTypeChild="Language Background"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="LASID" GlossTypeParent="Data Element" GlossTypeChild="LASID"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="Racial Category" GlossTypeParent="Data Element" GlossTypeChild="Racial Category"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="SASID" GlossTypeParent="Data Element" GlossTypeChild="SASID"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="Section 504 Handicapped" GlossTypeParent="Data Element" GlossTypeChild="Section 504 Handicapped"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="District Number"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="Ethnic Category"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="Gender"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="Language Background"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="LASID"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="Racial Category"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="SASID"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="Section 504 Handicapped"/>
-  <GlossaryXwalkHistory/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="District Number" ItemNameChild="District Number" GlossTypeParent="Business Rule" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Ethnic Category" ItemNameChild="Ethnic Category" GlossTypeParent="Business Rule" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Gender" ItemNameChild="Gender" GlossTypeParent="Business Rule" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Language Background" ItemNameChild="Language Background" GlossTypeParent="Business Rule" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="LASID" ItemNameChild="LASID" GlossTypeParent="Business Rule" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Racial Category" ItemNameChild="Racial Category" GlossTypeParent="Business Rule" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="SASID" ItemNameChild="SASID" GlossTypeParent="Business Rule" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Section 504 Handicapped" ItemNameChild="Section 504 Handicapped" GlossTypeParent="Business Rule" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Student October" ItemNameChild="District Number" GlossTypeParent="Collection" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Student October" ItemNameChild="Ethnic Category" GlossTypeParent="Collection" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Student October" ItemNameChild="Gender" GlossTypeParent="Collection" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Student October" ItemNameChild="Language Background" GlossTypeParent="Collection" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Student October" ItemNameChild="LASID" GlossTypeParent="Collection" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Student October" ItemNameChild="Racial Category" GlossTypeParent="Collection" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Student October" ItemNameChild="SASID" GlossTypeParent="Collection" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Student October" ItemNameChild="Section 504 Handicapped" GlossTypeParent="Collection" GlossTypeChild="Data Element"/>
+  <GlossaryXwalkHistory Id="1" GlossTypeParent="Business Rule" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="HomelessJUnit" GlossTypeChild="Data Element" CreateDate="2014-02-03"/>
+  <GlossaryXwalkHistory Id="2" GlossTypeParent="Business Rule" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="HomelessJUnit" GlossTypeChild="Data Element" CreateDate="2014-02-03"/>
+  <GlossaryXwalkHistory Id="3" GlossTypeParent="Business Rule" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="HomelessJUnit" GlossTypeChild="Data Element" CreateDate="2014-02-04"/>
+  <GlossaryXwalkHistory Id="4" GlossTypeParent="Business Rule" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="HomelessJUnit" GlossTypeChild="Data Element" CreateDate="2014-02-04"/>
+  <GlossaryXwalkHistory Id="5" GlossTypeParent="Business Rule" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="HomelessJUnit" GlossTypeChild="Data Element" CreateDate="2014-02-04"/>
+  <GlossaryXwalkHistory Id="6" GlossTypeParent="Business Rule" DeleteDate="2014-02-04" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="Homeless" GlossTypeChild="Data Element" DeleteUserId="SYSTEM" CreateDate="2014-02-04"/>
+  <GlossaryXwalkHistory Id="7" GlossTypeParent="Business Rule" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="HomelessJUnit" GlossTypeChild="Data Element" CreateDate="2014-02-04"/>
+  <GlossaryXwalkHistory Id="8" GlossTypeParent="Business Rule" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="HomelessJUnit" GlossTypeChild="Data Element" CreateDate="2014-02-04"/>
+  <GlossaryXwalkHistory Id="9" GlossTypeParent="Business Rule" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="HomelessJUnit" GlossTypeChild="Data Element" CreateDate="2014-02-04"/>
+  <GlossaryXwalkHistory Id="10" GlossTypeParent="Business Rule" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="HomelessJUnit" GlossTypeChild="Data Element" CreateDate="2014-02-04"/>
+  <GlossaryXwalkHistory Id="11" GlossTypeParent="Business Rule" DeleteDate="2014-02-04" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="Homeless" GlossTypeChild="Data Element" DeleteUserId="SYSTEM" CreateDate="2014-02-04"/>
+  <GlossaryXwalkHistory Id="12" GlossTypeParent="Business Rule" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="HomelessJUnit" GlossTypeChild="Data Element" CreateDate="2014-02-04"/>
 </dataset>

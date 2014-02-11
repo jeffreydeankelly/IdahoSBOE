@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="257" key="DIALOG_WIDTH"/>
-		<item value="275" key="DIALOG_Y_ORIGIN"/>
-		<item value="840" key="DIALOG_X_ORIGIN"/>
+		<item value="490" key="DIALOG_WIDTH"/>
+		<item value="305" key="DIALOG_Y_ORIGIN"/>
+		<item value="-663" key="DIALOG_X_ORIGIN"/>
 		<item value="380" key="DIALOG_HEIGHT"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
@@ -13,13 +13,24 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="PersistenceUnit" key="selection"/>
+		<item value="score" key="selection"/>
 		<list key="findhistory">
-			<item value="persistenceUnit"/>
-			<item value="jasper"/>
-			<item value="dataHolder"/>
+			<item value="score"/>
+			<item value="JSFUtils"/>
+			<item value="getFromSession"/>
+			<item value="GlossaryHistory"/>
+			<item value="SEQ_NAME"/>
+			<item value="SEQ"/>
+			<item value="SYSDATE"/>
+			<item value="CURRENT_DATE"/>
 		</list>
 		<list key="replacehistory">
+			<item value="GETDATE()"/>
+			<item value="GlossaryUser"/>
+			<item value="GlossaryUsagePage"/>
+			<item value="GlossaryUsageStatistics"/>
+			<item value="gov$idaho$sboe"/>
+			<item value="gov/idaho/sboe/view"/>
 		</list>
 	</section>
 </section>

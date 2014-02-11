@@ -8,7 +8,7 @@
 <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk7"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.sun.enterprise.glassfish.bootstrap.Main"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value=" "/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=9009 "/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=9009"/>
 <stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="C:/tools/glassfish4/glassfish"/>
 <stringAttribute key="server-id" value="GlassFish 4.0 at localhost"/>
 </launchConfiguration>

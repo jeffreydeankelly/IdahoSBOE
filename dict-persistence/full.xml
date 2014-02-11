@@ -1,38 +1,128 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dataset>
   <DictUser/>
-  <Glossary GlossType="Business Rule" ItemName="Academic Subject (Assessment)" ItemNarrative="RLA - Reading/Language Art"/>
-  <Glossary GlossType="Business Rule" ItemName="Academic Subject (Secondary)" ItemNarrative="&lt;p&gt;ENGL - English &lt;br&gt;M - Mathematics &lt;br&gt;S - Science &lt;br&gt;SS - Social Sciences"/>
-  <Glossary GlossType="Business Rule" ItemName="AMAO Proficiency Attainment Status for Limited English Proficient Students" ItemNarrative="&lt;p&gt;METAMAOLEP - Met the Annual Measurable Achievement Objectives (AMAO) for Limited English Proficient (LEP) Students"/>
-  <Glossary GlossType="Business Rule" ItemName="Base Salary" ItemNarrative="&lt;p&gt;Do not include additional pay for additional duties. If individual has"/>
-  <Glossary GlossType="Data Element" ItemName="Attends District Funded GED Program" ItemNarrative="GED funded using state funds either in the form of a district run GED program or tuition paid, by the district, to an external GED program."/>
-  <Glossary GlossType="Data Element" ItemName="Bilingual" ItemNarrative="This one digit field indicates whether the student is currently enrolled in a bilingual program, is in the monitoring period, or is Exited.  Must be a valid code as defined in the Student Data Elements and Definitions document or Zero-fill."/>
-  <GlossaryHistory/>
+  <Glossary Id="1" GlossType="Business Rule" ItemName="AMAO Proficiency Attainment Status for Limited English Proficient Students" ItemNarrative="&lt;p&gt;METAMAOLEP - Met the Annual Measurable Achievement Objectives (AMAO) for Limited English Proficient (LEP) Students" CreateUserId="SYSTEM" CreateDate="2014-02-07"/>
+  <Glossary Id="2" GlossType="Business Rule" ItemName="Academic Subject (Assessment)" ItemNarrative="RLA - Reading/Language Art" CreateUserId="SYSTEM" CreateDate="2014-02-07"/>
+  <Glossary Id="3" GlossType="Business Rule" ItemName="Academic Subject (Secondary)" ItemNarrative="&lt;p&gt;ENGL - English &lt;br&gt;M - Mathematics &lt;br&gt;S - Science &lt;br&gt;SS - Social Sciences" CreateUserId="SYSTEM" CreateDate="2014-02-07"/>
+  <Glossary Id="4" GlossType="Business Rule" ItemName="Base Salary" ItemNarrative="&lt;p&gt;Do not include additional pay for additional duties. If individual has" CreateUserId="SYSTEM" CreateDate="2014-02-07"/>
+  <Glossary Id="5" GlossType="Data Element" ItemName="Attends District Funded GED Program" ItemNarrative="GED funded using state funds either in the form of a district run GED program or tuition paid, by the district, to an external GED program." CreateUserId="SYSTEM" CreateDate="2014-02-07"/>
+  <Glossary Id="6" GlossType="Data Element" ItemName="Bilingual" ItemNarrative="This one digit field indicates whether the student is currently enrolled in a bilingual program, is in the monitoring period, or is Exited.  Must be a valid code as defined in the Student Data Elements and Definitions document or Zero-fill." CreateUserId="SYSTEM" CreateDate="2014-02-07"/>
+  <Glossary Id="7" GlossType="Data Element" ItemName="Additional Contract" ItemNarrative="&lt;br&gt;Additional contract for an administrative unit employee.  This includes additional pay received beyond the persons regular contract or addendum to his/her contract." CreateUserId="SYSTEM" CreateDate="2014-02-07"/>
+  <Glossary Id="8" GlossType="Business Rule" ItemName="Additional Contract - Form SED-409" ItemNarrative="&lt;p&gt;Form SED-409 - Enter a &amp;quot;Y&amp;quot; for all staff employed on the basis of purchased services contracts. The data system will generate a printout of all staff reported with a &amp;quot;Y&amp;quot; under Purchased Services, and you will be required to attach appropriately signed contracts to the printout.&lt;/p&gt;" CreateUserId="SYSTEM" CreateDate="2014-02-07"/>
+  <Glossary Id="9" GlossType="Collection" ItemName="Application for Federal IDEA Flow through Funds - Form SED-409" ItemNarrative="&lt;br&gt;An application to request for funds under the Federal IDEA (Individuals with Disabilities Education Act).&lt;br&gt;&lt;br&gt;For more information please go to the following web site:&lt;a href=http://www.cde.state.co.us/cdespedfin/download/pdf/FY08/FED/Narrative_Forms_FY08.pdf&gt;Application for Federal Special Education Funds&lt;/a&gt;." CreateUserId="SYSTEM" CreateDate="2014-02-07"/>
+  <Glossary Id="10" GlossType="Collection" ItemName="Student October - Form DAR-106" ItemNarrative="&lt;b&gt;Collection is:  ACTIVE, MANDATORY, OCTOBER - NOVEMBER, ELECTRONIC (ADE) SUBMITTAL&lt;/b&gt;&lt;br&gt;&lt;br&gt;Collection also known as:  October Count. &lt;p&gt;Student October collects information on all grades, while Colorado Student Assessment Program (CSAP) labels are valid only for grades 3 through 10.&lt;/p&gt;For more information please go to the following website:&lt;a href=&quot;https://ade.cde.state.co.us/doc_toc.htm#student&quot;&lt;u&gt;Student October&lt;/a&gt;.&lt;/p&gt;" CreateUserId="SYSTEM" CreateDate="2014-02-07"/>
+  <GlossaryHistory Id="1" GlossType="Data Element" CreateUserId="SYSTEM" ItemNarrative="JUnit Narrative" EffDateStart="2014-02-03" CreateDate="2014-02-03" ItemName="HomelessJUnit"/>
+  <GlossaryHistory Id="2" GlossType="Business Rule" CreateUserId="SYSTEM" ItemNarrative="Homeless BR" EffDateStart="2014-02-03" CreateDate="2014-02-03" ItemName="Homeless"/>
+  <GlossaryHistory Id="3" GlossType="Data Element" CreateUserId="SYSTEM" ItemNarrative="JUnit Narrative" EffDateStart="2014-02-03" CreateDate="2014-02-03" ItemName="HomelessJUnit"/>
+  <GlossaryHistory Id="4" GlossType="Business Rule" CreateUserId="SYSTEM" ItemNarrative="Homeless BR" EffDateStart="2014-02-03" CreateDate="2014-02-03" ItemName="Homeless"/>
+  <GlossaryHistory Id="5" GlossType="Data Element" CreateUserId="SYSTEM" ItemNarrative="JUnit Narrative" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="HomelessJUnit"/>
+  <GlossaryHistory Id="6" GlossType="Business Rule" CreateUserId="SYSTEM" ItemNarrative="Homeless BR" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="Homeless"/>
+  <GlossaryHistory Id="7" GlossType="Data Element" CreateUserId="SYSTEM" ItemNarrative="JUnit Narrative" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="HomelessJUnit"/>
+  <GlossaryHistory Id="8" GlossType="Data Element" CreateUserId="SYSTEM" ItemNarrative="JUnit Narrative" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="HomelessJUnit"/>
+  <GlossaryHistory Id="9" GlossType="Business Rule" CreateUserId="SYSTEM" ItemNarrative="Homeless BR" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="Homeless"/>
+  <GlossaryHistory Id="10" GlossType="Data Element" DeleteUserId="SYSTEM" CreateUserId="SYSTEM" ItemNarrative="Homeless DE" DeleteDate="2014-02-04" EffDateStart="2014-02-03" CreateDate="2014-02-03" ItemName="Homeless"/>
+  <GlossaryHistory Id="11" GlossType="Data Element" CreateUserId="SYSTEM" ItemNarrative="JUnit Narrative" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="HomelessJUnit"/>
+  <GlossaryHistory Id="12" GlossType="Data Element" CreateUserId="SYSTEM" ItemNarrative="JUnit Narrative" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="HomelessJUnit"/>
+  <GlossaryHistory Id="13" GlossType="Data Element" CreateUserId="SYSTEM" ItemNarrative="JUnit Narrative" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="HomelessJUnit"/>
+  <GlossaryHistory Id="14" GlossType="Data Element" CreateUserId="SYSTEM" ItemNarrative="JUnit Narrative" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="HomelessJUnit"/>
+  <GlossaryHistory Id="15" GlossType="Business Rule" CreateUserId="SYSTEM" ItemNarrative="Homeless BR" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="Homeless"/>
+  <GlossaryHistory Id="16" GlossType="Data Element" DeleteUserId="SYSTEM" CreateUserId="SYSTEM" ItemNarrative="Homeless DE" DeleteDate="2014-02-04" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="Homeless"/>
+  <GlossaryHistory Id="17" GlossType="Data Element" CreateUserId="SYSTEM" ItemNarrative="JUnit Narrative" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="HomelessJUnit"/>
   <GlossaryHistoryNarrIndx/>
   <GlossaryNarrIndx/>
   <GlossaryNoiseWord/>
-  <GlossaryType GlossType="Business Rule" GlossDesc="Business Rule Description" GlossVisible="1"/>
-  <GlossaryType GlossType="Collection" GlossDesc="Collection Description" GlossVisible="1"/>
-  <GlossaryType GlossType="Data Element" GlossDesc="Data Element Description" GlossVisible="1"/>
-  <GlossaryType GlossType="Report" GlossDesc="Report Element Description" GlossVisible="1"/>
+  <GlossaryType GlossType="Business Rule" GlossDesc="Business Rule Description" GlossVisible="Y"/>
+  <GlossaryType GlossType="Collection" GlossDesc="Collection Description" GlossVisible="Y"/>
+  <GlossaryType GlossType="Data Element" GlossDesc="Data Element Description" GlossVisible="Y"/>
+  <GlossaryType GlossType="Report" GlossDesc="Report Element Description" GlossVisible="Y"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="S" GlossaryUsageExtra="Salary" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f0c8e4047bb878daaafcc16af66d" GlossaryUsageTimestamp="2014-02-04 13:37:43.55"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="S" GlossaryUsageExtra="Salary" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f0c8e4047bb878daaafcc16af66d" GlossaryUsageTimestamp="2014-02-04 13:45:19.51"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="S" GlossaryUsageExtra="Salary" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f145c75c36b447aba8e12de3aa31" GlossaryUsageTimestamp="2014-02-04 13:46:13.307"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="S" GlossaryUsageExtra="Salary" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:15:05.117"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="C" GlossaryUsageExtra="" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:48:05.737"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="K" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:48:09.733"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="G" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:48:14.587"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="C" GlossaryUsageExtra="" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="4e4ac56322dd7f920c307522775c" GlossaryUsageTimestamp="2014-02-05 16:51:52.387"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="B" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="4e4ac56322dd7f920c307522775c" GlossaryUsageTimestamp="2014-02-05 16:52:51.787"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="C" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="4e4ac56322dd7f920c307522775c" GlossaryUsageTimestamp="2014-02-05 16:52:59.587"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="D" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="4e4ac56322dd7f920c307522775c" GlossaryUsageTimestamp="2014-02-05 16:53:01.333"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="E" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="4e4ac56322dd7f920c307522775c" GlossaryUsageTimestamp="2014-02-05 16:53:02.77"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="F" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="4e4ac56322dd7f920c307522775c" GlossaryUsageTimestamp="2014-02-05 16:53:04.847"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="A" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="4e4ac56322dd7f920c307522775c" GlossaryUsageTimestamp="2014-02-05 16:53:06.553"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="C" GlossaryUsageExtra="" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="4e87cceb8b441ca8d949f66e4c14" GlossaryUsageTimestamp="2014-02-05 16:57:12.773"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="C" GlossaryUsageExtra="" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="4f05b8af3032ef3f116c5341469c" GlossaryUsageTimestamp="2014-02-05 17:04:36.01"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="C" GlossaryUsageExtra="" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="4f05b8af3032ef3f116c5341469c" GlossaryUsageTimestamp="2014-02-05 17:05:20.883"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="C" GlossaryUsageExtra="" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="4fd5b8904fd82b08d19c3129d976" GlossaryUsageTimestamp="2014-02-05 17:18:42.91"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="C" GlossaryUsageExtra="" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="50a6ee7c30c1dd59842e2deb3bc3" GlossaryUsageTimestamp="2014-02-05 17:37:01.51"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="C" GlossaryUsageExtra="" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="50ec1b5ceea07faf2b1b306cca10" GlossaryUsageTimestamp="2014-02-05 17:37:45.74"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="C" GlossaryUsageExtra="" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="8ecad117558df56f07d3f3d41a13" GlossaryUsageTimestamp="2014-02-06 11:39:12.087"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="C" GlossaryUsageExtra="" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="8ecad117558df56f07d3f3d41a13" GlossaryUsageTimestamp="2014-02-06 11:39:33.597"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="C" GlossaryUsageExtra="" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="98b674c811689b63ae5f412f21cc" GlossaryUsageTimestamp="2014-02-06 14:32:25.64"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="C" GlossaryUsageExtra="" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="98b674c811689b63ae5f412f21cc" GlossaryUsageTimestamp="2014-02-06 14:37:55.047"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="C" GlossaryUsageExtra="" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="99651d36f93b36134d4d460c954b" GlossaryUsageTimestamp="2014-02-06 14:44:26.797"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="C" GlossaryUsageExtra="" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="99e8498f017805adcf3cafd42e49" GlossaryUsageTimestamp="2014-02-06 14:53:41.393"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="C" GlossaryUsageExtra="" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="a652ff34a120023d1e2409859a29" GlossaryUsageTimestamp="2014-02-06 18:30:11.853"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="C" GlossaryUsageExtra="" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="a652ff34a120023d1e2409859a29" GlossaryUsageTimestamp="2014-02-06 18:33:23.07"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="C" GlossaryUsageExtra="" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="a652ff34a120023d1e2409859a29" GlossaryUsageTimestamp="2014-02-06 18:33:45.177"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="S" GlossaryUsageExtra="October" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="a652ff34a120023d1e2409859a29" GlossaryUsageTimestamp="2014-02-06 18:33:52.687"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="C" GlossaryUsageExtra="" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="ed8b394c52930797aafaf038cfe2" GlossaryUsageTimestamp="2014-02-07 15:15:05.04"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="F" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:48:16.813"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="E" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:48:18.277"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="D" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:48:19.203"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="C" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:48:20.533"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="S" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:48:22.797"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="A" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:48:29.053"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="F" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:52:14.56"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="A" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:52:17.08"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="H" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:53:58.603"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="A" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:58:11.437"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="B" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:58:40.097"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="C" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:58:49.137"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="D" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:58:51.187"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="E" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:58:52.807"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="F" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:58:53.893"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="G" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:58:55.177"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="H" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:58:56.377"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="I" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:58:58.093"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="J" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:58:59.677"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="K" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:59:01.067"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="L" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:59:02.447"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="M" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:59:03.31"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="T" GlossaryUsageExtra="B" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 14:59:16.46"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="C" GlossaryUsageExtra="" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 15:00:42.597"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="C" GlossaryUsageExtra="" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="f2eaf736d20f35ec43668f5e712d" GlossaryUsageTimestamp="2014-02-04 15:02:30.247"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="C" GlossaryUsageExtra="" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="4fd5b8904fd82b08d19c3129d976" GlossaryUsageTimestamp="2014-02-05 17:31:00.187"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="C" GlossaryUsageExtra="" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="a72f3e63c04ffd825406a728f4eb" GlossaryUsageTimestamp="2014-02-06 18:45:15.197"/>
+  <GlossaryUsageStatistics GlossaryUsagePage="S" GlossaryUsageExtra="October" GlossaryUsageIP="0:0:0:0:0:0:0:1" GlossaryUsageSession="a72f3e63c04ffd825406a728f4eb" GlossaryUsageTimestamp="2014-02-06 18:45:26.067"/>
   <GlossaryWordAlias/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="District Number" GlossTypeParent="Data Element" GlossTypeChild="District Number"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="Ethnic Category" GlossTypeParent="Data Element" GlossTypeChild="Ethnic Category"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="Gender" GlossTypeParent="Data Element" GlossTypeChild="Gender"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="Language Background" GlossTypeParent="Data Element" GlossTypeChild="Language Background"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="LASID" GlossTypeParent="Data Element" GlossTypeChild="LASID"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="Racial Category" GlossTypeParent="Data Element" GlossTypeChild="Racial Category"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="SASID" GlossTypeParent="Data Element" GlossTypeChild="SASID"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Business Rule" ItemNameChild="Section 504 Handicapped" GlossTypeParent="Data Element" GlossTypeChild="Section 504 Handicapped"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="District Number"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="Ethnic Category"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="Gender"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="Language Background"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="LASID"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="Racial Category"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="SASID"/>
-  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-01-29" ItemNameParent="Collection" ItemNameChild="Student October" GlossTypeParent="Data Element" GlossTypeChild="Section 504 Handicapped"/>
-  <GlossaryXwalkHistory/>
-  <KeySequence SeqName="GlossaryHistorySeq" SeqCount="0"/>
-  <KeySequence SeqName="GlossaryXwalkHistorySeq" SeqCount="0"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="District Number" ItemNameChild="District Number" GlossTypeParent="Business Rule" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Ethnic Category" ItemNameChild="Ethnic Category" GlossTypeParent="Business Rule" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Gender" ItemNameChild="Gender" GlossTypeParent="Business Rule" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Language Background" ItemNameChild="Language Background" GlossTypeParent="Business Rule" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="LASID" ItemNameChild="LASID" GlossTypeParent="Business Rule" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Racial Category" ItemNameChild="Racial Category" GlossTypeParent="Business Rule" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="SASID" ItemNameChild="SASID" GlossTypeParent="Business Rule" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Section 504 Handicapped" ItemNameChild="Section 504 Handicapped" GlossTypeParent="Business Rule" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Student October" ItemNameChild="District Number" GlossTypeParent="Collection" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Student October" ItemNameChild="Ethnic Category" GlossTypeParent="Collection" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Student October" ItemNameChild="Gender" GlossTypeParent="Collection" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Student October" ItemNameChild="Language Background" GlossTypeParent="Collection" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Student October" ItemNameChild="LASID" GlossTypeParent="Collection" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Student October" ItemNameChild="Racial Category" GlossTypeParent="Collection" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Student October" ItemNameChild="SASID" GlossTypeParent="Collection" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Student October" ItemNameChild="Section 504 Handicapped" GlossTypeParent="Collection" GlossTypeChild="Data Element"/>
+  <GlossaryXwalkHistory Id="1" GlossTypeParent="Business Rule" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="HomelessJUnit" GlossTypeChild="Data Element" CreateDate="2014-02-03"/>
+  <GlossaryXwalkHistory Id="2" GlossTypeParent="Business Rule" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="HomelessJUnit" GlossTypeChild="Data Element" CreateDate="2014-02-03"/>
+  <GlossaryXwalkHistory Id="3" GlossTypeParent="Business Rule" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="HomelessJUnit" GlossTypeChild="Data Element" CreateDate="2014-02-04"/>
+  <GlossaryXwalkHistory Id="4" GlossTypeParent="Business Rule" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="HomelessJUnit" GlossTypeChild="Data Element" CreateDate="2014-02-04"/>
+  <GlossaryXwalkHistory Id="5" GlossTypeParent="Business Rule" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="HomelessJUnit" GlossTypeChild="Data Element" CreateDate="2014-02-04"/>
+  <GlossaryXwalkHistory Id="6" GlossTypeParent="Business Rule" DeleteDate="2014-02-04" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="Homeless" GlossTypeChild="Data Element" DeleteUserId="SYSTEM" CreateDate="2014-02-04"/>
+  <GlossaryXwalkHistory Id="7" GlossTypeParent="Business Rule" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="HomelessJUnit" GlossTypeChild="Data Element" CreateDate="2014-02-04"/>
+  <GlossaryXwalkHistory Id="8" GlossTypeParent="Business Rule" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="HomelessJUnit" GlossTypeChild="Data Element" CreateDate="2014-02-04"/>
+  <GlossaryXwalkHistory Id="9" GlossTypeParent="Business Rule" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="HomelessJUnit" GlossTypeChild="Data Element" CreateDate="2014-02-04"/>
+  <GlossaryXwalkHistory Id="10" GlossTypeParent="Business Rule" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="HomelessJUnit" GlossTypeChild="Data Element" CreateDate="2014-02-04"/>
+  <GlossaryXwalkHistory Id="11" GlossTypeParent="Business Rule" DeleteDate="2014-02-04" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="Homeless" GlossTypeChild="Data Element" DeleteUserId="SYSTEM" CreateDate="2014-02-04"/>
+  <GlossaryXwalkHistory Id="12" GlossTypeParent="Business Rule" ItemNameParent="Homeless" CreateUserId="SYSTEM" ItemNameChild="HomelessJUnit" GlossTypeChild="Data Element" CreateDate="2014-02-04"/>
+  <KeySequence SEQ_NAME="GlossaryHistorySeq" SEQ_COUNT="17"/>
+  <KeySequence SEQ_NAME="GlossaryXwalkHistorySeq" SEQ_COUNT="12"/>
 </dataset>
