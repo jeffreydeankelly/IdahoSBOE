@@ -16,16 +16,17 @@ CREATE TABLE GlossaryType (
 GO
 
 CREATE TABLE Glossary (
+	Id	 			INT				IDENTITY(1,1) NOT NULL,
 	GlossType		VARCHAR(30)		NOT NULL, 
 	ItemName		VARCHAR(80)		NOT NULL, 
 	ItemNarrative	VARCHAR(4000)	NOT NULL, 
 	CreateUserId	VARCHAR(30), 
 	UpdateUserId	VARCHAR(30), 
-	EffDateStart	DATE, 
-	EffDateEnd		DATE, 
-	CreateDate		DATE, 
-	UpdateDate		DATE, 
-	CONSTRAINT PkGloss PRIMARY KEY (GlossType, ItemName)
+	EffDateStart	DATETIME, 
+	EffDateEnd		DATETIME, 
+	CreateDate		DATETIME, 
+	UpdateDate		DATETIME, 
+	CONSTRAINT PkGloss PRIMARY KEY (Id)
 )
 GO
 
@@ -34,12 +35,20 @@ ALTER TABLE Glossary
       REFERENCES GlossaryType (GlossType)
 GO
 
+-- Section to create Full Text Search infrastructure
+CREATE FULLTEXT CATALOG GlossaryFTCatalog;
+
+CREATE FULLTEXT INDEX ON Glossary (ItemName, ItemNarrative)
+KEY INDEX PkGloss ON GlossaryFTCatalog --Unique index
+WITH CHANGE_TRACKING AUTO              --Population type;
+GO
+
 CREATE TABLE GlossaryNarrIndx (
 	GlossType		VARCHAR(30)	NOT NULL, 
 	ItemName		VARCHAR(80)	NOT NULL, 
 	Word			VARCHAR(80)	NOT NULL, 
 	CreateUserId	VARCHAR(30)	NOT NULL, 
-	CreateDate		DATE		NOT NULL, 
+	CreateDate		DATETIME		NOT NULL, 
 	CONSTRAINT PkGlossNarrIndx PRIMARY KEY (GlossType, ItemName, Word)
 )
 GO
@@ -54,13 +63,13 @@ CREATE TABLE GlossaryHistory (
 	GlossType		VARCHAR(30)		NOT NULL, 
 	DeleteUserId	VARCHAR(30), 
 	CreateUserId	VARCHAR(30)		NOT NULL, 
-	UpdateDate		DATE, 
+	UpdateDate		DATETIME, 
 	ItemNarrative	VARCHAR(4000)	NOT NULL, 
-	DeleteDate		DATE, 
-	EffDateStart	DATE			NOT NULL, 
+	DeleteDate		DATETIME, 
+	EffDateStart	DATETIME			NOT NULL, 
 	UpdateUserId	VARCHAR(30), 
-	CreateDate		DATE			NOT NULL, 
-	EffDateEnd		DATE, 
+	CreateDate		DATETIME			NOT NULL, 
+	EffDateEnd		DATETIME, 
 	ItemName		VARCHAR(80)		NOT NULL, 
 	CONSTRAINT PkGlossHist PRIMARY KEY (Id)
 )
@@ -75,14 +84,14 @@ CREATE TABLE GlossaryHistoryNarrIndx (
 	Id				INT			IDENTITY(1,1) NOT NULL,
 	Word			VARCHAR(80) NOT NULL,
 	CreateUserId	VARCHAR(30) NOT NULL, 
-	CreateDate		DATE NOT NULL, 
+	CreateDate		DATETIME NOT NULL, 
 	CONSTRAINT PkGlossHistNarrIndx PRIMARY KEY (Id, Word)
 )
 GO
 
 CREATE TABLE GlossaryXwalk (
 	CreateUserId	VARCHAR(30)	NOT NULL, 
-	CreateDate		DATE		NOT NULL, 
+	CreateDate		DATETIME		NOT NULL, 
 	ItemNameParent	VARCHAR(80)	NOT NULL, 
 	ItemNameChild	VARCHAR(80)	NOT NULL, 
 	GlossTypeParent	VARCHAR(30)	NOT NULL, 
@@ -97,13 +106,13 @@ GO
 CREATE TABLE GlossaryXwalkHistory (
 	Id				INT			NOT NULL, 
 	GlossTypeParent	VARCHAR(30)	NOT NULL, 
-	DeleteDate		DATE, 
+	DeleteDate		DATETIME, 
 	ItemNameParent	VARCHAR(80)	NOT NULL, 
 	CreateUserId	VARCHAR(30)	NOT NULL, 
 	ItemNameChild	VARCHAR(80)	NOT NULL, 
 	GlossTypeChild	VARCHAR(30)	NOT NULL, 
 	DeleteUserId	VARCHAR(30), 
-	CreateDate		DATE		NOT NULL, 
+	CreateDate		DATETIME		NOT NULL, 
 	CONSTRAINT PkGlossXwalkHist PRIMARY KEY (Id)
 )
 GO
@@ -150,3 +159,4 @@ GO
 INSERT INTO KeySequence(SEQ_NAME, SEQ_COUNT) VALUES ('GlossaryXwalkHistorySeq', 0);
 INSERT INTO KeySequence(SEQ_NAME, SEQ_COUNT) VALUES ('GlossaryHistorySeq', 0);
 GO
+

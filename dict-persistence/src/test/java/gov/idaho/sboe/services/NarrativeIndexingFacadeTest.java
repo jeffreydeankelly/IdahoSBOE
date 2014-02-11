@@ -111,7 +111,8 @@ public class NarrativeIndexingFacadeTest extends AbstractJPA {
     public void testBuildMultiWhereAndSelectClause() throws Exception {
         StringBuffer selectSql = new StringBuffer();
         StringBuffer orderBySql = new StringBuffer();
-        String where = nif.buildWhereClause("homeless student lunch program", selectSql, orderBySql);
+//        String where = nif.buildWhereClause("homeless student lunch program", selectSql, orderBySql);
+        String where = nif.buildWhereClause("homeless student lunch program", selectSql, null);
         assertTrue("Where clause empty", where.length()>0);
         String sql = selectSql.toString();
         assertTrue("Select clause empty", sql.length()>0);

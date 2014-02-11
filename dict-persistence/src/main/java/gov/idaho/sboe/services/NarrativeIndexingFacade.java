@@ -213,13 +213,29 @@ public class NarrativeIndexingFacade extends AbstractFacade {
                 querySql.append(")");
             }
             System.out.println("Query: "+querySql.toString());
-            List<Vector> results = em.createNativeQuery(querySql.toString()).
-//                    " CONTAINS(ItemNarrative, '$student NEAR $homeless', 1) > 0 OR " + 
-//                        "CONTAINS(ItemNarrative, 'syn(student) NEAR $homeless', 2) > 0 " + 
-                 getResultList();
-            // BigDecimal, String, String, String
-            for (Vector v: results) {
-                list.add(new Glossary.PK((String)v.get(0), (String)v.get(1)));
+
+            /*
+             * Original code:
+             * 
+             *   List<Vector> results = em.createNativeQuery(querySql.toString()).
+//           *         " CONTAINS(ItemNarrative, '$student NEAR $homeless', 1) > 0 OR " + 
+//           *         "CONTAINS(ItemNarrative, 'syn(student) NEAR $homeless', 2) > 0 " + 
+             *    getResultList();
+//             *    BigDecimal, String, String, String
+             *    for (Vector v: results) {
+             *        list.add(new Glossary.PK((String)v.get(0), (String)v.get(1)));
+             *    }
+             *
+             *  Below is a first version refactoring
+            List<Object[]> results = em.createNativeQuery(querySql.toString()).getResultList();
+            for (Object[] o: results) {
+               list.add(new Glossary.PK(o[0].toString(), o[1].toString()));
+            }
+			*/
+
+            List<Glossary.PK> results = em.createNativeQuery(querySql.toString()).getResultList();
+            for (Glossary.PK pk: results) {
+            	list.add(pk);
             }
         } catch (DatabaseException sqle) {
             // catch SQL Exception separately - may mean badly formed query
@@ -354,7 +370,7 @@ public class NarrativeIndexingFacade extends AbstractFacade {
             // scored only 10, where another Business Rule where 'student' appeared
             // many times scored 33!
             // But since I added this, I will leave in for future reference.
-//            if (orderBySql != null) orderBySql.append("GlossType, ItemName");
+            // if (orderBySql != null) orderBySql.append("GlossType, ItemName");
             if (orderBySql != null) orderBySql.append("totalscore DESC");
         } else
         /*
@@ -370,16 +386,16 @@ public class NarrativeIndexingFacade extends AbstractFacade {
             final String tok2 = iterator.next().trim();
             concatDoubleTokenPhrase(querySql, selectSql, "ItemNarrative", tok1, tok2, 1);
             concatDoubleTokenPhrase(querySql, selectSql, "ItemName", tok1, tok2, 5);
-/*            if (orderBySql != null) orderBySql.append("totalscore DESC");
-*/        } else if (tokens.size()> 2) {
+            if (orderBySql != null) orderBySql.append("totalscore DESC");
+        } else if (tokens.size()> 2) {
             querySql.append("(");
             int count = concatFromIterator(querySql, selectSql, "ItemNarrative", tokens, 1);
             if (selectSql != null) selectSql.append("+");
             querySql.append(") OR (");
             concatFromIterator(querySql, selectSql, "ItemName", tokens, count);
             querySql.append(")");
-/*            if (orderBySql != null) orderBySql.append("totalscore DESC");
-*/        }
+            if (orderBySql != null) orderBySql.append("totalscore DESC");
+        }
         return querySql.toString();
     }
 
@@ -428,10 +444,14 @@ public class NarrativeIndexingFacade extends AbstractFacade {
             System.out.println("Select: "+selectSql.toString());
             System.out.println("Query: "+querySql.toString());
             querySql.append(buildWhereClause(em, sarg, selectSql, orderBySql));
-/*            selectSql.append(" as totalscore, GlossType,ItemName, ItemNarrative ");
-*/          selectSql.append(" as GlossType, ItemName, ItemNarrative ");
+            /* 
+             * The following '0 as totalscore' is a temporary hack to create SearchResult objects
+             * with this query until the RANK operator is added to the build process
+             */
+            selectSql.append("0 as totalscore, GlossType, ItemName, ItemNarrative ");
             selectSql.append(querySql).append(orderBySql);
             log.info("ksearch: " + selectSql.toString());
+            /*
             List<Vector> results = em.createNativeQuery(selectSql.toString()).
                  getResultList();
             // BigDecimal, String, String, String
@@ -439,6 +459,12 @@ public class NarrativeIndexingFacade extends AbstractFacade {
                 list.add(new SearchResult((BigDecimal)v.get(0), 
                     (String)v.get(1), (String)v.get(2), (String)v.get(3)));
             }
+            */
+            List<SearchResult> results = em.createNativeQuery(selectSql.toString()).getResultList();
+               // BigDecimal, String, String, String
+               for (SearchResult sr: results) {
+                   list.add(sr);
+               }
         } catch (DatabaseException sqle) {
             // catch SQL Exception separately - may mean badly formed query
             // as in the search was "not and syn()"!
