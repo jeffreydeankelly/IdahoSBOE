@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1252"?>
+<?xml version="1.0" encoding="utf-8"?>
 <adf-faces-config xmlns="http://xmlns.oracle.com/adf/view/faces/config">
    <debug-output>false</debug-output>
    <skin-family>oracle</skin-family>

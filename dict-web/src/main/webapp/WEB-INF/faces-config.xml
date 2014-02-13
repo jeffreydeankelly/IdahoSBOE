@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1252"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE faces-config PUBLIC
   "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN"
   "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
@@ -48,16 +48,16 @@
     
        There are three persistence-units defined in the ccat-jpa 
        /META-INF/persistence.xml.
-       1. default – this unit should only be used for unit testing.  
+       1. default â€“ this unit should only be used for unit testing.  
           It creates an Apache Derby database on the fly and then tells 
           toplink to build the database tables associated with the 
           entity classes.
           
-       2. edwi – this unit uses local connection.  This connection can 
+       2. edwi â€“ this unit uses local connection.  This connection can 
           be used within the import command line utility program.  This 
           type of connection requires imbedded connection information.
           
-       3. edwi_JTA – this unit uses a JTA connection.  It uses data source 
+       3. edwi_JTA â€“ this unit uses a JTA connection.  It uses data source 
           jdbc/edwi.  This type of connection can be configured at the 
           application server level and is the preferable type of connection 
           within the web container.
@@ -173,6 +173,7 @@
       <to-view-id>/feedbackusage.jspx</to-view-id>
     </navigation-case>
   </navigation-rule>
+  
   <application>
     <default-render-kit-id>oracle.adf.core</default-render-kit-id>
     <message-bundle>resources.application</message-bundle>

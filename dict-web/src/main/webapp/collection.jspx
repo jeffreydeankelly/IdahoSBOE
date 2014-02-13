@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='windows-1252'?>
+<?xml version='1.0' encoding='utf-8'?>
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
           xmlns:h="http://java.sun.com/jsf/html"
           xmlns:f="http://java.sun.com/jsf/core"
@@ -7,7 +7,7 @@
   <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
               doctype-system="http://www.w3.org/TR/html4/loose.dtd"
               doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
-  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <jsp:directive.page contentType="text/html;charset=utf-8"/>
   <link rel="shortcut icon" href="favicon.ico"/>
   <f:view>
     <f:loadBundle basename="locales.default" var="mainBundle"/>

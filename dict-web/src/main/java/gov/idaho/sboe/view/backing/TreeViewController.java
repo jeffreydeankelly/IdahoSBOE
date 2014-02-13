@@ -372,7 +372,7 @@ public abstract class TreeViewController extends AbstractViewController {
      * Collapse all nodes
      *
      * Expand/Collapse State
-     * The ADF tree components use an instance of the oracle.adf.view.faces.mod el.PathSet
+     * The ADF tree components use an instance of the oracle.adf.view.faces.model.PathSet
      * class to keep track of which elements are expanded. This instance is stored
      * as the "treeState" attribute on the component. You may use this instance
      * to programmatically control the expand/collapse state of an element in the hierarchy.
@@ -381,7 +381,9 @@ public abstract class TreeViewController extends AbstractViewController {
      *
      */
     public void collapseAllNodes() {
-        getCatalogTree().getTreeState().getKeySet().clear();
+    	if (getCatalogTree() != null) {
+    		getCatalogTree().getTreeState().getKeySet().clear();
+    	}
     }
 
     /**

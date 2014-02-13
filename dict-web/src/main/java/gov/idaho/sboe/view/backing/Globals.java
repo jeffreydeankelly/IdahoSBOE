@@ -66,7 +66,7 @@ public class Globals {
      * to the login page in the event that an operation is attempted and the user
      * has lost their session due to a timeout.</p>
      */
-    public static final String LOGIN_VIEWID = "/login.jspx";
+    public static final String LOGIN_VIEWID = "/login.jsp";
     
     /**
      * <p>The viewId of the feedback page.  This is used for programmatic navigation
