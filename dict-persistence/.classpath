@@ -15,7 +15,6 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Microsoft JDBC Driver 4.0 for SQL Server"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk7">
 		<attributes>
 			<attribute name="owner.project.facets" value="java"/>
@@ -23,5 +22,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/EclipseLink 2.5.0 - Kepler"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/dbunit-2.2"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Microsoft JDBC Driver 4.0 for SQL Server"/>
 	<classpathentry kind="output" path="target"/>
 </classpath>

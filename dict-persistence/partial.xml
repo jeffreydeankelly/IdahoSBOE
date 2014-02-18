@@ -36,6 +36,8 @@
   <GlossaryHistory Id="17" GlossType="Data Element" CreateUserId="SYSTEM" ItemNarrative="JUnit Narrative" EffDateStart="2014-02-04" CreateDate="2014-02-04" ItemName="HomelessJUnit"/>
   <GlossaryHistoryNarrIndx/>
   <GlossaryNarrIndx/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-13" ItemNameParent="Additional Contract - Form SED-409" ItemNameChild="Additional Contract" GlossTypeParent="Business Rule" GlossTypeChild="Data Element"/>
+  <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-13" ItemNameParent="Application for Federal IDEA Flow through Funds - Form SED-409" ItemNameChild="Additional Contract" GlossTypeParent="Collection" GlossTypeChild="Data Element"/>
   <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="District Number" ItemNameChild="District Number" GlossTypeParent="Business Rule" GlossTypeChild="Data Element"/>
   <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Ethnic Category" ItemNameChild="Ethnic Category" GlossTypeParent="Business Rule" GlossTypeChild="Data Element"/>
   <GlossaryXwalk CreateUserId="UserId" CreateDate="2014-02-05" ItemNameParent="Gender" ItemNameChild="Gender" GlossTypeParent="Business Rule" GlossTypeChild="Data Element"/>

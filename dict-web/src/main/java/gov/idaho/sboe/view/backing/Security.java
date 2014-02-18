@@ -1,22 +1,22 @@
 package gov.idaho.sboe.view.backing;
 
 import java.io.IOException;
-
 import java.security.Principal;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.faces.component.UIViewRoot;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
-
 import javax.faces.event.ActionEvent;
-
 import javax.servlet.http.HttpServletResponse;
-
 import javax.servlet.http.HttpSession;
 
 import org.apache.shale.tiger.managed.Bean;
 import org.apache.shale.tiger.managed.Scope;
 import org.apache.shale.view.AbstractRequestBean;
+import org.apache.shale.view.Constants;
+import org.apache.shale.view.ExceptionHandler;
 
 import gov.idaho.sboe.services.CatalogFacade;
 import gov.idaho.sboe.utils.JPAResourceBean;
@@ -39,74 +39,74 @@ public class Security extends AbstractRequestBean {
     /**
      * <p>The authenticating users password.</p>
      */
-//    private String password = null;
+    private String password = null;
     
-//    private List<String> roles = new ArrayList<String>();
+    private List<String> roles = new ArrayList<String>();
 
     public Security()
     {
-//        //need to work out how to get to the request
-//        FacesContext ctx = FacesContext.getCurrentInstance();
-//        ExternalContext ectx = ctx.getExternalContext(); 
-//        
-//       
-//        //Ask the container who the user logged in as 
-//        userId = ectx.getRemoteUser();
-//        
+        //need to work out how to get to the request
+        FacesContext ctx = FacesContext.getCurrentInstance();
+        ExternalContext ectx = ctx.getExternalContext(); 
+        
+       
+        //Ask the container who the user logged in as 
+        userId = ectx.getRemoteUser();
+        
     }
 
 
     /**
      * @param viewId pushes the target view to session scope.
      */
-//    public void setReturnViewId(String viewId) {
-//        getSessionMap().put(Globals.RETURN_VIEWID, viewId);
-//    }
+    public void setReturnViewId(String viewId) {
+        getSessionMap().put(Globals.RETURN_VIEWID, viewId);
+    }
 
     /**
      * @return <code>RETURN_VIEWID</code> from session scope or the <code>DEFAULT_RETURN_VIEWID</code>
      */
-//    public String getReturnViewId() {
-//        String returnViewId = (String)getSessionMap().get(Globals.RETURN_VIEWID);
-//        if (returnViewId == null) {
-//            return Globals.DEFAULT_RETURN_VIEWID;
-//        } else {
-//            return returnViewId;
-//        }
-//
-//    }
+    public String getReturnViewId() {
+        String returnViewId = (String)getSessionMap().get(Globals.RETURN_VIEWID);
+        if (returnViewId == null) {
+            return Globals.DEFAULT_RETURN_VIEWID;
+        } else {
+            return returnViewId;
+        }
+
+    }
 
     /**
      * <p>Programmatic navigation to the <code>returnToViewId</code></p>
      * @param context faces context
      */
-//    private void gotoReturnView(FacesContext context) {
-//        String returnToViewId = getReturnViewId();
-//
-//        UIViewRoot root = 
-//            getApplication().getViewHandler().createView(context, returnToViewId);
-//        context.setViewRoot(root);
-//        context.renderResponse();
-//
-//        // remove the cached value
-//        setReturnViewId(null);
-//    }
+    private void gotoReturnView(FacesContext context) {
+        String returnToViewId = getReturnViewId();
+
+        UIViewRoot root = 
+            getApplication().getViewHandler().createView(context, returnToViewId);
+        context.setViewRoot(root);
+        context.renderResponse();
+
+        // remove the cached value
+        setReturnViewId(null);
+    }
     
     /**
      * <p>Programmatic navigation to the login page.</p>
      * @param context faces context
      */
-//    public void gotoLoginView(FacesContext context) {
-//        if (context.getViewRoot() != null) {
-//            setReturnViewId(context.getViewRoot().getViewId());
-//        }
-//
-//
-//        UIViewRoot root = 
-//            getApplication().getViewHandler().createView(context, Globals.LOGIN_VIEWID);
-//        context.setViewRoot(root);
-//        context.renderResponse();
-//    }
+    public void gotoLoginView(FacesContext context) {
+        if (context.getViewRoot() != null) {
+            setReturnViewId(context.getViewRoot().getViewId());
+        }
+
+
+        UIViewRoot root = 
+            getApplication().getViewHandler().createView(context, Globals.LOGIN_VIEWID);
+        context.setViewRoot(root);
+        context.renderResponse();
+    }
 
 
     /**
@@ -115,8 +115,8 @@ public class Security extends AbstractRequestBean {
     public void logout(ActionEvent event) throws IOException {
         ExternalContext ectx =      
                   FacesContext.getCurrentInstance().getExternalContext();
-//        HttpServletResponse response = 
-//                  (HttpServletResponse)ectx.getResponse();
+        HttpServletResponse response = 
+                  (HttpServletResponse)ectx.getResponse();
         HttpSession session = (HttpSession)ectx.getSession(false);
         session.invalidate();
         isLoggingIn = false;
@@ -135,12 +135,12 @@ public class Security extends AbstractRequestBean {
      * @param event actionListener event that captures the <code>returnViewId</code>
      * when the login menu link is clicked.
      */
-//    public void captureReturnView(ActionEvent event) {
-//        FacesContext context = getFacesContext();
-//        if (context.getViewRoot() != null) {
-//            setReturnViewId(context.getViewRoot().getViewId());
-//        }
-//    }
+    public void captureReturnView(ActionEvent event) {
+        FacesContext context = getFacesContext();
+        if (context.getViewRoot() != null) {
+            setReturnViewId(context.getViewRoot().getViewId());
+        }
+    }
 
 
    /**
@@ -208,9 +208,9 @@ public class Security extends AbstractRequestBean {
     /**
      * @param userId id of the authenticating user
      */
-//    public void setUserId(String userId) {
-//        this.userId = userId;
-//    }
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 
     /**
      * @return id of the authenticating user
@@ -222,16 +222,16 @@ public class Security extends AbstractRequestBean {
     /**
      * @param password of the authenticating user
      */
-//    public void setPassword(String password) {
-//        this.password = password;
-//    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     /**
      * @return password of the authenticating user
      */
-//    public String getPassword() {
-//        return password;
-//    }
+    public String getPassword() {
+        return password;
+    }
 
     public void flushCache(ActionEvent actionEvent) {
         CatalogDataAccessHelper dataHelper = 
@@ -249,12 +249,12 @@ public class Security extends AbstractRequestBean {
      *
      * @param exception Exception to be handled
      */
-    //    private void handleException(Exception exception) {
-    //        FacesContext context = FacesContext.getCurrentInstance();
-    //        ExceptionHandler handler = 
-    //            (ExceptionHandler)getBean(Constants.EXCEPTION_HANDLER);
-    //        handler.handleException(exception);
-    //    }
+    private void handleException(Exception exception) {
+        FacesContext context = FacesContext.getCurrentInstance();
+        ExceptionHandler handler = 
+            (ExceptionHandler)getBean(Constants.EXCEPTION_HANDLER);
+        handler.handleException(exception);
+    }
 
     public void setIsLoggingIn(boolean isLoggingIn) {
         this.isLoggingIn = isLoggingIn;

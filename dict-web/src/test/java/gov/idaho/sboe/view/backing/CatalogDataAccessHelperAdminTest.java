@@ -20,7 +20,7 @@ public class CatalogDataAccessHelperAdminTest extends TestCase {
     final CatalogDataAccessHelper objUnderTest;
     final CatalogFacade catalogFacade;
     final JPAResourceBean resourceBean;
-    final Security user;
+//    final Security user;
     final EntityManagerFactory emf;
     final EntityManager em;
 
@@ -29,10 +29,10 @@ public class CatalogDataAccessHelperAdminTest extends TestCase {
         resourceBean = new JPAResourceBean("edwi");
         catalogFacade = new CatalogFacade();
         catalogFacade.setPersistenceUnit(resourceBean.getFactory());
-        user = new Security() {
-            public boolean getIsAuthenticated() { return true; }
-            public String getUserId() { return "SYSTEM"; }
-        };
+//        user = new Security() {
+//            public boolean getIsAuthenticated() { return true; }
+//            public String getUserId() { return "SYSTEM"; }
+//        };
         // a hack way of properly setting the beans
         objUnderTest = new CatalogDataAccessHelper() {
             public Object getBean(final String id) {
@@ -44,9 +44,9 @@ public class CatalogDataAccessHelperAdminTest extends TestCase {
                 if (id.equals(Globals.JPA_RESOURCE)) {
                     return resourceBean;
                 }
-                if (id.equals(Globals.SECURITY)) {
-                    return user;
-                }
+//                if (id.equals(Globals.SECURITY)) {
+//                    return user;
+//                }
                return null;
             }
         };
@@ -75,9 +75,9 @@ public class CatalogDataAccessHelperAdminTest extends TestCase {
         gDE_Homeless.setPk(pkDE_Homeless);
 
         List<Glossary.PK> results = JdbcUtils.existsItem(em, pkDE_Homeless);
-        if (results == null || results.size()==0) {
-            JdbcUtils.insertItem(em, gDE_Homeless, user);
-        }
+//        if (results == null || results.size()==0) {
+//            JdbcUtils.insertItem(em, gDE_Homeless, user);
+//        }
         
         final Glossary.PK pkBR_Homeless = 
             new Glossary.PK("Business Rule", "Homeless");
@@ -86,9 +86,9 @@ public class CatalogDataAccessHelperAdminTest extends TestCase {
         gBR_Homeless.setPk(pkBR_Homeless);
 
         results = JdbcUtils.existsItem(em, pkBR_Homeless);
-        if (results == null || results.size()==0) {
-            JdbcUtils.insertItem(em, gBR_Homeless, user);
-        }
+//        if (results == null || results.size()==0) {
+//            JdbcUtils.insertItem(em, gBR_Homeless, user);
+//        }
         JdbcUtils.insertReference(em, pkBR_Homeless, pkDE_Homeless);
 
         CatalogElementBean child = new CatalogElementBean(gDE_Homeless);
@@ -108,7 +108,7 @@ public class CatalogDataAccessHelperAdminTest extends TestCase {
             Glossary gBR_Homeless = new Glossary();
             gBR_Homeless.setItemNarrative("Homeless DE");
             gBR_Homeless.setPk(pkBR_Homeless);
-            JdbcUtils.insertItem(em, gBR_Homeless, user);
+//            JdbcUtils.insertItem(em, gBR_Homeless, user);
         }
         CatalogElementBean child = new CatalogElementBean(pkBR_Homeless);
         objUnderTest.deleteItem(child);

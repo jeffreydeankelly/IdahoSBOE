@@ -38,7 +38,7 @@
 	</persistence-unit>
 	<persistence-unit name="dict-JTA" transaction-type="JTA">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-		<jta-data-source>jdbc/localSQLServer</jta-data-source>
+		<jta-data-source>jdbc/dev_SBOE_Data_Dictionary</jta-data-source>
 		<class>gov.idaho.sboe.jpa.beans.Glossary</class>
 		<class>gov.idaho.sboe.jpa.beans.Glossary.PK</class>
 		<class>gov.idaho.sboe.jpa.beans.GlossaryHistory</class>
