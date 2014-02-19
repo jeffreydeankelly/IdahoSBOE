@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<project name="dict-security" default="all" basedir=".">
+  <property file="build.properties"/>
+  <property environment="env"/>
+  <property name="dist.dir" value="../dict-web/src/main/webapp/WEB-INF/lib"/>
+  <property name="jar.name" value="dict-security.jar"/>
+  <property name="output.dir" value="classes" />
+  <path id="library.Oracle.JDBC">
+    <pathelement location="${jdev.home}/jdbc/lib/ojdbc14dms.jar"/>
+    <pathelement location="${jdev.home}/jdbc/lib/orai18n.jar"/>
+    <pathelement location="${jdev.home}/jdbc/lib/ocrs12.jar"/>
+    <pathelement location="${jdev.home}/diagnostics/lib/ojdl.jar"/>
+    <pathelement location="${jdev.home}/lib/dms.jar"/>
+  </path>
+  <path id="classpath">
+    <path refid="library.Oracle.JDBC"/>
+  </path>
+  <target name="init">
+    <tstamp/>
+    <mkdir dir="${output.dir}"/>
+    <mkdir dir="${dist.dir}"/>
+  </target>
+  <target name="all" description="Build the project" depends="compile,copy"/>
+  <target name="clean" description="Clean the project">
+    <delete includeemptydirs="true" quiet="true">
+      <fileset dir="${output.dir}" includes="**/*"/>
+    </delete>
+  </target>
+  <target name="compile" description="Compile Java source files" depends="init">
+    <javac destdir="${output.dir}" classpathref="classpath"
+           debug="${javac.debug}" nowarn="${javac.nowarn}"
+           deprecation="${javac.deprecation}" encoding="Cp1252" source="1.5"
+           target="1.5">
+      <src path="src"/>
+    </javac>
+  </target>
+  <target name="copy" description="Copy files to output directory"
+          depends="init">
+    <patternset id="copy.patterns">
+      <include name="**/*.gif"/>
+      <include name="**/*.jpg"/>
+      <include name="**/*.jpeg"/>
+      <include name="**/*.png"/>
+      <include name="**/*.properties"/>
+      <include name="**/*.xml"/>
+      <include name="**/*-apf.xml"/>
+      <include name="**/*.ejx"/>
+      <include name="**/*.xcfg"/>
+      <include name="**/*.cpx"/>
+      <include name="**/*.dcx"/>
+      <include name="**/*.wsdl"/>
+      <include name="**/*.ini"/>
+      <include name="**/*.tld"/>
+      <include name="**/*.tag"/>
+    </patternset>
+    <copy todir="${output.dir}">
+      <fileset dir="src">
+        <patternset refid="copy.patterns"/>
+      </fileset>
+    </copy>
+  </target>
+  <target name="build.jar" description="Build the jar file"
+        depends="init,compile,copy">
+        <jar destfile="${dist.dir}/${jar.name}">
+            <fileset dir="${output.dir}"/>
+        </jar>
+  </target>
+</project>
