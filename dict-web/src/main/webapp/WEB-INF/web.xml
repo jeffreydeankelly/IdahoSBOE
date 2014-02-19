@@ -75,8 +75,8 @@
             <url-pattern>/admin/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
-            <role-name>ccat_admin</role-name>
-            <role-name>ccat_demo</role-name>
+            <role-name>sboe_dict_admin</role-name>
+            <role-name>sboe_dict_demo</role-name>
         </auth-constraint>
     </security-constraint>
     
@@ -89,10 +89,10 @@
     </login-config>
     
     <security-role>
-        <role-name>ccat_admin</role-name>
+        <role-name>sboe_dict_admin</role-name>
     </security-role>
     <security-role>
-        <role-name>ccat_demo</role-name>
+        <role-name>sboe_dict_demo</role-name>
     </security-role>
     <session-config>
         <session-timeout>35</session-timeout>

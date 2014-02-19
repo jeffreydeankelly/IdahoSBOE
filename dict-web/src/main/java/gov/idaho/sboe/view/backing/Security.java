@@ -43,18 +43,14 @@ public class Security extends AbstractRequestBean {
     
     private List<String> roles = new ArrayList<String>();
 
-    public Security()
-    {
+    public Security() {
         //need to work out how to get to the request
         FacesContext ctx = FacesContext.getCurrentInstance();
         ExternalContext ectx = ctx.getExternalContext(); 
-        
-       
+
         //Ask the container who the user logged in as 
         userId = ectx.getRemoteUser();
-        
     }
-
 
     /**
      * @param viewId pushes the target view to session scope.
@@ -73,7 +69,6 @@ public class Security extends AbstractRequestBean {
         } else {
             return returnViewId;
         }
-
     }
 
     /**
@@ -101,13 +96,11 @@ public class Security extends AbstractRequestBean {
             setReturnViewId(context.getViewRoot().getViewId());
         }
 
-
         UIViewRoot root = 
             getApplication().getViewHandler().createView(context, Globals.LOGIN_VIEWID);
         context.setViewRoot(root);
         context.renderResponse();
     }
-
 
     /**
      * @param event actionListener invoked when the logout menu item is clicked
@@ -142,7 +135,6 @@ public class Security extends AbstractRequestBean {
         }
     }
 
-
    /**
      * <p>Checks to see if the user is authenticated</p>
      * @return <code>true</code> if the user is logged on
@@ -158,10 +150,9 @@ public class Security extends AbstractRequestBean {
             isLoggingIn = false;
             return false;
         }
-        
         return true;
     }
-    
+
     /**
       * <p>Checks to see if the user is run in demo mode</p>
       * @return <code>true</code> if the user is logged on
@@ -177,10 +168,9 @@ public class Security extends AbstractRequestBean {
              isLoggingIn = false;
              return false;
          }
-         if (!ctx.getExternalContext().isUserInRole("ccat_demo")) {
+         if (!ctx.getExternalContext().isUserInRole("sboe_dict_demo")) {
              return false;
          }
-
          return true;
      }
      
@@ -199,7 +189,7 @@ public class Security extends AbstractRequestBean {
                  isLoggingIn = false;
                  return false;
              }
-             if (!ctx.getExternalContext().isUserInRole("ccat_admin")) {
+             if (!ctx.getExternalContext().isUserInRole("sboe_dict_admin")) {
                  return false;
              }
              return true;
