@@ -1,11 +1,11 @@
 /** 
-*   Script to create database tables for
-*   Idaho State Board Of Education
-*   Online Data Dictionary
-*   
-*   Author:	jeffk
-*   Date:	Jan. 17, 2014
-**/
+ *   Script to create database tables for
+ *   Idaho State Board Of Education
+ *   Online Data Dictionary
+ *   
+ *   Author:	jeffk
+ *   Date:	Jan. 17, 2014
+ */
 
 CREATE TABLE GlossaryType (
 	GlossType		VARCHAR(30)		NOT NULL, 
@@ -15,6 +15,10 @@ CREATE TABLE GlossaryType (
 )
 GO
 
+/**
+ * 	The Id column was added to facilitate a fulltext catalog index
+ *	on this table.
+ */
 CREATE TABLE Glossary (
 	Id	 			INT				IDENTITY(1,1) NOT NULL,
 	GlossType		VARCHAR(30)		NOT NULL, 
@@ -26,6 +30,7 @@ CREATE TABLE Glossary (
 	EffDateEnd		DATETIME, 
 	CreateDate		DATETIME, 
 	UpdateDate		DATETIME, 
+	CONSTRAINT uc_Gloss UNIQUE (GlossType, ItemName),
 	CONSTRAINT PkGloss PRIMARY KEY (Id)
 )
 GO
@@ -118,12 +123,16 @@ CREATE TABLE GlossaryXwalkHistory (
 GO
 
 CREATE TABLE GlossaryWordAlias (
-	WordAlais	VARCHAR(80) NOT NULL, 
+	WordAlias	VARCHAR(80) NOT NULL, 
 	Word		VARCHAR(80) NOT NULL, 
-	CONSTRAINT PkGlossWordAlias PRIMARY KEY (WordAlais, Word)
+	CONSTRAINT PkGlossWordAlias PRIMARY KEY (WordAlias, Word)
 )
 GO
 
+/**
+ * Not identified in the documents "ccat-ddl-reference.doc" or "Data-Dictionary-Requirements.doc"
+ * Derived from code found in GlossaryUsage.java and CatalogFacade.java
+ */
 CREATE TABLE GlossaryUsageStatistics (
 	GlossaryUsagePage		VARCHAR(1) NOT NULL,
 	GlossaryUsageExtra		VARCHAR(200),
@@ -133,6 +142,18 @@ CREATE TABLE GlossaryUsageStatistics (
 )
 GO
 
+/**
+ * Not identified in the documents "ccat-ddl-reference.doc" or "Data-Dictionary-Requirements.doc"
+ * Derived from code found in GlossaryFeedback.java and CatalogFacade.java
+ */
+CREATE TABLE GlossaryUsagePageRating (
+	GlossaryUsagePageIP			VARCHAR(16) NOT NULL,
+	GlossaryUsagePageSession	VARCHAR(256) NOT NULL,
+	GlossaryUsagePageRating		VARCHAR(1) NOT NULL,
+	GlossaryUsagePageTimestamp	DATETIME NOT NULL,
+	GlossaryUsagePageComment	VARCHAR(4096)
+)
+GO
 
 CREATE TABLE GlossaryNoiseWord (
 	Word VARCHAR(80) NOT NULL, 

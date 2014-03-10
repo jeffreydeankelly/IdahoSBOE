@@ -1380,10 +1380,10 @@ public class CatalogFacade extends AbstractFacade {
     void persistFeedback(EntityManager em, GlossaryFeedback gf) {
         Query insert = em.createNativeQuery("insert into " +
                 "GlossaryUsagePageRating " +
-                "   (GlossaryUsagePageIP, GlossaryUsagePageRating, GlossaryUsagePageSessopm, " +
+                "   (GlossaryUsagePageIP, GlossaryUsagePageRating, GlossaryUsagePageSession, " +
                 "    GlossaryUsagePageComment, GlossaryUsagePageTimestamp)" +
                 "   VALUES" +
-                "   (#addr, #rating, #sess, #comment,  SYSDATETIME())"
+                "   (#addr, #rating, #sess, #comment,  GETDATE())"
             ).
                 setParameter("addr", gf.getIpAddress()).
                 setParameter("rating", gf.getRating()).
@@ -1429,7 +1429,7 @@ public class CatalogFacade extends AbstractFacade {
             "   GlossaryUsageTimestamp" +
             "   )" +
             "   VALUES" +
-            "   (#pi, #px, #addr, #sess,  SYSDATETIME())"
+            "   (#pi, #px, #addr, #sess,  GETDATE())"
             ).
                 setParameter("addr", gu.getIpAddress()).
                 setParameter("pi", gu.getPageId()).
