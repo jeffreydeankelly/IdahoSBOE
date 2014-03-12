@@ -136,7 +136,8 @@
                                         text="#{node.displayItemName}"
                                         immediate="true" partialSubmit="true"
                                         partialTriggers="tree treeDetail showDetail1 showNarrative showPreviousNarrative showReferences"
-                                        shortDesc="#{mainBundle.button_treearrow_tip}"/>
+                                        shortDesc="#{mainBundle.button_treearrow_tip}"
+                                        inlineStyle="#{node.showingDetail ? 'font-weight:bold;color:black;' : 'color:#663300'}"/>
                         <af:commandLink id="adminCopyCmd"
                                         actionListener="#{rolodex.copyToClipboard}"
                                         immediate="true"
