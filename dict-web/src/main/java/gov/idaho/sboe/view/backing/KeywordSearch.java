@@ -65,7 +65,12 @@ public class KeywordSearch extends AbstractViewController {
         try {
             ScratchPad.KWContext scratchPad = ((ScratchPad)getBean(Globals.SCRATCH_PAD)).searchPage;
             String sarg = scratchPad.sarg;
-            if (sarg != null && sarg.length()>0) {
+            
+            /* Changed sarg.length() requirement to > 1.
+             * The reason is that NarrativeIndexingFacade.tokenizeNarrative() 
+             * returns a null where unless "word.length() >= 2" (line 95)
+             */
+            if (sarg != null && sarg.length()>1) {
                 CatalogDataAccessHelper dataHelper = 
                     (CatalogDataAccessHelper)getBean(Globals.DATA_ACCESS_HELPER);
                 dataHelper.logUsage(Globals.PAGE_SEARCH, sarg);

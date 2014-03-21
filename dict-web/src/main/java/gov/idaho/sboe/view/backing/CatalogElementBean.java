@@ -329,8 +329,8 @@ public class CatalogElementBean implements Serializable, Comparable,
          * sets A tags inside the selected item of a tree to white text.
          */
         if (filterATags) {
-            itemNarrative = itemNarrative.replace("<a href", "<a style='color:#000000' href");
-            itemNarrative = itemNarrative.replace("<A HREF", "<a style='color:#000000' href");
+//            itemNarrative = itemNarrative.replace("<a href", "<a style='color:#000000' href");
+//            itemNarrative = itemNarrative.replace("<A HREF", "<a style='color:#000000' href");
         }
         return itemNarrative;
     }
@@ -359,8 +359,8 @@ public class CatalogElementBean implements Serializable, Comparable,
          * sets A tags inside the selected item of a tree to white text.
          */
         if (filterATags) {
-            effDateString = effDateString.replace("<a href", "<a style='color:#000000' href");
-            effDateString = effDateString.replace("<A HREF", "<a style='color:#000000' href");
+//            effDateString = effDateString.replace("<a href", "<a style='color:#000000' href");
+//            effDateString = effDateString.replace("<A HREF", "<a style='color:#000000' href");
         }
         return effDateString;
     }

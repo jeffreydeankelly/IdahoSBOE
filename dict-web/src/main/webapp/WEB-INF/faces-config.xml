@@ -115,6 +115,7 @@
     <navigation-case>
       <from-outcome>alpha</from-outcome>
       <to-view-id>/rolodex.jspx</to-view-id>
+      <!--  redirect/-->
     </navigation-case>
     <navigation-case>
       <from-outcome>menu2.keyword</from-outcome>

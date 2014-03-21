@@ -10,6 +10,11 @@
         <param-value>client</param-value>
     </context-param>
 
+	<context-param>
+	   <param-name>com.sun.faces.enableRestoreView11Compatibility</param-name>
+	   <param-value>true</param-value>
+	</context-param>
+
     <context-param>
         <param-name>oracle.adf.view.faces.CHECK_FILE_MODIFICATION</param-name>
         <param-value>false</param-value>
@@ -94,6 +99,7 @@
     <security-role>
         <role-name>sboe_dict_demo</role-name>
     </security-role>
+    
     <session-config>
         <session-timeout>35</session-timeout>
     </session-config>
