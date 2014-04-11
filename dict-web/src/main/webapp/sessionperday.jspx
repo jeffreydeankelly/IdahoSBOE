@@ -85,16 +85,18 @@
                 </div>
               </f:verbatim>
               <af:panelHorizontal valign="top" halign="left">
+<!-- 
                   <af:objectSpacer width="1" height="50" />
-                  <af:selectInputDate id="startdate"  value="#{sessionperday.startDate}"
+                  <af:selectInputDate id="startdate"  value="#{sessionperday.startDate.toString()}"
                               label="Start Date">
                         <f:convertDateTime dateStyle="long" pattern="MM/dd/yy"/>
                     </af:selectInputDate>
                     <af:objectSpacer width="20" height="1" />
-                     <af:selectInputDate id="enddate"  value="#{sessionperday.endDate}"
+                     <af:selectInputDate id="enddate"  value="#{sessionperday.endDate.toString()}"
                               label="End Date">
                         <f:convertDateTime dateStyle="long" pattern="MM/dd/yy"/>
                     </af:selectInputDate>
+-->
               </af:panelHorizontal>
               <af:panelHorizontal valign="top" halign="left">
                   <af:objectSpacer width="1" height="50" />

@@ -323,7 +323,11 @@ public class NarrativeIndexingFacade extends AbstractFacade {
             final String tok1 = iterator.next().trim();
             if (label > start) {
                 querySql.append(" AND");
-                if (selectSql != null) selectSql.append("+");
+                /*
+                 * Comment out the plus characters in selectSql until we implement scoring
+                 *
+                 if (selectSql != null) selectSql.append("+");
+                 */
             }
             /*
              * 
@@ -333,8 +337,10 @@ public class NarrativeIndexingFacade extends AbstractFacade {
                         field, tok1, label));
              */
             querySql.append(
-                    String.format(" CONTAINS(%1$s, '$%2$s)",
-                            field, tok1));
+//                    String.format(" CONTAINS(%1$s, '%2$s', %3$d)",
+//                            field, tok1));
+		            String.format(" CONTAINS(%1$s, '%2$s')",
+		                    field, tok1));
             label++;
         }
         return label;
@@ -395,7 +401,11 @@ public class NarrativeIndexingFacade extends AbstractFacade {
         } else if (tokens.size()> 2) {
             querySql.append("(");
             int count = concatFromIterator(querySql, selectSql, "ItemNarrative", tokens, 1);
-            if (selectSql != null) selectSql.append("+");
+            /*
+             * Comment out the plus characters in selectSql until we implement scoring
+             *
+             if (selectSql != null) selectSql.append("+");
+             */
             querySql.append(") OR (");
             concatFromIterator(querySql, selectSql, "ItemName", tokens, count);
             querySql.append(")");

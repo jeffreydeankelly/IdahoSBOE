@@ -52,11 +52,11 @@
                                       inlineStyle="font-size: 9pt;"
                                       selected="false" immediate="true"
                                       shortDesc="See Frequently Asked Questions"/>
-                  <af:commandMenuItem text="Feedback" action="menu2.feedback"
+                  <!-- af:commandMenuItem text="Feedback" action="menu2.feedback"
                                       inlineStyle="font-size: 9pt;"
                                       actionListener="#{feedback.captureReturnView}"
                                       selected="false" immediate="true"
-                                      shortDesc="Give feedback about this web site"/>
+                                      shortDesc="Give feedback about this web site"/-->
                   <af:commandMenuItem text="About"
                                       inlineStyle="font-size: 9pt;"
                                       action="menu2.about" selected="false"
@@ -85,16 +85,19 @@
                 </div>
               </f:verbatim>
               <af:panelHorizontal valign="top" halign="left">
+
                   <af:objectSpacer width="1" height="50" />
-                  <af:selectInputDate id="startdate"  value="#{statistics.startDate}"
-                              label="Start Date">
+                  
+                  <!-- af:selectInputDate id="startdate" binding="#{statistics.selectStartDate}" label="Start Date">
                         <f:convertDateTime dateStyle="long" pattern="MM/dd/yy"/>
-                    </af:selectInputDate>
-                    <af:objectSpacer width="20" height="1" />
-                     <af:selectInputDate id="enddate"  value="#{statistics.endDate}"
-                              label="End Date">
+                  </af:selectInputDate>
+                  
+                  <af:objectSpacer width="20" height="1" />
+                  
+                  <af:selectInputDate id="enddate"  binding="#{statistics.selectEndDate}" label="End Date">
                         <f:convertDateTime dateStyle="long" pattern="MM/dd/yy"/>
-                    </af:selectInputDate>
+                  </af:selectInputDate-->
+
               </af:panelHorizontal>
               <af:panelHorizontal valign="top" halign="left">
                   <af:objectSpacer width="1" height="50" />

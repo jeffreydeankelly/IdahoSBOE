@@ -228,7 +228,12 @@ public class CatalogDataAccessHelper extends AbstractApplicationBean {
         try {
             // ad-hoc narrative search
             List<Glossary.PK> results;
-            if (sarg.trim().length() > 0) {
+            
+            /* Changed sarg.length() requirement to > 1.
+             * The reason is that NarrativeIndexingFacade.tokenizeNarrative() 
+             * returns a null where unless "word.length() >= 2" (line 95)
+             */
+            if (sarg.trim().length() > 1) {
                 results = indexingFacade.searchGlossaryWildcard(sarg, Globals.COLLECTIONS_TYPE);
             } else {
                 // make empty list

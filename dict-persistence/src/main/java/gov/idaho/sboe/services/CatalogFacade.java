@@ -1,11 +1,10 @@
 package gov.idaho.sboe.services;
 
 import java.math.BigDecimal;
-
 import java.sql.Date;
 import java.sql.Timestamp;
-
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -1454,12 +1453,14 @@ public class CatalogFacade extends AbstractFacade {
          List<StatisticSessionLength> results = new ArrayList<StatisticSessionLength>();
 
          try {
-             StringBuffer sql = new StringBuffer("select distinct day, avg(abs(to_number(slen))) over (partition by day) avglen " 
-              + " from (select distinct GlossaryUsageSession,   "
-              + " to_char( min(GlossaryUsageTimestamp) over (partition by GlossaryUsageSession), 'YYYY-MM-DD') day,   "
-              + " to_char(max(GlossaryUsageTimestamp) over (partition by GlossaryUsageSession), 'SSSS') -   "
-              + " to_char(min(GlossaryUsageTimestamp) over (partition by GlossaryUsageSession), 'SSSS') slen  "
-              + " from GlossaryUsageStatistics   where 1=1  ");
+         	StringBuffer sql = new StringBuffer("WITH cteOne AS "
+         			+ " (SELECT	distinct GlossaryUsageSession,"
+         			+ " CAST(MIN(GlossaryUsageTimestamp) OVER (PARTITION BY GlossaryUsageSession) AS DATE) AS day," 
+         			+ " DATEDIFF(SECOND, MIN(GlossaryUsageTimestamp) OVER (PARTITION BY GlossaryUsageSession),"
+         			+ " MAX(GlossaryUsageTimestamp) OVER (PARTITION BY GlossaryUsageSession)) AS slen "
+         			+ " FROM   GlossaryUsageStatistics) "
+         			+ " SELECT DISTINCT day, AVG(ABS(slen)) OVER (PARTITION BY day) AS avglen "
+         			+ " FROM cteOne");
                  
                  if (startDate != null)
                     sql.append(" and GlossaryUsageTimestamp >= ? ");
@@ -1467,7 +1468,7 @@ public class CatalogFacade extends AbstractFacade {
                  if (endDate != null)
                     sql.append(" and GlossaryUsageTimestamp <= ? ");
                     
-                 sql.append(") order by day ");
+                 sql.append(" ORDER BY day ");
                  
                  em = emf.createEntityManager();
                  Query query = em.createNativeQuery(sql.toString());
@@ -1483,19 +1484,11 @@ public class CatalogFacade extends AbstractFacade {
                  Iterator itr = resultList.iterator();
                  while (itr.hasNext())
                  {
-                     Vector resultRow = (Vector)itr.next();
-                     Iterator rowItr = resultRow.iterator();
-                     if (rowItr.hasNext())
-                     {
-                        StatisticSessionLength  row = new StatisticSessionLength();
-                        row.setDay((String)rowItr.next());
-                        BigDecimal sessLen =  (BigDecimal)rowItr.next();
-//                        BigDecimal amtDays = sessLen.multiply(new BigDecimal(24));
-//                        BigDecimal amtHours = amtDays.multiply(new BigDecimal(60));
-//                        BigDecimal amtSec = amtHours.multiply(new BigDecimal(60));
-                        row.setSessionLength(sessLen.longValue()/60);
-                        results.add(row);
-                     }
+                     Object[] resultRow = (Object[])itr.next();
+                     StatisticSessionLength  row = new StatisticSessionLength();
+                     row.setDay(resultRow[0].toString());
+                     row.setSessionLength(Long.valueOf(resultRow[1].toString())/60);
+                     results.add(row);
                  }
          } 
          catch (Exception e) {
@@ -1527,21 +1520,24 @@ public class CatalogFacade extends AbstractFacade {
             List<StatisticSessionPerDay> results = new ArrayList<StatisticSessionPerDay>();
         
             try {
-                StringBuffer sql = new StringBuffer("select distinct day, hour, count(*) over (partition by timeofday) cnt "
-                 + " from ( select distinct GlossaryUsageSession, "
-                 + "  to_char( min(GlossaryUsageTimestamp) over (partition by GlossaryUsageSession), 'YYYY-MM-DD') day, "
-                 + "  to_char( min(GlossaryUsageTimestamp) over (partition by GlossaryUsageSession), 'HH am') hour, "
-                 + "  to_char( min(GlossaryUsageTimestamp) over (partition by GlossaryUsageSession), 'YYYY-MM-DD HH am') timeofday "
-                 + " from GlossaryUsageStatistics " 
-                 + " where 1=1 ");
-                
-                if (startDate != null)
+            	StringBuffer sql = new StringBuffer("WITH cteOne AS "
+            									+ " (SELECT DISTINCT GlossaryUsageSession, "  
+            											+ " CAST(MIN(GlossaryUsageTimestamp) OVER (PARTITION BY GlossaryUsageSession) AS DATE) day, "   
+            											+ " CAST(MIN(GlossaryUsageTimestamp) OVER (PARTITION BY GlossaryUsageSession) AS TIME(0)) hour, "   
+            											+ " CAST(MIN(GlossaryUsageTimestamp) OVER (PARTITION BY GlossaryUsageSession) AS SMALLDATETIME) timeofday "  
+            									+ " FROM GlossaryUsageStatistics  WHERE 1=1 ) " 
+            									+ " SELECT DISTINCT day, " 
+            									+ " 		hour, " 
+            									+ " 		COUNT(*) OVER (PARTITION BY timeofday) cnt "  
+            									+ " FROM cteOne ");
+
+            	if (startDate != null)
                   sql.append(" and GlossaryUsageTimestamp >= ? ");
                 
                 if (endDate != null)
                   sql.append(" and GlossaryUsageTimestamp <= ? ");
                   
-                sql.append(") order by day, hour  ");
+                sql.append(" ORDER BY day, hour  ");
                    
                 em = emf.createEntityManager();
                 Query query = em.createNativeQuery(sql.toString());
@@ -1557,16 +1553,12 @@ public class CatalogFacade extends AbstractFacade {
                 Iterator itr = resultList.iterator();
                 while (itr.hasNext())
                 {
-                   Vector resultRow = (Vector)itr.next();
-                   Iterator rowItr = resultRow.iterator();
-                   if (rowItr.hasNext())
-                   {
-                      StatisticSessionPerDay  row = new StatisticSessionPerDay();
-                      row.setDay((String)rowItr.next());
-                      row.setHour((String)rowItr.next());
-                      row.setCount(((BigDecimal)rowItr.next()).longValue());
-                      results.add(row);
-                   }
+                    Object[] resultRow = (Object[])itr.next();
+                    StatisticSessionPerDay  row = new StatisticSessionPerDay();
+                    row.setDay(resultRow[0].toString());
+                    row.setHour(resultRow[1].toString());
+                    row.setCount(Long.valueOf(resultRow[2].toString()));
+                    results.add(row);
                 }
             }
             catch (Exception e) {

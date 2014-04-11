@@ -1,11 +1,12 @@
 package gov.idaho.sboe.view.backing;
 
 import java.sql.Date;
-
+import java.util.Calendar;
 import java.util.logging.Logger;
 
 import javax.faces.event.ActionEvent;
 
+import oracle.adf.view.faces.component.core.input.CoreSelectInputDate;
 
 import org.apache.shale.tiger.managed.Bean;
 import org.apache.shale.tiger.managed.Scope;
@@ -47,6 +48,11 @@ public class Statistics extends AbstractViewController {
     protected Date startDate;
     protected Date endDate;
     
+    protected Calendar cal = Calendar.getInstance();
+
+    public CoreSelectInputDate selectStartDate;
+    public CoreSelectInputDate selectEndDate;
+    
     public static String StartDate = "StartDate";
     public static String EndDate = "EndDate";
     public static String DateChangeFlag = "DateChangeFlag";
@@ -65,8 +71,9 @@ public class Statistics extends AbstractViewController {
             JSFUtils.storeOnProcess(DateChangeFlag, true);
             JSFUtils.removeFromProcess(StartDate);
             JSFUtils.removeFromProcess(EndDate);
-            startDate = null;
-            endDate = null;
+            endDate = new java.sql.Date(cal.getTime().getTime());
+            cal.add(Calendar.MONTH,  -1);
+            startDate = new java.sql.Date(cal.getTime().getTime());
         } catch (Exception e) {
             handleException(e);
         }
@@ -82,7 +89,22 @@ public class Statistics extends AbstractViewController {
         ((ExceptionHandler)getBean(Constants.EXCEPTION_HANDLER)).handleException(exception);
     }
 
-
+    public void setSelectStartDate(CoreSelectInputDate selectStartDate){
+        this.selectStartDate=selectStartDate;
+    }
+    
+    public CoreSelectInputDate getSelectStartDate(){
+        return selectStartDate;
+    }
+    
+    public void setSelectEndDate(CoreSelectInputDate selectEndDate){
+        this.selectEndDate=selectEndDate;
+    }
+    
+    public CoreSelectInputDate getSelectEndDate(){
+        return selectEndDate;
+    }
+    
     public void setStartDate(Date startDate)
     {
         this.startDate = startDate;
