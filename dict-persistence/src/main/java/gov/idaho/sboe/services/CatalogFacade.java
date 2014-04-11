@@ -1591,24 +1591,23 @@ public class CatalogFacade extends AbstractFacade {
             List<StatisticFeedbackUsage> results = new ArrayList<StatisticFeedbackUsage>();
         
             try {
-                StringBuffer sql = new StringBuffer( "select " + 
-                    "    GlossaryUsagePageRating, " + 
-                    "    GlossaryUsageTimestamp, " + 
-                    "    GlossaryUsagePage, " + 
-                    "    GlossaryUsagePageComment, " + 
-                    "    GlossaryUsageExtra " + 
-                    " from GlossaryUsagePageRating r " + 
-                    "    left join GlossaryUsageStatistics s " + 
-                    "        on r.GlossaryUsagePageSession = s.GlossaryUsageSession " + 
-                    " where 1=1 ");
+                StringBuffer sql = new StringBuffer( "SELECT " + 
+                    "    r.GlossaryUsagePageRating, " + 
+                    "    r.GlossaryUsagePageTimestamp, " +
+                    "    s.GlossaryUsagePage, " +
+                    "    s.GlossaryUsageExtra, " +
+                    "    r.GlossaryUsagePageComment " +
+                    "FROM GlossaryUsagePageRating r " + 
+                    "LEFT JOIN GlossaryUsageStatistics s " + 
+                    "     ON r.GlossaryUsagePageSession = s.GlossaryUsageSession ");
                 
                 if (startDate != null)
-                   sql.append(" and GlossaryUsageTimestamp >= ? ");
+                   sql.append(" AND r.GlossaryUsagePageTimestamp >= ? ");
                 
                 if (endDate != null)
-                   sql.append(" and GlossaryUsageTimestamp <= ? ");
+                   sql.append(" AND r.GlossaryUsagePageTimestamp <= ? ");
                    
-                sql.append(" order by GlossaryUsageTimestamp");
+                sql.append(" ORDER BY GlossaryUsagePageTimestamp DESC");
                 
                 em = emf.createEntityManager();
                 Query query = em.createNativeQuery(sql.toString());
@@ -1624,18 +1623,29 @@ public class CatalogFacade extends AbstractFacade {
                 Iterator itr = resultList.iterator();
                 while (itr.hasNext())
                 {
-                    Vector resultRow = (Vector)itr.next();
-                    Iterator rowItr = resultRow.iterator();
-                    if (rowItr.hasNext())
+                    Object[] resultRow = (Object[])itr.next();
+                    StatisticFeedbackUsage  row = new StatisticFeedbackUsage();
+                    row.setUserRate(resultRow[0].toString());
+                    row.setUsageDate((Timestamp)resultRow[1]);
+                    
+                    // User could submit an entry without a page attached
+                    if (resultRow[2] != null)
                     {
-                       StatisticFeedbackUsage  row = new StatisticFeedbackUsage();
-                       row.setUserRate((String)rowItr.next());
-                       row.setUsageDate((Timestamp)rowItr.next());
-                       row.setUsagePage((String)rowItr.next());
-                       row.setUserComment((String)rowItr.next());
-                       row.setUsageExtra((String)rowItr.next());
-                       results.add(row);
+                    	row.setUsagePage(resultRow[2].toString());
                     }
+
+                    // User could submit an entry without entering a comment
+                    if (resultRow[3] != null)
+                    {
+                    	row.setUsageExtra(resultRow[3].toString());
+                    }
+                    // User could submit an entry without an extra
+                    if (resultRow[4] != null)
+                    {
+                    	row.setUserComment(resultRow[4].toString());
+                    }
+
+                    results.add(row);
                 }
               
             } 
